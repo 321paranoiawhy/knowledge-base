@@ -1,5 +1,5 @@
 ---
-layout: page
+layout: doc
 title: 归档
 sidebar: false
 ---

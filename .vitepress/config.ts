@@ -10,7 +10,7 @@ const ogUrl = 'https://unocss.dev/';
 const ogImage = `${ogUrl}og.png#1`;
 const title = 'WHY の 自留地';
 const titleTemplate = '';
-const description = 'LH Coding Guide';
+const description = 'WHY の 自留地';
 
 const transformFileName = (fileName: string) => {
   const index = fileName.indexOf('-');
@@ -326,42 +326,44 @@ const SidebarConfig: DefaultTheme.SidebarItem[] = [
 export default defineConfig({
   lang: 'en-US',
   title,
-  titleTemplate: titleTemplate,
+  // titleTemplate,
   description,
+  // base 前后必须使用 / 闭合
   // base: '/',
   base: '/knowledge-base/',
   // srcDir: 'docs',
   outDir: '.vitepress/dist',
   head: [
-    ['link', {rel: 'icon', href: '/favicon.svg', type: 'image/svg+xml'}],
+    ['link', {rel: 'icon', href: '/knowledge-base/favicon.svg', type: 'image/svg+xml'}],
     [
       'link',
       {
         rel: 'alternate icon',
-        href: '/favicon.ico',
+        // `${base}fileName`, 默认 base 为 /, 即 `/favicon.ico`
+        href: '/knowledge-base/favicon.ico',
         type: 'image/png',
         sizes: '16x16'
       }
     ],
-    ['meta', {name: 'author', content: 'Anthony Fu'}],
+    ['meta', {name: 'author', content: 'WHY'}],
     ['meta', {property: 'og:type', content: 'website'}],
     ['meta', {name: 'og:title', content: title}],
     ['meta', {name: 'og:description', content: description}],
-    ['meta', {property: 'og:image', content: ogImage}],
-    ['meta', {name: 'twitter:title', content: title}],
-    ['meta', {name: 'twitter:card', content: 'summary_large_image'}],
-    ['meta', {name: 'twitter:image', content: ogImage}],
-    ['meta', {name: 'twitter:site', content: '@antfu7'}],
-    ['meta', {name: 'twitter:url', content: ogUrl}],
-    [
-      'link',
-      {
-        rel: 'search',
-        type: 'application/opensearchdescription+xml',
-        href: '/search.xml',
-        title: 'UnoCSS'
-      }
-    ]
+    ['meta', {property: 'og:image', content: ogImage}]
+    // ['meta', {name: 'twitter:title', content: title}],
+    // ['meta', {name: 'twitter:card', content: 'summary_large_image'}],
+    // ['meta', {name: 'twitter:image', content: ogImage}],
+    // ['meta', {name: 'twitter:site', content: '@antfu7'}],
+    // ['meta', {name: 'twitter:url', content: ogUrl}],
+    // [
+    //   'link',
+    //   {
+    //     rel: 'search',
+    //     type: 'application/opensearchdescription+xml',
+    //     href: '/knowledge-base/search.xml',
+    //     title
+    //   }
+    // ]
   ],
   // 显示最后一次更新时间, 文件须被 git 提交方可显示, 否则不显示
   lastUpdated: true,

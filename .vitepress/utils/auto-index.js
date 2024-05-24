@@ -87,7 +87,6 @@ fs.readdirSync(DOCS_ROOT_PATH, READ_DIR_OPTIONS).forEach(name => {
       generatedSidebar[`/docs/${name}/${folder}/`] = currentSidebar;
 
       // TODO 面包屑 breadcrumb 更多内容和样式
-      // TODO 新增空白行
       let indexMdContent = `# ${transformedFolder}\n`;
 
       const archivedMd = fs.readdirSync(secondLevelFolder, READ_DIR_OPTIONS);

@@ -4,6 +4,7 @@
   "type": "module",
   "private": true,
   "description": "WHY の自留地",
+  "homepage": "https://321paranoiawhy.github.io/knowledge-base",
   "scripts": {
     "docs:dev": "vitepress dev",
     "docs:build": "vitepress build",

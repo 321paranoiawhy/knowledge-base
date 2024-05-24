@@ -8,7 +8,7 @@ hero:
     alt: UnoCSS
   name: 'WHY の '
   text: 自留地
-  tagline: 全栈 · 精进 · 代码指南
+  tagline: 圈地自萌 · 保持热爱 · 笔耕不辍
   actions:
     - theme: brand
       text: README

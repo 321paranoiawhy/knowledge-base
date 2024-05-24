@@ -1,7 +1,7 @@
 - 🚧 nprogress
 - ✅ 评论 giscus
 - 🚧 标签及标签页 tags
-- 🚧 归档 archive
+- 🚧 归档 archive (按年份降序, 提供排序切换)
 - 🚧 Heading 前置 H1 ~ H6
 - [vitepress 插件合集](https://chodocs.cn/program/vitepress-plugin/)
 - 🚧 embed, 如 codepen

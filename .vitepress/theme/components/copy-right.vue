@@ -59,8 +59,13 @@ watch(
             CC BY-NC-SA 4.0
           </a>
           许可协议。转载请注明来自
-          <a href="https://chodocs.cn/" rel="noreferrer" target="_blank" class="c-[var(--vp-c-brand-lighter)]">
-            ChoDocs
+          <a
+            href="https://321paranoiawhy.github.io/knowledge-base"
+            rel="noreferrer"
+            target="_blank"
+            class="c-[var(--vp-c-brand-lighter)]"
+          >
+            WHY の 自留地
           </a>
         </span>
         ！
