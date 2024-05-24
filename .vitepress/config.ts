@@ -328,7 +328,8 @@ export default defineConfig({
   title,
   titleTemplate: titleTemplate,
   description,
-  base: '/',
+  // base: '/',
+  base: '/knowledge-base/',
   // srcDir: 'docs',
   outDir: '.vitepress/dist',
   head: [
