@@ -1,23 +1,22 @@
 <script setup lang="ts">
-import {computed, ref} from 'vue';
+import {computed, ref, watch} from 'vue';
 import {useData, useRoute} from 'vitepress';
 
-const defaultAuthor = 'WHY';
 const {frontmatter} = useData();
 
-const author = ref(defaultAuthor);
+const author = ref(import.meta.env.VITE_AUTHOR);
 
+// frontmatter author 字段优先级最高
 if (frontmatter.value?.author) author.value = frontmatter.value?.author;
 
-function reName(name: string) {
-  return name === 'Choi Yang' ? 'Chocolate1999' : name;
-}
-
-const pageHref = location.href;
-
-function getGithubLink(name: string) {
-  return `https://github.com/${reName(name)}`;
-}
+const pageHref = ref(location.href);
+const router = useRoute();
+watch(
+  () => router.path,
+  () => {
+    pageHref.value = location.href;
+  }
+);
 </script>
 
 <template>
@@ -29,7 +28,12 @@ function getGithubLink(name: string) {
       <div>
         <span class="font-bold">文章作者:&nbsp;</span>
         <span>
-          <a :href="getGithubLink(author)" rel="noreferrer" target="_blank" class="c-[var(--vp-c-brand-lighter)]">
+          <a
+            href="https://github.com/321paranoiawhy"
+            rel="noreferrer"
+            target="_blank"
+            class="c-[var(--vp-c-brand-lighter)]"
+          >
             {{ author }}
           </a>
         </span>

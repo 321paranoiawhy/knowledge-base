@@ -38,7 +38,7 @@ const ANGULAR = `${LOGOS}angular`;
 const ELECTRON = `${LOGOS}electron`;
 const FLUTTER = `${LOGOS}flutter`;
 const KMP = `${LOGOS}kotlin-icon`;
-const NEXT = `${LOGOS}next`;
+const NEXT = `${LOGOS}nextjs-icon`;
 // const NUXT = `${MDI}nuxt`;
 const NUXT = `${LOGOS}nuxt`;
 // const REACT = `${MDI}react`;
@@ -53,9 +53,9 @@ const VUE = `${LOGOS}vue`;
 // const HM = `${MDI}hongmeng`;
 
 // sidebar-game
-// TODO cocos godot
-const UNITY = `${MDI}unity`;
+const COCOS = `i-simple-icons:cocos`;
 const GODOT = `${LOGOS}godot-icon`;
+const UNITY = `${MDI}unity`;
 
 export const ICONS_MAP = {
   // nav
@@ -65,9 +65,10 @@ export const ICONS_MAP = {
   TOOLS,
   TEST,
   // sidebar-backend
-  'C#': C_SHARP,
+  'C SHARP': C_SHARP,
   GO,
   JAVA,
+  NEST,
   PHP,
   PYTHON,
   RUST,
@@ -76,14 +77,16 @@ export const ICONS_MAP = {
   ELECTRON,
   FLUTTER,
   'KOTLIN MULTIPLATFORM': KMP,
+  NEXT,
   NUXT,
   REACT,
   SWIFT,
   TAURI,
   VUE,
   // sidebar-game
-  UNITY,
-  GODOT
+  COCOS,
+  GODOT,
+  UNITY
 };
 
 export const UNOCSS_SAFELIST_ICONS = Object.values(ICONS_MAP);

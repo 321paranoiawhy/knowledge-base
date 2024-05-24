@@ -447,7 +447,7 @@ export default defineConfig({
       // '/config/': SidebarConfig,
     },
     editLink: {
-      pattern: 'https://github.com/unocss/unocss/edit/main/docs/:path',
+      pattern: 'https://github.com/321paranoiawhy/knowledge-base/edit/main/:path',
       text: 'Edit this page on GitHub'
       // text: 'Suggest changes to this page',
     },

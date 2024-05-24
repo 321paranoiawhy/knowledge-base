@@ -17,6 +17,9 @@ devDependencies:
   '@iconify-json/ph':
     specifier: ^1.1.12
     version: 1.1.13
+  '@iconify-json/simple-icons':
+    specifier: ^1.1.102
+    version: 1.1.102
   '@iconify-json/twemoji':
     specifier: ^1.1.15
     version: 1.1.15
@@ -851,6 +854,12 @@ packages:
 
   /@iconify-json/ph@1.1.13:
     resolution: {integrity: sha512-xtM4JJ63HCKj09WRqrBswXiHrpliBlqboWSZH8odcmqYXbvIFceU9/Til4V+MQr6+MoUC+KB72cxhky2+A6r/g==}
+    dependencies:
+      '@iconify/types': 2.0.0
+    dev: true
+
+  /@iconify-json/simple-icons@1.1.102:
+    resolution: {integrity: sha512-ErRQGs7tjGsq4sj5SSeYwBOQ766yd9LtWblWakyL+ugg1k48ImabkI3mptDN5o+XSUb9SC+b7YNSStlrrecqNQ==}
     dependencies:
       '@iconify/types': 2.0.0
     dev: true

@@ -6,3 +6,5 @@ node_modules
 # Vitepress related
 .vitepress/cache/
 .vitepress/dist/
+
+.generated

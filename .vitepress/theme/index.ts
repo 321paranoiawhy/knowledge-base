@@ -48,8 +48,8 @@ export default {
     const route = useRoute();
 
     const initZoom = () => {
-      // 可更改选择器为 .main img
-      mediumZoom('img', {background: 'var(--vp-c-bg)'});
+      // 选择器为 .main img
+      mediumZoom('.main img', {background: 'var(--vp-c-bg)'});
     };
 
     onMounted(() => {
@@ -62,11 +62,15 @@ export default {
     );
 
     // TODO 更改 giscus 配置
+    // https://giscus.app/zh-CN
+    // https://github.com/settings/installations/51129315
     giscusTalk(
       {
-        repo: 'T-miracle/blog',
-        repoId: 'R_kgDOJCf-FQ',
-        categoryId: 'DIC_kwDOJCf-Fc4CUohc',
+        // repo: 'T-miracle/blog',
+        repo: '321paranoiawhy/knowledge-base',
+        repoId: 'R_kgDOMAAHSA', // 对应 script 标签中的 data-repo-id
+        category: 'General', // 对应 script 标签中的 data-category
+        categoryId: 'DIC_kwDOMAAHSM4Cfldg', // 对应 script 标签中的 data-category-id
         mapping: 'pathname'
       },
       {

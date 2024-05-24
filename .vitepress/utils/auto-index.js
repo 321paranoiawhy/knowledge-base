@@ -71,35 +71,42 @@ fs.readdirSync(DOCS_ROOT_PATH, READ_DIR_OPTIONS).forEach(name => {
     };
     generatedNav.push(currentNav);
 
-    // const currentSidebar = [];
-    const currentSidebarItems = [];
-    // currentSidebar.push({text: generateInlineIcon(name), items: currentSidebarItems});
-
     fs.readdirSync(firstLevelFolder, READ_DIR_OPTIONS).forEach(folder => {
       // 这里即最深层级
       const secondLevelFolder = `${firstLevelFolder}/${folder}`;
       const transformedFolder = transformFileName(folder, ALL_CAPITALIZE_STACK.includes(folder));
 
       const currentSidebar = [];
-      // const currentSidebarItems = [];
+      const currentSidebarItems = [];
       currentSidebar.push({
         text: generateInlineIcon(transformedFolder) + transformedFolder,
         items: currentSidebarItems
       });
 
+      // 键示例: /docs/backend/c-sharp/
       generatedSidebar[`/docs/${name}/${folder}/`] = currentSidebar;
 
       // TODO 面包屑 breadcrumb 更多内容和样式
+      // TODO 新增空白行
       let indexMdContent = `# ${transformedFolder}\n`;
 
-      fs.readdirSync(secondLevelFolder, READ_DIR_OPTIONS).forEach(file => {
+      const archivedMd = fs.readdirSync(secondLevelFolder, READ_DIR_OPTIONS);
+
+      if (
+        (!archivedMd.includes('index.md') && archivedMd.length > 0) ||
+        (archivedMd.includes('index.md') && archivedMd.length > 1)
+      ) {
+        indexMdContent += '\n';
+      }
+
+      archivedMd.forEach(file => {
         const fileNameWithoutExtension = file.replace('.md', '');
 
         // 跳过非 md 文件
         if (!file.endsWith('.md')) {
           return;
         } else if (file === 'index.md') {
-          // 处理 index.md
+          // 处理归档 index.md
           currentNav.items.push({
             // ! nav 下拉框似乎不是使用的 v-html, 这里不能直接使用图标字符表示元素
             // text: generateInlineIcon(transformedFolder) + transformedFolder,
@@ -146,7 +153,11 @@ fs.readdirSync(DOCS_ROOT_PATH, READ_DIR_OPTIONS).forEach(name => {
 //   })
 //   .forEach(index => generatedDocs.splice(index, 1));
 
-console.log(generatedNav, generatedSidebar);
+console.log(generatedNav, generatedSidebar, 666);
+
+!fs.existsSync('.generated') && fs.mkdirSync('.generated');
+fs.writeFileSync('.generated/nav.json', JSON.stringify(generatedNav, null, 2));
+fs.writeFileSync('.generated/sidebar.json', JSON.stringify(generatedSidebar, null, 2));
 
 // export default generatedNav;
 export {generatedNav, generatedSidebar};

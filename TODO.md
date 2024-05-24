@@ -1,24 +1,24 @@
-- nprogress
-- 评论 giscus
-- 标签及标签页 tags
-- 归档 archive
-- Heading 前置 H1 ~ H6
+- 🚧 nprogress
+- ✅ 评论 giscus
+- 🚧 标签及标签页 tags
+- 🚧 归档 archive
+- 🚧 Heading 前置 H1 ~ H6
 - [vitepress 插件合集](https://chodocs.cn/program/vitepress-plugin/)
-- 统一图标为 mdi
-- embed, 如 codepen
-- 代码块折叠功能 (带动画)
-- 复刻 medium-zoom 至 uniapp
-- 面包屑 breadcrumb
-- useSetting
-- 付费阅读
-- demo 组件
-- code group 当前页联动, tabs 切换下划线动画
-- nav sidebar 添加图标
-- 基于 nuxt/vue3/ts/unocss/nest/mongodb/redis/mysql 开发后台管理系统
-- tools
+- 🚧 embed, 如 codepen
+- 🚧 代码块折叠功能 (带动画)
+- 🚧 复刻 medium-zoom 至 uniapp
+- 🚧 面包屑 breadcrumb
+- 🚧 useSetting
+- 🚧 付费阅读
+- 🚧 demo 组件
+- 🚧 code group 当前页联动, tabs 切换下划线动画
+- ✅ nav sidebar 添加图标
+- 🚧 页面切换动画
+- ✅ 基于 nuxt/vue3/ts/unocss/nest/mongodb/redis/mysql 开发后台管理系统
+- ✅ tools
 
   roadmap.sh
-- tree 组件展示 `tree` 命令结果, 语法可参照 [dumi - Tree](https://d.umijs.org/guide/markdown#tree)
+- ✅ tree 组件展示 `tree` 命令结果, 语法可参照 [dumi - Tree](https://d.umijs.org/guide/markdown#tree)
 
   ```tree
   tree

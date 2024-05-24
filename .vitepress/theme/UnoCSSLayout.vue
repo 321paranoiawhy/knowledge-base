@@ -1,5 +1,5 @@
 <script setup lang="ts">
-import {useData} from 'vitepress';
+import {useData, useRoute} from 'vitepress';
 import DefaultTheme from 'vitepress/theme';
 import {nextTick, provide} from 'vue';
 import CopyRight from './components/copy-right.vue';
@@ -44,7 +44,7 @@ provide('toggle-appearance', async ({clientX: x, clientY: y}: MouseEvent) => {
     <!--    https://vitepress.dev/guide/extending-default-theme#layout-slots -->
     <!--    https://github.com/vuejs/vitepress/blob/main/src/client/theme-default/Layout.vue -->
     <template #doc-before>
-      <!--      TODO 字数统计和阅读时长 -->
+      <!-- TODO 字数统计和阅读时长 -->
       <page-info words="" read-time=""></page-info>
     </template>
     <template #doc-footer-before>

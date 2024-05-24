@@ -11,11 +11,11 @@ hero:
   tagline: 全栈 · 精进 · 代码指南
   actions:
     - theme: brand
-      text: Getting Started
-      link: /TODO/
+      text: README
+      link: /README/
     - theme: alt
-      text: Config
-      link: /config/
+      text: TODO
+      link: /TODO/
 #    - theme: alt
 #      text: CHANGELOG
 #      link: /CHANGELOG/
