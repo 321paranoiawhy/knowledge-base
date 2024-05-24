@@ -1,0 +1,7 @@
+build
+coverage
+.env
+.github
+!.vitepress
+.vitepress/cache
+.vitepress/dist
