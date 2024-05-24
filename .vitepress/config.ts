@@ -366,11 +366,7 @@ export default defineConfig({
   lastUpdated: true,
   // 路由不带 .html 后缀
   cleanUrls: true,
-  ignoreDeadLinks: [
-    // /^\/play/,
-    // /^\/interactive/,
-    // /:\/\/localhost/,
-  ],
+  ignoreDeadLinks: true,
 
   markdown: {
     theme: {
