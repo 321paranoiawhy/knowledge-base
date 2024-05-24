@@ -11,6 +11,7 @@
 - 🚧 useSetting
 - 🚧 付费阅读
 - 🚧 demo 组件
+- - [vitepress-demo-preview](https://github.com/flingyp/vitepress-demo-preview)
 - 🚧 code group 当前页联动, tabs 切换下划线动画
 - ✅ nav sidebar 添加图标
 - 🚧 页面切换动画
@@ -34,3 +35,12 @@ $$ x = {-b \pm \sqrt{b^2-4ac} \over 2a} $$
 | $\nabla \cdot \vec{\mathbf{B}}  = 0$                                                                                                                                      | divergence of $\vec{\mathbf{B}}$ is zero                                               |
 | $\nabla \times \vec{\mathbf{E}}\, +\, \frac1c\, \frac{\partial\vec{\mathbf{B}}}{\partial t}  = \vec{\mathbf{0}}$                                                          | curl of $\vec{\mathbf{E}}$ is proportional to the rate of change of $\vec{\mathbf{B}}$ |
 | $\nabla \times \vec{\mathbf{B}} -\, \frac1c\, \frac{\partial\vec{\mathbf{E}}}{\partial t} = \frac{4\pi}{c}\vec{\mathbf{j}}    \nabla \cdot \vec{\mathbf{E}} = 4 \pi \rho$ | _wha?_                                                                                 |
+
+
+[//]: # (:::preview title || component description content)
+
+[//]: # ()
+[//]: # (demo-preview=./.vitepress/theme/components/demo-test.vue)
+
+[//]: # ()
+[//]: # (:::)

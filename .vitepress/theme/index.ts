@@ -17,6 +17,8 @@ import './overrides.css';
 import 'uno.css';
 import {useData, useRoute} from 'vitepress';
 import CustomLayout from './layouts/custom-layout.vue';
+import {AntDesignContainer, ElementPlusContainer, NaiveUIContainer} from '@vitepress-demo-preview/component';
+import '@vitepress-demo-preview/component/dist/style.css';
 
 let homePageStyle: HTMLStyleElement | undefined;
 
@@ -30,6 +32,7 @@ export default {
 
     // layout 全局组件
     app.component('custom', CustomLayout);
+    app.component('demo-preview', AntDesignContainer);
 
     if (typeof window === 'undefined') return;
 

@@ -28,6 +28,8 @@
     "@iconify-json/vscode-icons": "^1.1.33",
     "@shikijs/vitepress-twoslash": "^1.6.0",
     "@types/node": "^20.12.12",
+    "@vitepress-demo-preview/component": "^2.3.2",
+    "@vitepress-demo-preview/plugin": "^1.2.3",
     "busuanzi.pure.js": "^1.0.3",
     "conventional-changelog-cli": "^4.1.0",
     "markdown-it-mathjax3": "^4.3.2",

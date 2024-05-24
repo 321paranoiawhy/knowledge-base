@@ -5,6 +5,7 @@ import mathjax3 from 'markdown-it-mathjax3';
 // import {version} from '../package.json';
 import * as fs from 'fs';
 import {generatedNav, generatedSidebar} from './utils/auto-index';
+import {containerPreview, componentPreview} from '@vitepress-demo-preview/plugin';
 
 const ogUrl = 'https://unocss.dev/';
 const ogImage = `${ogUrl}og.png#1`;
@@ -386,6 +387,8 @@ export default defineConfig({
     },
     config: md => {
       md.use(mathjax3);
+      md.use(containerPreview);
+      md.use(componentPreview);
     },
     codeTransformers: [
       transformerTwoslash({
