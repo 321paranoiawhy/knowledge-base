@@ -152,7 +152,7 @@ fs.readdirSync(DOCS_ROOT_PATH, READ_DIR_OPTIONS).forEach(name => {
 //   })
 //   .forEach(index => generatedDocs.splice(index, 1));
 
-console.log(generatedNav, generatedSidebar, 666);
+console.log(generatedNav, generatedSidebar);
 
 !fs.existsSync('.generated') && fs.mkdirSync('.generated');
 fs.writeFileSync('.generated/nav.json', JSON.stringify(generatedNav, null, 2));

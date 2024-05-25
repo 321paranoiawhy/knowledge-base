@@ -2,9 +2,17 @@ node_modules
 .idea
 .webstorm
 .vscode
+.history
+.DS_Store
+*.local
+build
+dist
 
 # Vitepress related
 .vitepress/cache/
 .vitepress/dist/
 
 .generated
+env/.env.local
+
+log

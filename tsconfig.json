@@ -1,0 +1,21 @@
+{
+  //  "extends": "@vue/tsconfig/tsconfig.json",
+  "compilerOptions": {
+    //    "sourceMap": true,
+    "baseUrl": ".",
+    "module": "es2022",
+    "moduleResolution": "Node",
+    "paths": {
+      //      "@/*": ["./src/*"],
+      "@components/*": ["./.vitepress/theme/components/*"],
+      "@utils": ["./.vitepress/theme/utils/*"]
+    },
+    "lib": ["esnext", "dom"],
+    "strict": true
+    //    "noUnusedLocals": true,
+    //    "noUnusedParameters": true,
+    //    "noFallthroughCasesInSwitch": true,
+    //    "ignoreDeprecations": "5.0"
+  },
+  "include": ["*.[js|ts|jsx|tsx|vue]", ".vitepress/**/*.[js|ts|jsx|tsx|vue]", "env.d.ts"]
+}

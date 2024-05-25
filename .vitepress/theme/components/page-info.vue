@@ -6,7 +6,7 @@ defineProps<{
   /**
    * 阅读时长
    */
-  readTime: string;
+  readingTime: string;
   /**
    * 字数统计
    */
@@ -47,7 +47,7 @@ const author = computed(() => {
     <div class="flex gap-[4px] items-center">
       <span i-mdi:clock-outline></span>
       阅读时长:&nbsp;
-      <span>{{ readTime }} 分钟</span>
+      <span>{{ readingTime }} 分钟</span>
     </div>
     <div class="flex gap-[4px] items-center">
       <span i-mdi:eye-outline></span>

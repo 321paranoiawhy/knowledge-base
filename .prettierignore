@@ -1,7 +1,8 @@
 build
 coverage
-.env
-.github
+env
+!.github
+dist
 !.vitepress
 .vitepress/cache
 .vitepress/dist
