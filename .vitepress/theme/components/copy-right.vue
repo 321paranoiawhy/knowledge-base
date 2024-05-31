@@ -1,5 +1,4 @@
-<script setup lang="ts">
-import {computed, ref, watch} from 'vue';
+<script setup lang="ts" xmlns:i-mdi="http://www.w3.org/1999/xhtml">
 import {useData, useRoute} from 'vitepress';
 
 const {frontmatter} = useData();
@@ -20,20 +19,13 @@ watch(
 </script>
 
 <template>
-  <section
-    class="px-[1.2rem] relative py-[1rem] border-1 border-[var(--vp-c-border)]/[.55] w-full min-h-[32px] border-solid my-[32px] leading-[24px] rounded-[4px]"
-  >
-    <div i-mdi:copyright absolute class="top-[1rem] right-[1.2rem]" />
-    <div class="flex flex-col gap-y-[8px] overflow-hidden">
+  <section px-1.2rem relative py-1rem my-8 rounded-1 lh-6 w-full class="bg-[--vp-c-default-soft]">
+    <div i-mdi:copyright absolute top-4 right-1.2rem />
+    <div flex flex-col gap-y-2 overflow-hidden>
       <div>
-        <span class="font-bold">文章作者:&nbsp;</span>
+        <span class="fw-500">文章作者:&nbsp;</span>
         <span>
-          <a
-            href="https://github.com/321paranoiawhy"
-            rel="noreferrer"
-            target="_blank"
-            class="c-[var(--vp-c-brand-lighter)]"
-          >
+          <a href="https://github.com/321paranoiawhy" rel="noreferrer" target="_blank" class="c-[var(--vp-c-brand-1)]">
             {{ author }}
           </a>
         </span>
@@ -41,7 +33,7 @@ watch(
       <div>
         <span class="font-bold">文章链接:&nbsp;</span>
         <span>
-          <a :href="pageHref" rel="noreferrer" target="_blank" class="c-[var(--vp-c-brand-lighter)]">
+          <a :href="pageHref" rel="noreferrer" target="_blank" class="c-[var(--vp-c-brand-1)]">
             {{ pageHref }}
           </a>
         </span>
@@ -54,7 +46,7 @@ watch(
             href="https://creativecommons.org/licenses/by-nc-sa/4.0/"
             rel="noreferrer"
             target="_blank"
-            class="c-[var(--vp-c-brand-lighter)]"
+            class="c-[var(--vp-c-brand-1)]"
           >
             CC BY-NC-SA 4.0
           </a>
@@ -63,7 +55,7 @@ watch(
             href="https://321paranoiawhy.github.io/knowledge-base"
             rel="noreferrer"
             target="_blank"
-            class="c-[var(--vp-c-brand-lighter)]"
+            class="c-[var(--vp-c-brand-1)]"
           >
             WHY の 自留地
           </a>

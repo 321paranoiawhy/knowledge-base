@@ -1,3 +1,3 @@
 # Python
 
-- [astro](./astro.md)
+- [Astro](./astro.md)

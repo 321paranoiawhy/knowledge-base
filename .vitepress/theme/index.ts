@@ -1,10 +1,8 @@
 // https://vitepress.dev/guide/custom-theme
-import {h, nextTick, onMounted, watch} from 'vue';
 import Theme from 'vitepress/theme';
 import TwoslashFloatingVue from '@shikijs/vitepress-twoslash/client';
 import UnoCSSLayout from './UnoCSSLayout.vue';
 import giscusTalk from 'vitepress-plugin-comment-with-giscus';
-import {toRefs} from 'vue';
 // PV UV 统计
 import busuanzi from 'busuanzi.pure.js';
 // medium 图片预览效果
@@ -15,10 +13,19 @@ import './rainbow.css';
 import './vars.css';
 import './overrides.css';
 import 'uno.css';
+// 主题切换必须引入 element-plus dark css
+import 'element-plus/theme-chalk/dark/css-vars.css';
 import {useData, useRoute} from 'vitepress';
 import CustomLayout from './layouts/custom-layout.vue';
-import {AntDesignContainer, ElementPlusContainer, NaiveUIContainer} from '@vitepress-demo-preview/component';
-import '@vitepress-demo-preview/component/dist/style.css';
+
+// import {AntDesignContainer, ElementPlusContainer, NaiveUIContainer} from '@vitepress-demo-preview/component';
+// import '@vitepress-demo-preview/component/dist/style.css';
+
+// nolebase related
+import {NolebaseInlineLinkPreviewPlugin} from '@nolebase/vitepress-plugin-inline-link-preview/client';
+import '@nolebase/vitepress-plugin-inline-link-preview/client/style.css';
+
+import {NolebaseGitChangelogPlugin} from '@nolebase/vitepress-plugin-git-changelog/client';
 
 let homePageStyle: HTMLStyleElement | undefined;
 
@@ -30,9 +37,12 @@ export default {
   enhanceApp({app, router}) {
     app.use(TwoslashFloatingVue);
 
+    app.use(NolebaseInlineLinkPreviewPlugin);
+    app.use(NolebaseGitChangelogPlugin);
+
     // layout 全局组件
     app.component('custom', CustomLayout);
-    app.component('demo-preview', AntDesignContainer);
+    // app.component('demo-preview', AntDesignContainer);
 
     if (typeof window === 'undefined') return;
 
@@ -79,7 +89,9 @@ export default {
       {
         frontmatter,
         route
-      }
+      },
+      // 全局开启, 可在 md frontmatter 中设置 comment: false 以关闭
+      true
     );
   }
 };

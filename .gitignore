@@ -12,6 +12,9 @@ dist
 .vitepress/cache/
 .vitepress/dist/
 
+# vite-plugin-vue-devtools outDir
+.vite-inspect
+
 .generated
 env/.env.local
 

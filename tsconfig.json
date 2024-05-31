@@ -3,8 +3,13 @@
   "compilerOptions": {
     //    "sourceMap": true,
     "baseUrl": ".",
-    "module": "es2022",
-    "moduleResolution": "Node",
+    "module": "esnext",
+    //    "moduleResolution": "Node",
+    "moduleResolution": "NodeNext",
+    "esModuleInterop": true,
+    "resolveJsonModule": true,
+    "allowJs": true,
+    "jsx": "preserve",
     "paths": {
       //      "@/*": ["./src/*"],
       "@components/*": ["./.vitepress/theme/components/*"],
@@ -17,5 +22,14 @@
     //    "noFallthroughCasesInSwitch": true,
     //    "ignoreDeprecations": "5.0"
   },
-  "include": ["*.[js|ts|jsx|tsx|vue]", ".vitepress/**/*.[js|ts|jsx|tsx|vue]", "env.d.ts"]
+  "include": [
+    "**/.vitepress/**/*.js",
+    "**/.vitepress/**/*.ts",
+    "**/.vitepress/**/*.jsx",
+    "**/.vitepress/**/*.tsx",
+    "**/.vitepress/**/*.vue",
+    "*.js",
+    "env.d.ts",
+    "components.d.ts"
+  ]
 }

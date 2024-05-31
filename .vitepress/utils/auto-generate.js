@@ -1,43 +1,6 @@
-import * as fs from 'fs';
+import fs from 'fs';
 import {generateInlineIcon} from '../../constant.js';
-
-/**
- * 单词首字母大写
- * @param str
- * @returns {string}
- */
-const capitalize = str => {
-  if (typeof str === 'string' && str.length) {
-    return str[0].toUpperCase() + str.slice(1);
-  } else {
-    return '';
-  }
-};
-
-/**
- * 转换文件 (夹) 名称
- * @param fileName
- * @param allCapitalize 是否全大写, 默认仅首字母大写
- * @returns {string}
- * @example
- * ```js
- * transformFileName('abc-def'); // Abc Def
- * transformFileName('abc-def', true); // ABC DEF
- * ```
- */
-const transformFileName = (fileName, allCapitalize = false) => {
-  if (typeof fileName === 'string' && fileName.length) {
-    const index = fileName.indexOf('-');
-    if (~index) {
-      const arr = fileName.split('-');
-      return arr.map(item => (allCapitalize ? item.toUpperCase() : capitalize(item))).join(' ');
-    } else {
-      return allCapitalize ? fileName.toUpperCase() : capitalize(fileName);
-    }
-  } else {
-    return '';
-  }
-};
+import {transformFileName} from './index.js';
 
 /**
  * 须全大写的技术栈
@@ -51,7 +14,7 @@ const READ_DIR_OPTIONS = {withFileTypes: false, encoding: 'utf-8', recursive: fa
 // 其下 md 文件为 .docs/a/b/index.md .docs/a/b/example.md
 const DOCS_ROOT_PATH = './docs';
 
-const generatedNav = [];
+const generatedNavbar = [];
 const generatedSidebar = {};
 // TODO 错误处理
 fs.readdirSync(DOCS_ROOT_PATH, READ_DIR_OPTIONS).forEach(name => {
@@ -65,11 +28,11 @@ fs.readdirSync(DOCS_ROOT_PATH, READ_DIR_OPTIONS).forEach(name => {
   if (status.isDirectory()) {
     const firstLevelFolder = `${DOCS_ROOT_PATH}/${name}`;
     const currentNav = {
-      text: generateInlineIcon(name) + capitalize(name),
+      text: generateInlineIcon(name) + transformFileName(name),
       items: [],
       activeMatch: `^/${name}/`
     };
-    generatedNav.push(currentNav);
+    generatedNavbar.push(currentNav);
 
     fs.readdirSync(firstLevelFolder, READ_DIR_OPTIONS).forEach(folder => {
       // 这里即最深层级
@@ -118,22 +81,13 @@ fs.readdirSync(DOCS_ROOT_PATH, READ_DIR_OPTIONS).forEach(name => {
           });
           return;
         }
-
+        const transformFileNameWithoutExtension = transformFileName(fileNameWithoutExtension);
         currentSidebarItems.push({
-          text: fileNameWithoutExtension,
+          text: transformFileNameWithoutExtension,
           link: `/docs/${name}/${folder}/${fileNameWithoutExtension}`
         });
 
-        const currentItems = [];
-        // currentNav.items.push({
-        //   text: transformedFolder,
-        //   // items: currentItems
-        //   // 不加尾随斜杠, 则无法高亮
-        //   // 等价于 `/docs/${name}/${folder}/index.md`, 但悬停显示的链接过于丑陋, 不够 clean
-        //   link: `/docs/${name}/${folder}/`
-        //   // link: `${secondLevelFolder}`
-        // });
-        indexMdContent += `- [${fileNameWithoutExtension}](./${file})\n`;
+        indexMdContent += `- [${transformFileNameWithoutExtension}](./${encodeURI(file)})\n`;
       });
 
       // flag w (也可使用 w+) 表示文件不存在则创建文件, 否则覆盖写入源文件
@@ -152,11 +106,8 @@ fs.readdirSync(DOCS_ROOT_PATH, READ_DIR_OPTIONS).forEach(name => {
 //   })
 //   .forEach(index => generatedDocs.splice(index, 1));
 
-console.log(generatedNav, generatedSidebar);
-
 !fs.existsSync('.generated') && fs.mkdirSync('.generated');
-fs.writeFileSync('.generated/nav.json', JSON.stringify(generatedNav, null, 2));
+fs.writeFileSync('.generated/navbar.json', JSON.stringify(generatedNavbar, null, 2));
 fs.writeFileSync('.generated/sidebar.json', JSON.stringify(generatedSidebar, null, 2));
 
-// export default generatedNav;
-export {generatedNav, generatedSidebar};
+export {generatedNavbar, generatedSidebar};

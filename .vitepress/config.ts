@@ -3,8 +3,10 @@ import type {DefaultTheme} from 'vitepress/types';
 import {transformerTwoslash} from '@shikijs/vitepress-twoslash';
 import mathjax3 from 'markdown-it-mathjax3';
 // import {version} from '../package.json';
-import {generatedNav, generatedSidebar} from './utils/auto-generate';
+import {generatedNavbar, generatedSidebar} from './utils/auto-generate.js';
 import {containerPreview, componentPreview} from '@vitepress-demo-preview/plugin';
+import {InlineLinkPreviewElementTransform} from '@nolebase/vitepress-plugin-inline-link-preview/markdown-it';
+import fs from 'fs';
 
 const ogUrl = 'https://unocss.dev/';
 const ogImage = `${ogUrl}og.png#1`;
@@ -12,15 +14,17 @@ const title = 'WHY の 自留地';
 const titleTemplate = '';
 const description = 'WHY の 自留地';
 
+// console.log(heatmapData);
 // console.log($env)
 
 // 由 link 和 activeMatch 共同决定是否高亮之
 const Nav: DefaultTheme.NavItem[] = [
-  ...generatedNav,
+  ...(generatedNavbar as DefaultTheme.NavItem[]),
   {text: 'ARCHIVE', link: '/docs/archive', activeMatch: '/docs/archive'}
 ];
 
 // process.env.NODE_ENV 的所有可能值: development / production
+// TODO process.env.NODE_ENV 不可靠
 const isDev = process.env.NODE_ENV === 'development';
 // const isDev = import.meta.env.DEV;
 // 本地开发 base 使用默认值 /, 部署到 gh-pages 使用 仓库名 /knowledge-base/
@@ -32,10 +36,8 @@ export default defineConfig({
   title,
   // titleTemplate,
   description,
-  // base 前后必须使用 / 闭合
-  // base: '/',
+  // base 前后必须使用 / 闭合, 默认 /, 可配置为 /<github-repo-name>/
   base,
-  // srcDir: 'docs',
   outDir: '.vitepress/dist',
   head: [
     ['link', {rel: 'icon', href: `${base}favicon.svg`, type: 'image/svg+xml'}],
@@ -59,8 +61,13 @@ export default defineConfig({
   lastUpdated: true,
   // 路由不带 .html 后缀
   cleanUrls: true,
+  // 路由重写策略
+  // rewrites: {
+  //   'docs/:page': '/:page'
+  // },
+  // 忽略死链, 默认 false
+  // 如不忽略死链, 若存在死链, 开发环境不会报错, 打包时则会报错
   ignoreDeadLinks: true,
-
   markdown: {
     theme: {
       light: 'vitesse-light',
@@ -68,7 +75,7 @@ export default defineConfig({
     },
     // 所有 code block 均显示行号
     lineNumbers: true,
-    // 支持数学公式, 基于 markdown-it-mathjax3
+    // 支持数学公式 (基于 markdown-it-mathjax3)
     math: true,
     image: {
       // 图片懒加载
@@ -78,6 +85,7 @@ export default defineConfig({
       md.use(mathjax3);
       md.use(containerPreview);
       md.use(componentPreview);
+      md.use(InlineLinkPreviewElementTransform);
     },
     codeTransformers: [
       transformerTwoslash({
@@ -89,50 +97,31 @@ export default defineConfig({
   themeConfig: {
     logo: '/logo.svg',
     nav: Nav,
+    sidebar: generatedSidebar as DefaultTheme.Sidebar,
     search: {
       provider: 'local'
     },
     outline: {
       level: 'deep',
+      // Alternate: TOC / Table of Contents / 目录 / 大纲
       label: 'On this page'
     },
     lastUpdated: {
-      // 最后更新于 / 上次更新于
+      // Alternate: Last Edited / [最后/上次][编辑/更新]于
       text: 'Last Updated'
       // TODO 格式化为 2024 年 5 月 1 日 13:01:02
       // formatOptions: {
       // },
     },
     docFooter: {
-      // 上一篇 / 下一篇
+      // Alternate: Prev / 上一篇
       prev: 'Previous page',
+      // Alternate: Next / 下一篇
       next: 'Next page'
-    },
-    sidebar: {
-      ...generatedSidebar
-      // '/docs/frontend/vue/': [
-      //   {
-      //     text: '<span class="i-logos:vue w-1em h-1em inline-block v-mid mr-4px"></span>Vue',
-      //     items: [
-      //       {
-      //         text: 'astro',
-      //         link: '/docs/frontend/vue/astro'
-      //       },
-      //       {
-      //         text: 'eslint',
-      //         link: '/docs/frontend/vue/eslint'
-      //       },
-      //       {
-      //         text: 'vitepress',
-      //         link: '/docs/frontend/vue/vitepress'
-      //       }
-      //     ]
-      //   }
-      // ]
     },
     editLink: {
       pattern: 'https://github.com/321paranoiawhy/knowledge-base/edit/main/:path',
-      // Suggest changes to this page
+      // Alternate: Suggest changes to this page
       text: 'Edit this page on GitHub'
     },
     socialLinks: [{icon: 'github', link: 'https://github.com/321paranoiawhy'}],
@@ -141,5 +130,21 @@ export default defineConfig({
       message: 'Released under the MIT License.',
       copyright: 'Copyright © 2024-PRESENT WHY'
     }
+  },
+  transformPageData(pageData) {
+    // 须注入 frontmatter 的键值对
+    const inject = {
+      breadcrumb: true,
+      pageInfo: true,
+      heatmap: true,
+      copyright: true
+      // TODO 如何从 md 中获取 # 一级标题
+      // title: 'Title'
+    };
+
+    Object.keys(inject).forEach(key => {
+      // 如 md frontmatter 中未配置该属性, 则使用默认值
+      !(key in pageData.frontmatter) && (pageData.frontmatter[key] = inject[key as keyof typeof inject]);
+    });
   }
 });

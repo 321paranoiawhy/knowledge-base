@@ -1,6 +1,4 @@
----
-title: Vitepress
----
+# Vitepress
 
 ## Table of Contents 目录
 
@@ -92,6 +90,29 @@ title: Vitepress
   npm install @unocss/reset
   ```
   :::
+- [Focus 聚焦指定行](https://vitepress.dev/guide/markdown#focus-in-code-blocks)
+
+  ````md
+  ```js
+  export default {
+    data () {
+      return {
+        msg: 'Focused!' // [!code focus]
+      }
+    }
+  }
+  ```
+  ````
+  
+  ```js
+  export default {
+    data () {
+      return {
+        msg: 'Focused!' // [!code focus]
+      }
+    }
+  }
+  ```
 
 ## Callout
 
@@ -172,7 +193,7 @@ layout: foo
 ---
 ````
 
-## frontmatter
+## Frontmatter
 
 - `title` 标题, 会出现在 `head title` 标签中, 等同于 `TDK` 中的 `T`
 - `description` 描述, 等同于 `TDK` 中的 `D`
@@ -202,4 +223,22 @@ layout: foo
 ©️
 ®️
 🚧
+```
+
+## TS Twoslash
+
+- [TS Twoslash - Vitepress](https://shiki.style/packages/vitepress#twoslash)
+
+```ts twoslash
+// .vitepress/config.ts
+import { defineConfig } from 'vitepress'
+import { transformerTwoslash } from '@shikijs/vitepress-twoslash'
+
+export default defineConfig({
+  markdown: {
+    codeTransformers: [
+      transformerTwoslash() 
+    ]
+  }
+})
 ```

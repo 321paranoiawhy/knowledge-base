@@ -1,12 +1,20 @@
 <script setup lang="ts">
 import {useData, useRouter} from 'vitepress';
 import DefaultTheme from 'vitepress/theme';
-import {nextTick, onMounted, provide, ref, watch} from 'vue';
 import nprogress from 'nprogress';
 import 'nprogress/nprogress.css';
-import CopyRight from './components/copy-right.vue';
-import PageInfo from './components/page-info.vue';
-import {generateInlineIcon} from '../../constant';
+import {generateInlineIcon} from '../../constant.js';
+
+// nolebase
+import {
+  NolebaseEnhancedReadabilitiesMenu,
+  NolebaseEnhancedReadabilitiesScreenMenu
+} from '@nolebase/vitepress-plugin-enhanced-readabilities/client';
+import '@nolebase/vitepress-plugin-enhanced-readabilities/client/style.css';
+
+import {NolebaseHighlightTargetedHeading} from '@nolebase/vitepress-plugin-highlight-targeted-heading/client';
+import '@nolebase/vitepress-plugin-highlight-targeted-heading/client/style.css';
+// import BackToTop from './components/back-to-top.vue';
 
 const {isDark} = useData();
 
@@ -58,6 +66,7 @@ router.onAfterRouteChanged = to => {
 
 onMounted(async () => {
   await nextTick();
+
   // hack dropdown menu item
   const menus = document.querySelectorAll('.VPMenu .VPMenuLink .VPLink');
   menus?.forEach(menu => {
@@ -71,17 +80,6 @@ onMounted(async () => {
     }
   });
 });
-
-const getBreadcrumb = () => window.location.href.split('/docs/')[1]?.split('/').filter(Boolean);
-const breadcrumb = ref(getBreadcrumb());
-
-watch(
-  () => router.route.path,
-  () => {
-    breadcrumb.value = getBreadcrumb();
-    console.log(breadcrumb.value);
-  }
-);
 </script>
 
 <template>
@@ -90,17 +88,22 @@ watch(
     <!--    https://vitepress.dev/guide/extending-default-theme#layout-slots -->
     <!--    https://github.com/vuejs/vitepress/blob/main/src/client/theme-default/Layout.vue -->
     <template #doc-before>
-      <div v-if="breadcrumb.length > 1">
-        <span v-for="(item, index) in breadcrumb" :key="index">
-          <!-- Divider: > / | -->
-          {{ item }}{{ index === breadcrumb.length - 1 ? '' : ' > ' }}
-        </span>
-      </div>
+      <breadcrumb />
       <!-- TODO 字数统计和阅读时长 -->
       <page-info words="" reading-time=""></page-info>
     </template>
     <template #doc-footer-before>
-      <copy-right></copy-right>
+      <copy-right />
+    </template>
+    <template #layout-top>
+      <nolebase-highlight-targeted-heading />
+      <back-to-top />
+    </template>
+    <template #nav-bar-content-after>
+      <nolebase-enhanced-readabilities-menu />
+    </template>
+    <template #nav-screen-content-after>
+      <nolebase-enhanced-readabilities-screen-menu />
     </template>
   </DefaultTheme.Layout>
 </template>
