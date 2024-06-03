@@ -1,0 +1,143 @@
+[
+  {
+    "text": "Backend",
+    "items": [
+      {
+        "text": "C Sharp",
+        "link": "/docs/backend/c-sharp/"
+      },
+      {
+        "text": "Docker",
+        "link": "/docs/backend/docker/"
+      },
+      {
+        "text": "Go",
+        "link": "/docs/backend/go/"
+      },
+      {
+        "text": "Java",
+        "link": "/docs/backend/java/"
+      },
+      {
+        "text": "K8s",
+        "link": "/docs/backend/k8s/"
+      },
+      {
+        "text": "Nest",
+        "link": "/docs/backend/nest/"
+      },
+      {
+        "text": "PHP",
+        "link": "/docs/backend/php/"
+      },
+      {
+        "text": "Python",
+        "link": "/docs/backend/python/"
+      },
+      {
+        "text": "Rust",
+        "link": "/docs/backend/rust/"
+      }
+    ],
+    "activeMatch": "^/backend/"
+  },
+  {
+    "text": "Frontend",
+    "items": [
+      {
+        "text": "Angular",
+        "link": "/docs/frontend/angular/"
+      },
+      {
+        "text": "Electron",
+        "link": "/docs/frontend/electron/"
+      },
+      {
+        "text": "Flutter",
+        "link": "/docs/frontend/flutter/"
+      },
+      {
+        "text": "Kotlin Multiplatform",
+        "link": "/docs/frontend/kotlin-multiplatform/"
+      },
+      {
+        "text": "Next",
+        "link": "/docs/frontend/next/"
+      },
+      {
+        "text": "Nuxt",
+        "link": "/docs/frontend/nuxt/"
+      },
+      {
+        "text": "React",
+        "link": "/docs/frontend/react/"
+      },
+      {
+        "text": "React Native",
+        "link": "/docs/frontend/react-native/"
+      },
+      {
+        "text": "Swift",
+        "link": "/docs/frontend/swift/"
+      },
+      {
+        "text": "Tauri",
+        "link": "/docs/frontend/tauri/"
+      },
+      {
+        "text": "Uniapp",
+        "link": "/docs/frontend/uniapp/"
+      },
+      {
+        "text": "Vitepress",
+        "link": "/docs/frontend/vitepress/"
+      },
+      {
+        "text": "Vue",
+        "link": "/docs/frontend/vue/"
+      },
+      {
+        "text": "代码指南",
+        "link": "/docs/frontend/代码指南/"
+      },
+      {
+        "text": "鸿蒙",
+        "link": "/docs/frontend/鸿蒙/"
+      }
+    ],
+    "activeMatch": "^/frontend/"
+  },
+  {
+    "text": "<span class=\"i-mdi:gamepad-classic w-1em h-1em inline-block v-mid mr-4px\"></span>Game",
+    "items": [
+      {
+        "text": "Cocos",
+        "link": "/docs/game/cocos/"
+      },
+      {
+        "text": "Godot",
+        "link": "/docs/game/godot/"
+      },
+      {
+        "text": "Unity",
+        "link": "/docs/game/unity/"
+      }
+    ],
+    "activeMatch": "^/game/"
+  },
+  {
+    "text": "<span class=\"i-mdi:ab-testing w-1em h-1em inline-block v-mid mr-4px\"></span>Test",
+    "items": [],
+    "activeMatch": "^/test/"
+  },
+  {
+    "text": "<span class=\"i-mdi:tools w-1em h-1em inline-block v-mid mr-4px\"></span>Tools",
+    "items": [
+      {
+        "text": "All In One",
+        "link": "/docs/tools/all-in-one/"
+      }
+    ],
+    "activeMatch": "^/tools/"
+  }
+]

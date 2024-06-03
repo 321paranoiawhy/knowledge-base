@@ -1,0 +1,243 @@
+{
+  "/docs/backend/c-sharp/": [
+    {
+      "text": "<span class=\"i-logos:c-sharp w-1em h-1em inline-block v-mid mr-4px\"></span>C Sharp",
+      "items": []
+    }
+  ],
+  "/docs/backend/docker/": [
+    {
+      "text": "<span class=\"i-logos:docker-icon w-1em h-1em inline-block v-mid mr-4px\"></span>Docker",
+      "items": []
+    }
+  ],
+  "/docs/backend/go/": [
+    {
+      "text": "<span class=\"i-logos:go w-1em h-1em inline-block v-mid mr-4px\"></span>Go",
+      "items": []
+    }
+  ],
+  "/docs/backend/java/": [
+    {
+      "text": "<span class=\"i-logos:java w-1em h-1em inline-block v-mid mr-4px\"></span>Java",
+      "items": []
+    }
+  ],
+  "/docs/backend/k8s/": [
+    {
+      "text": "<span class=\"i-logos:kubernetes w-1em h-1em inline-block v-mid mr-4px\"></span>K8s",
+      "items": []
+    }
+  ],
+  "/docs/backend/nest/": [
+    {
+      "text": "<span class=\"i-logos:nestjs w-1em h-1em inline-block v-mid mr-4px\"></span>Nest",
+      "items": []
+    }
+  ],
+  "/docs/backend/php/": [
+    {
+      "text": "<span class=\"i-logos:php w-1em h-1em inline-block v-mid mr-4px\"></span>PHP",
+      "items": []
+    }
+  ],
+  "/docs/backend/python/": [
+    {
+      "text": "<span class=\"i-logos:python w-1em h-1em inline-block v-mid mr-4px\"></span>Python",
+      "items": [
+        {
+          "text": "Astro",
+          "link": "/docs/backend/python/astro"
+        }
+      ]
+    }
+  ],
+  "/docs/backend/rust/": [
+    {
+      "text": "<span class=\"i-logos:rust w-1em h-1em inline-block v-mid mr-4px\"></span>Rust",
+      "items": []
+    }
+  ],
+  "/docs/frontend/angular/": [
+    {
+      "text": "<span class=\"i-logos:angular w-1em h-1em inline-block v-mid mr-4px\"></span>Angular",
+      "items": []
+    }
+  ],
+  "/docs/frontend/electron/": [
+    {
+      "text": "<span class=\"i-logos:electron w-1em h-1em inline-block v-mid mr-4px\"></span>Electron",
+      "items": []
+    }
+  ],
+  "/docs/frontend/flutter/": [
+    {
+      "text": "<span class=\"i-logos:flutter w-1em h-1em inline-block v-mid mr-4px\"></span>Flutter",
+      "items": []
+    }
+  ],
+  "/docs/frontend/kotlin-multiplatform/": [
+    {
+      "text": "<span class=\"i-logos:kotlin-icon w-1em h-1em inline-block v-mid mr-4px\"></span>Kotlin Multiplatform",
+      "items": []
+    }
+  ],
+  "/docs/frontend/next/": [
+    {
+      "text": "<span class=\"i-logos:nextjs-icon w-1em h-1em inline-block v-mid mr-4px\"></span>Next",
+      "items": []
+    }
+  ],
+  "/docs/frontend/nuxt/": [
+    {
+      "text": "<span class=\"i-logos:nuxt w-1em h-1em inline-block v-mid mr-4px\"></span>Nuxt",
+      "items": []
+    }
+  ],
+  "/docs/frontend/react/": [
+    {
+      "text": "<span class=\"i-logos:react w-1em h-1em inline-block v-mid mr-4px\"></span>React",
+      "items": []
+    }
+  ],
+  "/docs/frontend/react-native/": [
+    {
+      "text": "React Native",
+      "items": []
+    }
+  ],
+  "/docs/frontend/swift/": [
+    {
+      "text": "<span class=\"i-logos:swift w-1em h-1em inline-block v-mid mr-4px\"></span>Swift",
+      "items": []
+    }
+  ],
+  "/docs/frontend/tauri/": [
+    {
+      "text": "<span class=\"i-logos:tauri w-1em h-1em inline-block v-mid mr-4px\"></span>Tauri",
+      "items": []
+    }
+  ],
+  "/docs/frontend/uniapp/": [
+    {
+      "text": "Uniapp",
+      "items": [
+        {
+          "text": "Uniapp 踩坑记录",
+          "link": "/docs/frontend/uniapp/uniapp 踩坑记录"
+        }
+      ]
+    }
+  ],
+  "/docs/frontend/vitepress/": [
+    {
+      "text": "Vitepress",
+      "items": [
+        {
+          "text": "Basic",
+          "link": "/docs/frontend/vitepress/basic"
+        },
+        {
+          "text": "Customize",
+          "link": "/docs/frontend/vitepress/customize"
+        }
+      ]
+    }
+  ],
+  "/docs/frontend/vue/": [
+    {
+      "text": "<span class=\"i-logos:vue w-1em h-1em inline-block v-mid mr-4px\"></span>Vue",
+      "items": []
+    }
+  ],
+  "/docs/frontend/代码指南/": [
+    {
+      "text": "代码指南",
+      "items": [
+        {
+          "text": "README",
+          "link": "/docs/frontend/代码指南/README"
+        },
+        {
+          "text": "Coding Style",
+          "link": "/docs/frontend/代码指南/coding-style"
+        },
+        {
+          "text": "Css",
+          "link": "/docs/frontend/代码指南/css"
+        },
+        {
+          "text": "Directory Structure",
+          "link": "/docs/frontend/代码指南/directory-structure"
+        },
+        {
+          "text": "Git",
+          "link": "/docs/frontend/代码指南/git"
+        },
+        {
+          "text": "Html",
+          "link": "/docs/frontend/代码指南/html"
+        },
+        {
+          "text": "Js",
+          "link": "/docs/frontend/代码指南/js"
+        },
+        {
+          "text": "React",
+          "link": "/docs/frontend/代码指南/react"
+        },
+        {
+          "text": "Tools",
+          "link": "/docs/frontend/代码指南/tools"
+        },
+        {
+          "text": "Ts",
+          "link": "/docs/frontend/代码指南/ts"
+        },
+        {
+          "text": "Vitepress",
+          "link": "/docs/frontend/代码指南/vitepress"
+        },
+        {
+          "text": "Vue",
+          "link": "/docs/frontend/代码指南/vue"
+        }
+      ]
+    }
+  ],
+  "/docs/frontend/鸿蒙/": [
+    {
+      "text": "鸿蒙",
+      "items": []
+    }
+  ],
+  "/docs/game/cocos/": [
+    {
+      "text": "<span class=\"i-simple-icons:cocos w-1em h-1em inline-block v-mid mr-4px\"></span>Cocos",
+      "items": []
+    }
+  ],
+  "/docs/game/godot/": [
+    {
+      "text": "<span class=\"i-logos:godot-icon w-1em h-1em inline-block v-mid mr-4px\"></span>Godot",
+      "items": []
+    }
+  ],
+  "/docs/game/unity/": [
+    {
+      "text": "<span class=\"i-mdi:unity w-1em h-1em inline-block v-mid mr-4px\"></span>Unity",
+      "items": []
+    }
+  ],
+  "/docs/tools/all-in-one/": [
+    {
+      "text": "All In One",
+      "items": [
+        {
+          "text": "工具合集",
+          "link": "/docs/tools/all-in-one/工具合集"
+        }
+      ]
+    }
+  ]
+}

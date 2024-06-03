@@ -1,0 +1,123 @@
+[
+  {
+    "title": "归档",
+    "author": "why",
+    "description": "",
+    "tags": [],
+    "path": "docs/archive"
+  },
+  {
+    "title": "UnoCSS Astro Integration",
+    "author": "why",
+    "description": "The UnoCSS integration for Astro (@unocss/astro).",
+    "tags": [],
+    "path": "docs/backend/python/astro"
+  },
+  {
+    "author": "why",
+    "description": "",
+    "tags": [
+      "UniAPP",
+      "踩坑记录"
+    ],
+    "path": "docs/frontend/uniapp/uniapp 踩坑记录"
+  },
+  {
+    "title": "Vitepress Basic",
+    "author": "why",
+    "description": "",
+    "tags": [
+      "Vitepress"
+    ],
+    "path": "docs/frontend/vitepress/basic"
+  },
+  {
+    "title": "Vitepress Customize",
+    "author": "why",
+    "description": "",
+    "tags": [
+      "Vitepress"
+    ],
+    "path": "docs/frontend/vitepress/customize"
+  },
+  {
+    "author": "why",
+    "description": "",
+    "tags": [],
+    "path": "docs/frontend/代码指南/README"
+  },
+  {
+    "author": "why",
+    "description": "",
+    "tags": [],
+    "path": "docs/frontend/代码指南/coding-style"
+  },
+  {
+    "author": "why",
+    "description": "",
+    "tags": [],
+    "path": "docs/frontend/代码指南/css"
+  },
+  {
+    "author": "why",
+    "description": "",
+    "tags": [],
+    "path": "docs/frontend/代码指南/directory-structure"
+  },
+  {
+    "author": "why",
+    "description": "",
+    "tags": [],
+    "path": "docs/frontend/代码指南/git"
+  },
+  {
+    "author": "why",
+    "description": "",
+    "tags": [],
+    "path": "docs/frontend/代码指南/html"
+  },
+  {
+    "author": "why",
+    "description": "",
+    "tags": [],
+    "path": "docs/frontend/代码指南/js"
+  },
+  {
+    "author": "why",
+    "description": "",
+    "tags": [],
+    "path": "docs/frontend/代码指南/react"
+  },
+  {
+    "author": "why",
+    "description": "",
+    "tags": [],
+    "path": "docs/frontend/代码指南/tools"
+  },
+  {
+    "author": "why",
+    "description": "",
+    "tags": [],
+    "path": "docs/frontend/代码指南/ts"
+  },
+  {
+    "author": "why",
+    "description": "",
+    "tags": [],
+    "path": "docs/frontend/代码指南/vitepress"
+  },
+  {
+    "author": "why",
+    "description": "",
+    "tags": [],
+    "path": "docs/frontend/代码指南/vue"
+  },
+  {
+    "author": "why",
+    "description": "",
+    "tags": [
+      "Tools"
+    ],
+    "path": "docs/tools/all-in-one/工具合集"
+  }
+]

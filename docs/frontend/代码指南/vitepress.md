@@ -2,9 +2,9 @@
 
 ## Table of Contents 目录
 
-````md
+```md
 [[toc]]
-````
+```
 
 ## Code Block 代码块
 
@@ -31,9 +31,11 @@
     }
   }
   ```
+
 - [diff](https://vitepress.dev/guide/markdown#colored-diffs-in-code-blocks)
 
   在代码同一行使用单行注释 `// [!code --]` 或 `// [!code ++]` 表示代码的增减
+
   ````
   ```js
   export default {
@@ -60,58 +62,68 @@
 
 - [引入文件作为代码块](https://vitepress.dev/guide/markdown#import-code-snippets)
 
-  ````md
+  ```md
   <<< @/filepath
-  ````
+  ```
+
 - [Code Groups](https://vitepress.dev/guide/markdown#code-groups)
 
   ````md
   ::: code-group
+
   ```bash [pnpm]
   pnpm add @unocss/reset
   ```
+
   ```bash [yarn]
   yarn add @unocss/reset
   ```
+
   ```bash [npm]
   npm install @unocss/reset
   ```
+
   :::
   ````
 
   ::: code-group
+
   ```bash [pnpm]
   pnpm add @unocss/reset
   ```
+
   ```bash [yarn]
   yarn add @unocss/reset
   ```
+
   ```bash [npm]
   npm install @unocss/reset
   ```
+
   :::
+
 - [Focus 聚焦指定行](https://vitepress.dev/guide/markdown#focus-in-code-blocks)
 
   ````md
   ```js
   export default {
-    data () {
+    data() {
       return {
         msg: 'Focused!' // [!code focus]
-      }
+      };
     }
-  }
+  };
   ```
   ````
-  
+
   ```js
   export default {
-    data () {
+    data() {
       return {
         msg: 'Focused!' // [!code focus]
-      }
+      };
     }
-  }
+  };
   ```
 
 ## Callout
@@ -141,9 +153,11 @@ This is a details block.
 :::
 
 ::: details Click me to view the code
+
 ```js
-console.log('Hello, VitePress!')
+console.log('Hello, VitePress!');
 ```
+
 :::
 ````
 
@@ -168,9 +182,11 @@ This is a details block.
 :::
 
 ::: details Click me to view the code
+
 ```js
-console.log('Hello, VitePress!')
+console.log('Hello, VitePress!');
 ```
+
 :::
 
 ## Layout
@@ -187,11 +203,11 @@ console.log('Hello, VitePress!')
 
 使用自定义布局:
 
-````md
+```md
 ---
 layout: foo
 ---
-````
+```
 
 ## Frontmatter
 
@@ -202,20 +218,19 @@ layout: foo
 - `layout` 布局, 默认值为 `doc`, 可选值为 `doc/page/home`
 - `sidebar` 是否显示侧边栏 `sidebar`
 
-
 ## Emoji
 
 - [markdown-it-emoji](https://github.com/markdown-it/markdown-it-emoji/blob/master/lib/data/full.mjs)
 
 常用的 `emoji`:
 
-````md
+```md
 :white_check_mark:
 :x:
 :copyright:
 :registered:
 :construction:
-````
+```
 
 ```md
 ✅
@@ -231,14 +246,28 @@ layout: foo
 
 ```ts twoslash
 // .vitepress/config.ts
-import { defineConfig } from 'vitepress'
-import { transformerTwoslash } from '@shikijs/vitepress-twoslash'
+import {defineConfig} from 'vitepress';
+import {transformerTwoslash} from '@shikijs/vitepress-twoslash';
 
 export default defineConfig({
   markdown: {
-    codeTransformers: [
-      transformerTwoslash() 
-    ]
+    codeTransformers: [transformerTwoslash()]
   }
-})
+});
 ```
+
+## Badge 徽章
+
+````md
+```html
+<Badge type="info" text="default" />
+<Badge type="tip" text="^1.9.0" />
+<Badge type="warning" text="beta" />
+<Badge type="danger" text="caution" />
+```
+````
+
+<Badge type="info" text="default" />
+<Badge type="tip" text="^1.9.0" />
+<Badge type="warning" text="beta" />
+<Badge type="danger" text="caution" />

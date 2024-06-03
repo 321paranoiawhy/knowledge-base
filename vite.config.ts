@@ -44,14 +44,17 @@ export default defineConfig(({command, mode}) => {
     // css: {
     //   preprocessorOptions: {
     //     scss: {
-    //       additionalData: `@use "~/styles/element/index.scss" as *;`
+    //       additionalData: ''
     //     }
     //   }
     // },
     ssr: {
       noExternal: [
         '@nolebase/vitepress-plugin-enhanced-readabilities',
-        '@nolebase/vitepress-plugin-highlight-targeted-heading'
+        '@nolebase/vitepress-plugin-highlight-targeted-heading',
+        '@nolebase/vitepress-plugin-inline-link-preview',
+        'element-plus',
+        '@antv/g2plot'
       ]
     },
     plugins: [
@@ -73,7 +76,7 @@ export default defineConfig(({command, mode}) => {
       }),
       VueDevTools(),
       Inspect({
-        build: true,
+        build: false,
         outputDir: '.vite-inspect'
       }),
       GitChangelog({

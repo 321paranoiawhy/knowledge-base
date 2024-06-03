@@ -15,7 +15,7 @@ dist
 # vite-plugin-vue-devtools outDir
 .vite-inspect
 
-.generated
+#.generated
 env/.env.local
 
 log
