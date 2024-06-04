@@ -52,6 +52,5 @@ const heatmap = filterData(results);
 
 !fs.existsSync('.generated') && fs.mkdirSync('.generated');
 fs.writeFileSync('.generated/heatmap.json', JSON.stringify(heatmap, null, 2));
-fs.writeFileSync('public/heatmap.json', JSON.stringify(heatmap, null, 2));
 
 export {heatmap};

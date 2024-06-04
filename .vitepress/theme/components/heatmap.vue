@@ -110,9 +110,8 @@ async function paint(cal: CalHeatmap, theme: 'light' | 'dark') {
           textAlign: 'start',
           // magic number 25 to position properly
           padding: [25, 0, 0, 0],
-          // 等价于
-          // text: () => ['', 'Mon', '', 'Wed', '', 'Fri', '']
-          text: () => dayjs.weekdaysShort().map((d, i) => (i % 2 == 0 ? '' : d))
+          text: () => ['', 'Mon', '', 'Wed', '', 'Fri', '']
+          // text: () => dayjs.weekdaysShort().map((d, i) => (i % 2 == 0 ? '' : d))
           // text: () => ['一', '', '三', '', '五', '', '日']
         }
       ]

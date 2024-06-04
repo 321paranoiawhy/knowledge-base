@@ -33,17 +33,17 @@ devDependencies:
     specifier: ^1.1.33
     version: 1.1.34
   '@nolebase/vitepress-plugin-enhanced-readabilities':
-    specifier: ^2.0.0
-    version: 2.0.0(vitepress@1.2.2)(vue@3.4.27)
+    specifier: ^2.1.1
+    version: 2.1.1(vitepress@1.2.2)(vue@3.4.27)
   '@nolebase/vitepress-plugin-git-changelog':
-    specifier: ^2.0.0
-    version: 2.0.0(vitepress@1.2.2)(vue@3.4.27)
+    specifier: ^2.1.1
+    version: 2.1.1(vitepress@1.2.2)(vue@3.4.27)
   '@nolebase/vitepress-plugin-highlight-targeted-heading':
-    specifier: ^2.0.0
-    version: 2.0.0(vitepress@1.2.2)
+    specifier: ^2.1.1
+    version: 2.1.1(vitepress@1.2.2)
   '@nolebase/vitepress-plugin-inline-link-preview':
-    specifier: ^2.0.0
-    version: 2.0.0(vitepress@1.2.2)(vue@3.4.27)
+    specifier: ^2.1.1
+    version: 2.1.1(vitepress@1.2.2)(vue@3.4.27)
   '@shikijs/vitepress-twoslash':
     specifier: ^1.6.0
     version: 1.6.0(typescript@5.4.5)
@@ -1441,20 +1441,20 @@ packages:
       fastq: 1.17.1
     dev: true
 
-  /@nolebase/markdown-it-element-transform@2.0.0(markdown-it@13.0.2):
-    resolution: {integrity: sha512-VymHjPdFWlb6EBgT71OcuGq8qKyveNQ77eL/a1PTyH2wp1DybEYUwFZjKAYAT82jh6iUcahFuGk8Yh5CqbqtFg==}
+  /@nolebase/markdown-it-element-transform@2.1.1(markdown-it@14.1.0):
+    resolution: {integrity: sha512-Qe/zNQGpEqr02v66FGCb28w97wGYYVlZfQADegf4KwRgCkuthqltIoCYHavyMe8bSDpRC/ay0ZsvlGxs3CQ8Aw==}
     peerDependencies:
-      markdown-it: '>=13.0.1'
+      markdown-it: '>=14.0.0'
     dependencies:
-      markdown-it: 13.0.2
+      markdown-it: 14.1.0
     dev: true
 
-  /@nolebase/ui@2.0.0(vitepress@1.2.2)(vue@3.4.27):
-    resolution: {integrity: sha512-4v0uKzjGEKF7+OPJ4Z4Qmh1ykaExUplwqam1xurE5CZwnOal4EXoy5xf0uu1biCrAJBXYZ06j/w2qaQpmmpGCg==}
+  /@nolebase/ui@2.1.1(vitepress@1.2.2)(vue@3.4.27):
+    resolution: {integrity: sha512-3U1/pSLWng6ch1U0yAB1/mXEHiJmwEJxvMugN1mQe7B3w+HE9F37K1YLuCgoGh5TtTIWCBKkraMtIxyKmV8XNw==}
     peerDependencies:
       '@rive-app/canvas': ^2.11.1
       asciinema-player: ^3.7.1
-      vitepress: ^1.1.4
+      vitepress: ^1.2.2
       vue: ^3.2.0
     peerDependenciesMeta:
       '@rive-app/canvas':
@@ -1470,14 +1470,14 @@ packages:
       vue: 3.4.27(typescript@5.4.5)
     dev: true
 
-  /@nolebase/vitepress-plugin-enhanced-readabilities@2.0.0(vitepress@1.2.2)(vue@3.4.27):
-    resolution: {integrity: sha512-LBj1I/ft3R9ED329zLrDI2OA9ekRH9hDhWAFjnt7+6Ka1VsGAv+oOnAxx3RKa8YPc6I1p+ytGN/FRqPyPNxdHA==}
+  /@nolebase/vitepress-plugin-enhanced-readabilities@2.1.1(vitepress@1.2.2)(vue@3.4.27):
+    resolution: {integrity: sha512-LYkdKaNDi+duSEbkikgXOqxNx6e9+ZoJ/ItJdRw4hrrdQgWi3eDCxVZKPpldXqFMFgTq7j7gWs0ZxrfEi4uVJA==}
     peerDependencies:
-      vitepress: ^1.1.4
+      vitepress: ^1.2.2
     dependencies:
       '@iconify-json/carbon': 1.1.34
       '@iconify-json/icon-park-outline': 1.1.15
-      '@nolebase/ui': 2.0.0(vitepress@1.2.2)(vue@3.4.27)
+      '@nolebase/ui': 2.1.1(vitepress@1.2.2)(vue@3.4.27)
       less: 4.2.0
       vitepress: 1.2.2(@algolia/client-search@4.23.3)(@types/node@20.12.12)(markdown-it-mathjax3@4.3.2)(nprogress@0.2.0)(postcss@8.4.38)(sass@1.77.2)(search-insights@2.14.0)(typescript@5.4.5)
     transitivePeerDependencies:
@@ -1486,15 +1486,16 @@ packages:
       - vue
     dev: true
 
-  /@nolebase/vitepress-plugin-git-changelog@2.0.0(vitepress@1.2.2)(vue@3.4.27):
-    resolution: {integrity: sha512-gnEYzvj+XM7E5MVnP48ZdpQz/qbuyYa8sHGVt6iuuh8PPrV6CPe2eJllLSt5uAE7Ep3Vz/RtKt5CWa5Zru/tbA==}
+  /@nolebase/vitepress-plugin-git-changelog@2.1.1(vitepress@1.2.2)(vue@3.4.27):
+    resolution: {integrity: sha512-qunlrYNUysylwJ+JDmxSFftaXnKilEyujd5uA7QUEpRA/HvHE4Vh3dnukUJGtKD1Xa5i1W+pSPFvUiyIF+//qw==}
     peerDependencies:
-      vitepress: ^1.1.4
+      vitepress: ^1.2.2
     dependencies:
       '@iconify-json/octicon': 1.1.54
-      '@nolebase/ui': 2.0.0(vitepress@1.2.2)(vue@3.4.27)
+      '@nolebase/ui': 2.1.1(vitepress@1.2.2)(vue@3.4.27)
       colorette: 2.0.20
       date-fns: 3.6.0
+      defu: 6.1.4
       execa: 8.0.1
       globby: 14.0.1
       gray-matter: 4.0.3
@@ -1508,28 +1509,28 @@ packages:
       - vue
     dev: true
 
-  /@nolebase/vitepress-plugin-highlight-targeted-heading@2.0.0(vitepress@1.2.2):
-    resolution: {integrity: sha512-S65JIzu7K+KO/HLZHgxu/xdTlNAjRWcfVwrRHZ6brgaiXKYl5EbeYFDG/32E5cHvvn/KlaiWu/iuV5xJmlTTPA==}
+  /@nolebase/vitepress-plugin-highlight-targeted-heading@2.1.1(vitepress@1.2.2):
+    resolution: {integrity: sha512-Z5+49Zkqo8szM/YKjMxMiGO92vMm8ugenU6ltd1T22GZ0lRwxKFPWOhXcjbJtHAZ79sRtZAJHXS+THPG63C51Q==}
     peerDependencies:
-      vitepress: ^1.1.4
+      vitepress: ^1.2.2
     dependencies:
       less: 4.2.0
       vitepress: 1.2.2(@algolia/client-search@4.23.3)(@types/node@20.12.12)(markdown-it-mathjax3@4.3.2)(nprogress@0.2.0)(postcss@8.4.38)(sass@1.77.2)(search-insights@2.14.0)(typescript@5.4.5)
     dev: true
 
-  /@nolebase/vitepress-plugin-inline-link-preview@2.0.0(vitepress@1.2.2)(vue@3.4.27):
-    resolution: {integrity: sha512-CEtqdIosKyCQl7uijcqsEIWjTxwmx/kke8ZlliD94S5lqsfs3s+RY9mR3JllS1x5WoNUUYFsydSipfN94FNpAQ==}
+  /@nolebase/vitepress-plugin-inline-link-preview@2.1.1(vitepress@1.2.2)(vue@3.4.27):
+    resolution: {integrity: sha512-dn/biTXb47DgOTFRggCgODqeSTTglzzIUaroS4JjdaRf7UJZdee5n4HD73WWDKWiueS8M1bL3I7da0G0yniuFA==}
     peerDependencies:
-      vitepress: ^1.1.4
+      vitepress: ^1.2.2
     dependencies:
       '@iconify-json/icon-park-outline': 1.1.15
       '@iconify-json/octicon': 1.1.54
       '@iconify-json/svg-spinners': 1.1.2
-      '@nolebase/markdown-it-element-transform': 2.0.0(markdown-it@13.0.2)
-      '@nolebase/ui': 2.0.0(vitepress@1.2.2)(vue@3.4.27)
+      '@nolebase/markdown-it-element-transform': 2.1.1(markdown-it@14.1.0)
+      '@nolebase/ui': 2.1.1(vitepress@1.2.2)(vue@3.4.27)
       less: 4.2.0
-      markdown-it: 13.0.2
-      markdown-it-attrs: 4.1.6(markdown-it@13.0.2)
+      markdown-it: 14.1.0
+      markdown-it-attrs: 4.1.6(markdown-it@14.1.0)
       vitepress: 1.2.2(@algolia/client-search@4.23.3)(@types/node@20.12.12)(markdown-it-mathjax3@4.3.2)(nprogress@0.2.0)(postcss@8.4.38)(sass@1.77.2)(search-insights@2.14.0)(typescript@5.4.5)
     transitivePeerDependencies:
       - '@rive-app/canvas'
@@ -4473,6 +4474,12 @@ packages:
       uc.micro: 1.0.6
     dev: true
 
+  /linkify-it@5.0.0:
+    resolution: {integrity: sha512-5aHCbzQRADcdP+ATqnDuhhJ/MRIqDkZX5pyjFHRRysS8vZ5AbqGEoFIb6pYHPZ+L/OC2Lc+xT8uHVVR5CAK/wQ==}
+    dependencies:
+      uc.micro: 2.1.0
+    dev: true
+
   /lit-element@4.0.5:
     resolution: {integrity: sha512-iTWskWZEtn9SyEf4aBG6rKT8GABZMrTWop1+jopsEOgEcugcXJGKuX5bEbkq9qfzY+XB4MAgCaSPwnNpdsNQ3Q==}
     dependencies:
@@ -4585,13 +4592,13 @@ packages:
     resolution: {integrity: sha512-1I+1qpDt4idfgLQG+BNWmrqku+7/2bi5nLf4YwF8y8zXvmfiTBY3PV3ZibfrjBueCByROpuBjLLFCajqkgYoLQ==}
     dev: true
 
-  /markdown-it-attrs@4.1.6(markdown-it@13.0.2):
+  /markdown-it-attrs@4.1.6(markdown-it@14.1.0):
     resolution: {integrity: sha512-O7PDKZlN8RFMyDX13JnctQompwrrILuz2y43pW2GagcwpIIElkAdfeek+erHfxUOlXWPsjFeWmZ8ch1xtRLWpA==}
     engines: {node: '>=6'}
     peerDependencies:
       markdown-it: '>= 9.0.0'
     dependencies:
-      markdown-it: 13.0.2
+      markdown-it: 14.1.0
     dev: true
 
   /markdown-it-container@3.0.0:
@@ -4616,6 +4623,18 @@ packages:
       linkify-it: 4.0.1
       mdurl: 1.0.1
       uc.micro: 1.0.6
+    dev: true
+
+  /markdown-it@14.1.0:
+    resolution: {integrity: sha512-a54IwgWPaeBCAAsv13YgmALOF1elABB08FxO9i+r4VFk5Vl4pKokRPeX8u5TCgSsPi6ec1otfLjdOpVcgbpshg==}
+    hasBin: true
+    dependencies:
+      argparse: 2.0.1
+      entities: 4.5.0
+      linkify-it: 5.0.0
+      mdurl: 2.0.0
+      punycode.js: 2.3.1
+      uc.micro: 2.1.0
     dev: true
 
   /markdown-table@3.0.3:
@@ -4774,6 +4793,10 @@ packages:
 
   /mdurl@1.0.1:
     resolution: {integrity: sha512-/sKlQJCBYVY9Ers9hqzKou4H6V5UWc/M59TH2dvkt+84itfnq7uFOMLpOiOS4ujvHP4etln18fmIxA5R5fll0g==}
+    dev: true
+
+  /mdurl@2.0.0:
+    resolution: {integrity: sha512-Lf+9+2r+Tdp5wXDXC4PcIBjTDtq4UKjCPMQhKIuzpJNW0b96kVqSwW0bT7FhRSfmAiFYgP+SCRvdrDozfh0U5w==}
     dev: true
 
   /medium-zoom@1.1.0:
@@ -5401,6 +5424,11 @@ packages:
     requiresBuild: true
     dev: true
     optional: true
+
+  /punycode.js@2.3.1:
+    resolution: {integrity: sha512-uxFIHU0YlHYhDQtV4R9J6a52SLx28BCjT+4ieh7IGbgwVJWO+km431c4yRlREUAsAmt/uMjQUyQHNEPf0M39CA==}
+    engines: {node: '>=6'}
+    dev: true
 
   /qs@6.12.1:
     resolution: {integrity: sha512-zWmv4RSuB9r2mYQw3zxQuHWeU+42aKi1wWig/j4ele4ygELZ7PEO6MM7rim9oAQH2A5MWfsAVf/jPvTPgCbvUQ==}
@@ -6037,6 +6065,10 @@ packages:
 
   /uc.micro@1.0.6:
     resolution: {integrity: sha512-8Y75pvTYkLJW2hWQHXxoqRgV7qb9B+9vFEtidML+7koHUFapnVJAZ6cKs+Qjz5Aw3aZWHMC6u0wJE3At+nSGwA==}
+    dev: true
+
+  /uc.micro@2.1.0:
+    resolution: {integrity: sha512-ARDJmphmdvUk6Glw7y9DQ2bFkKBHwQHLi2lsaH6PPmz/Ka9sFOBsBluozhDltWmnv9u/cF6Rt87znRTPV+yp/A==}
     dev: true
 
   /ufo@1.5.3:

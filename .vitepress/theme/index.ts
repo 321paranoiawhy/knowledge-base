@@ -46,7 +46,11 @@ export default {
 
     if (typeof window === 'undefined') return;
 
+    const originalAfterRouteChange = router.onAfterRouteChanged;
+
     router.onAfterRouteChanged = () => {
+      originalAfterRouteChange?.();
+
       busuanzi.fetch();
     };
 

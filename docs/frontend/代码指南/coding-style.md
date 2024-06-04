@@ -1,5 +1,9 @@
 # Coding Style 编码风格
 
+## Reference
+
+- [Kotlin Coding conventions](https://kotlinlang.org/docs/coding-conventions.html)
+
 ## 前置知识
 
 ### 命名风格
@@ -35,7 +39,8 @@
   ```bash
   pnpm prettier
   ```
-- `husky + lint-staged` 对暂存区文件执行格式化
+
+- `husky + lint-staged` 对暂存区文件代码格式化
 
 ## 命名风格
 
@@ -43,13 +48,14 @@
 
   ```js
   // bad
-  const shuzi = 1;
-  const str1 = 'str1'
-  
+  const shuzi = 1; // 中文数字拼音命名
+  const str1 = 'str1';
+
   // good
   const number = 1;
-  const str = 'str'
+  const str = 'str';
   ```
+
 - 允许使用众所周知的英文单词缩写, 不推荐使用自创缩写
 
   ```js
@@ -58,6 +64,7 @@
   // good, 众所周知 SVIP 为超级会员缩写
   const isSVIP = false;
   ```
+
 - 变量名和函数名使用小驼峰命名, 尽可能见文知意, 符合语义化
 - 常量或环境变量使用蛇形命名且所有字符均大写, 正确示例: `BASE_API_URL`
 
@@ -68,61 +75,3 @@
   前端层面须做好类型校验和默认值处理, 以避免数据问题导致界面白屏等,
   可多使用可选链 `?.`, 三元表达式 `true ? true : false`, 空值合并运算符 `??`, 逻辑空赋值 `??=`,
   逻辑或运算符 `||`, 逻辑或赋值 `||=`
-
-## 错误处理
-
-抛出错误:
-
-```js
-// 禁止使用如下写法
-// throw new Error()
-throw new Error('这是错误描述');
-
-if (err) {
-  throw err;
-}
-```
-
-`Error` 上有以下几个重要属性:
-
-- `name` 错误名
-- `message` 错误信息
-- `stack` 错误堆栈
-
-自定义错误:
-
-```js
-class ValidationError extends Error {
-  constructor(message) {
-    super(message);
-    this.name = 'ValidationError';
-    // 挂载自定义属性
-    this.customProperty = 'customProperty';
-  }
-}
-
-throw new ValidationError('No field: age');
-
-// 使用 instanceof 判断是否为特定错误
-if (err instanceof ValidationError) {
-  console.log('ValidationErrorValidationError');
-}
-```
-
-使用 `try catch finally`:
-
-```js
-try {
-  // some error may occur
-} catch (err) {
-  if (err instanceof EvalError) {
-    // EvalError
-  } else if (err instanceof SyntaxError) {
-    // SyntaxError
-  } else {
-    // others
-  }
-} finally {
-  // finally, will be always excuted
-}
-```

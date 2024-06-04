@@ -2,20 +2,15 @@ import {defineConfig} from 'vitepress';
 import type {DefaultTheme} from 'vitepress/types';
 import {transformerTwoslash} from '@shikijs/vitepress-twoslash';
 import mathjax3 from 'markdown-it-mathjax3';
-// import {version} from '../package.json';
 import {generatedNavbar, generatedSidebar} from './utils/auto-generate.js';
 import {containerPreview, componentPreview} from '@vitepress-demo-preview/plugin';
 import {InlineLinkPreviewElementTransform} from '@nolebase/vitepress-plugin-inline-link-preview/markdown-it';
-import fs from 'fs';
 
 const ogUrl = 'https://unocss.dev/';
 const ogImage = `${ogUrl}og.png#1`;
 const title = 'WHY の 自留地';
-const titleTemplate = '';
+// const titleTemplate = '';
 const description = 'WHY の 自留地';
-
-// console.log(heatmapData);
-// console.log($env)
 
 // 由 link 和 activeMatch 共同决定是否高亮之
 const Nav: DefaultTheme.NavItem[] = [
@@ -27,7 +22,8 @@ const Nav: DefaultTheme.NavItem[] = [
 // TODO process.env.NODE_ENV 不可靠
 const isDev = process.env.NODE_ENV === 'development';
 // const isDev = import.meta.env.DEV;
-// 本地开发 base 使用默认值 /, 部署到 gh-pages 使用 仓库名 /knowledge-base/
+// 本地开发 base 使用默认值 /
+// 部署到 gh-pages 使用仓库名 /knowledge-base/
 const base = isDev ? '/' : '/knowledge-base/';
 console.log(process.env.NODE_ENV, isDev, base);
 
@@ -107,7 +103,7 @@ export default defineConfig({
       label: 'On this page'
     },
     lastUpdated: {
-      // Alternate: Last Edited / [最后/上次][编辑/更新]于
+      // Alternate: Last Edited / Last Modified / [最后/上次][编辑/更新]于
       text: 'Last Updated'
       // TODO 格式化为 2024 年 5 月 1 日 13:01:02
       // formatOptions: {

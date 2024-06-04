@@ -5,7 +5,7 @@ tags: ['Vitepress']
 
 # Vitepress Customize
 
-## Boolean 布尔值
+## `Boolean` 布尔值
 
 ### `navbar`
 

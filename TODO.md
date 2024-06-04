@@ -43,6 +43,8 @@
   ```
 
 - 🚧 标签及标签页 tags
+- 🚧 友情链接
+- 🚧 广告+网站流量分析
 - 🚧 归档 archive (按年份降序, 提供排序切换)
 - 🚧 Heading 前置 H1 ~ H6
 - [vitepress 插件合集](https://chodocs.cn/program/vitepress-plugin/)
@@ -74,7 +76,7 @@
   pnpm add medium-zoom -D
   ```
 
-- 🚧 面包屑 breadcrumb
+- ✅ 面包屑 breadcrumb
 - 🚧 useSetting 右侧边呼出
 - 🚧 付费阅读
 - 🚧 知乎、`CSDN` 展开阅读全文功能, 逐渐模糊最后一行
@@ -85,16 +87,22 @@
 - 🚧 code group 当前页联动, tabs 切换下划线动画
 - ✅ nav sidebar 添加图标
 - 🚧 页面切换动画
-- ✅ 基于 nuxt/vue3/ts/unocss/nest/mongodb/redis/mysql 开发后台管理系统
+- 🚧 基于 nuxt/vue3/ts/unocss/nest/mongodb/redis/mysql 开发后台管理系统
 - ✅ tools
 
   roadmap.sh
 
-- ✅ tree 组件展示 `tree` 命令结果, 语法可参照 [dumi - Tree](https://d.umijs.org/guide/markdown#tree)
+- 🚧 tree 组件展示 `tree` 命令结果, 语法可参照 [dumi - Tree](https://d.umijs.org/guide/markdown#tree)
 
   ```tree
   tree
   ```
+
+## Reference
+
+- [Tmiracle の 技术小站](https://blog.namichong.com/)
+  - [vitepress-plugin-codeblocks-fold](https://github.com/T-miracle/vitepress-plugin-codeblocks-fold)
+  - [vitepress-plugin-comment-with-giscus](https://github.com/T-miracle/vitepress-plugin-comment-with-giscus)
 
 ## BUG
 

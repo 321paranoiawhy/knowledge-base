@@ -72,6 +72,7 @@ onMounted(async () => {
   menus?.forEach(menu => {
     const text = menu.innerHTML;
     const icon = generateInlineIcon(text);
+    console.log(text, icon);
     if (icon) {
       menu.innerHTML = `${icon}${text}`;
     } else {
