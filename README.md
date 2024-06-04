@@ -61,3 +61,10 @@ pnpm prettier
 # 运行成功后可查看 .generated/navbar.json 和 .generated/sidebar.json
 pnpm generate:auto
 ```
+
+由 `git commit` 生成 `heatmap`:
+
+```bash
+# 文件位于 .generated/heatmap.json
+pnpm generate:heatmap
+```

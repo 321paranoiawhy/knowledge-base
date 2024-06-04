@@ -20,12 +20,14 @@ const Nav: DefaultTheme.NavItem[] = [
 
 // process.env.NODE_ENV 的所有可能值: development / production
 // TODO process.env.NODE_ENV 不可靠
-const isDev = process.env.NODE_ENV === 'development';
+// const isDev = process.env.NODE_ENV === 'development';
 // const isDev = import.meta.env.DEV;
 // 本地开发 base 使用默认值 /
 // 部署到 gh-pages 使用仓库名 /knowledge-base/
-const base = isDev ? '/' : '/knowledge-base/';
-console.log(process.env.NODE_ENV, isDev, base);
+// const base = isDev ? '/' : '/knowledge-base/';
+// console.log(process.env.NODE_ENV, isDev, base);
+
+const base = '/knowledge-base/';
 
 export default defineConfig({
   lang: 'en-US',

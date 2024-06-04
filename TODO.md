@@ -12,7 +12,7 @@
 
   [手动实现] 在布局文件中使用:
 
-  ```vue
+  ```vue twoslash
   <script setup lang="ts">
   import {useRouter} from 'vitepress';
   import nprogress from 'nprogress';
@@ -45,6 +45,7 @@
 - 🚧 标签及标签页 tags
 - 🚧 友情链接
 - 🚧 广告+网站流量分析
+- 🚧 MDX 支持
 - 🚧 归档 archive (按年份降序, 提供排序切换)
 - 🚧 Heading 前置 H1 ~ H6
 - [vitepress 插件合集](https://chodocs.cn/program/vitepress-plugin/)
@@ -53,19 +54,19 @@
 - 🚧 `frontmatter` 补全 (读取自 frontmatter.d.ts)
   - 编辑 `frontmatter` 或在 `md` 中使用 `frontmatter` 时补全 (插件)
   - 在 `vue` 中使用时补全
-- 🚧 回到顶部
+- ✅ 回到顶部
 
   - [vitepress-plugin-back-to-top](https://github.com/wehuss/vitepress-plugin-back-to-top)
 
-- 🚧 阅读进度
-- 路径别名
-- 🚧 word cloud (标签) 词云
+- 🚧 实时阅读进度
+- 🚧 路径别名
+- ✅ word cloud (标签) 词云
 
   - [wordCloud.vue](https://github.com/yqchilde/yqchilde.github.io/blob/825854e3318298f7d67aab5bcc76f6b0f3dab1d8/.vitepress/theme/components/wordCloud.vue)
 
     基于 `@antv/g2plot`
 
-- 🚧 commit heatmap
+- ✅ commit heatmap
 
   - [cal-heatmap](https://github.com/wa0x6e/cal-heatmap)
   - [vue-calendar-heatmap](https://github.com/julienr114/vue-calendar-heatmap)

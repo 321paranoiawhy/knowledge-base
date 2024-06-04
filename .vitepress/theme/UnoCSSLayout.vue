@@ -70,7 +70,7 @@ onMounted(async () => {
   // hack dropdown menu item
   const menus = document.querySelectorAll('.VPMenu .VPMenuLink .VPLink');
   menus?.forEach(menu => {
-    const text = menu.innerHTML;
+    const text = menu.innerHTML.replace('<!--[-->', '').replace('<!--]-->', '').trim();
     const icon = generateInlineIcon(text);
     console.log(text, icon);
     if (icon) {
