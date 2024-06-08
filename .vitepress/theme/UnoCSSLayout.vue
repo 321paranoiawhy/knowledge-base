@@ -72,7 +72,6 @@ onMounted(async () => {
   menus?.forEach(menu => {
     const text = menu.innerHTML.replace('<!--[-->', '').replace('<!--]-->', '').trim();
     const icon = generateInlineIcon(text);
-    console.log(text, icon);
     if (icon) {
       menu.innerHTML = `${icon}${text}`;
     } else {

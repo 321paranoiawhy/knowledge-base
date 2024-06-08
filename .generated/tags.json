@@ -16,6 +16,18 @@
   {
     "author": "why",
     "description": "",
+    "tags": [],
+    "path": "docs/frontend/react-native/get-started"
+  },
+  {
+    "author": "why",
+    "description": "",
+    "tags": [],
+    "path": "docs/frontend/react-native/调研"
+  },
+  {
+    "author": "why",
+    "description": "",
     "tags": [
       "UniAPP",
       "踩坑记录"
@@ -39,6 +51,12 @@
       "Vitepress"
     ],
     "path": "docs/frontend/vitepress/customize"
+  },
+  {
+    "author": "why",
+    "description": "",
+    "tags": [],
+    "path": "docs/frontend/vitepress/deploy"
   },
   {
     "author": "why",

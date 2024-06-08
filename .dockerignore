@@ -1,0 +1,10 @@
+node_modules
+#.git
+.vitepress/cache/
+.vitepress/dist/
+.husky
+.npmrc
+.nvmrc
+.prettierignore
+.prettierrc.cjs
+LICENSE

@@ -103,7 +103,16 @@
   "/docs/frontend/react-native/": [
     {
       "text": "React Native",
-      "items": []
+      "items": [
+        {
+          "text": "Get Started",
+          "link": "/docs/frontend/react-native/get-started"
+        },
+        {
+          "text": "调研",
+          "link": "/docs/frontend/react-native/调研"
+        }
+      ]
     }
   ],
   "/docs/frontend/swift/": [
@@ -140,6 +149,10 @@
         {
           "text": "Customize",
           "link": "/docs/frontend/vitepress/customize"
+        },
+        {
+          "text": "Deploy",
+          "link": "/docs/frontend/vitepress/deploy"
         }
       ]
     }
