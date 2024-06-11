@@ -27,7 +27,10 @@ const Nav: DefaultTheme.NavItem[] = [
 // const base = isDev ? '/' : '/knowledge-base/';
 // console.log(process.env.NODE_ENV, isDev, base);
 
-const base = '/knowledge-base/';
+const vercel = ['preview', 'production'].includes(process.env.VITE_VERCEL_ENV || '');
+const isDefaultBase = vercel || process.env.VITE_BASE_ENV === 'development';
+// const base = '/knowledge-base/';
+const base = isDefaultBase ? '/' : '/knowledge-base/';
 
 export default defineConfig({
   lang: 'en-US',

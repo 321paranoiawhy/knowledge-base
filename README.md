@@ -5,7 +5,7 @@
 - [GitHub](https://321paranoiawhy.github.io/knowledge-base)
 - 🚧 Netlify
 - 🚧 Cloudflare
-- 🚧 Vercel
+- [Vercel](https://knowledge-base-mauve-pi.vercel.app/)
 
 技术栈及亮点:
 

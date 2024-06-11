@@ -56,11 +56,7 @@ chmod 777 deploy.sh
 - [GitHub Pages](https://vitepress.dev/guide/deploy#github-pages)
 
 ::: details .github/workflows/deploy.yml
-
-```yaml
 <<< @/.github/workflows/deploy.yml
-```
-
 :::
 
 ## Nginx 配置
@@ -68,9 +64,5 @@ chmod 777 deploy.sh
 - [Nginx](https://vitepress.dev/guide/deploy#nginx)
 
 ::: details nginx.conf 示例
-
-```nginx
 <<< @/nginx.conf
-```
-
 :::
