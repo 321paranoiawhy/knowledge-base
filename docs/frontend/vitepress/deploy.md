@@ -64,5 +64,5 @@ chmod 777 deploy.sh
 - [Nginx](https://vitepress.dev/guide/deploy#nginx)
 
 ::: details nginx.conf 示例
-<<< @/nginx.conf
+<<< @/nginx.conf{nginx}
 :::
