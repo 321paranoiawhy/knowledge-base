@@ -126,11 +126,6 @@
     "activeMatch": "^/game/"
   },
   {
-    "text": "<span class=\"i-mdi:ab-testing w-1em h-1em inline-block v-mid mr-4px\"></span>Test",
-    "items": [],
-    "activeMatch": "^/test/"
-  },
-  {
     "text": "<span class=\"i-mdi:tools w-1em h-1em inline-block v-mid mr-4px\"></span>Tools",
     "items": [
       {
