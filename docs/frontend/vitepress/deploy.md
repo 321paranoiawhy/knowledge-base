@@ -58,40 +58,7 @@ chmod 777 deploy.sh
 ::: details .github/workflows/deploy.yml
 
 ```yaml
-name: Deploy
-
-on:
-  push:
-    branches:
-      - main
-  pull_request:
-    branches:
-      - main
-
-jobs:
-  deploy:
-    permissions:
-      contents: write
-    concurrency:
-      group: pages
-      cancel-in-progress: false
-    runs-on: ubuntu-latest
-    steps:
-      - uses: actions/checkout@v2
-      - uses: actions/setup-node@v3
-        with:
-          node-version: 20.11.1
-      - run: npm i pnpm@8.15.4 -g
-      - run: pnpm install --frozen-lockfile
-
-      - name: Build
-        run: pnpm docs:build
-
-      - name: Deploy
-        uses: peaceiris/actions-gh-pages@v3
-        with:
-          github_token: ${{ secrets.GITHUB_TOKEN }}
-          publish_dir: .vitepress/dist
+<<< @/.github/workflows/deploy.yml
 ```
 
 :::
@@ -103,35 +70,7 @@ jobs:
 ::: details nginx.conf 示例
 
 ```nginx
-server {
-    gzip on;
-    gzip_types text/plain text/css application/json application/javascript text/xml application/xml application/xml+rss text/javascript;
-
-    listen 80;
-    server_name _;
-    index index.html;
-
-    location / {
-        # content location
-        root /app;
-
-        # exact matches -> reverse clean urls -> folders -> not found
-        try_files $uri $uri.html $uri/ =404;
-
-        # non existent pages
-        error_page 404 /404.html;
-
-        # a folder without index.html raises 403 in this setup
-        error_page 403 /404.html;
-
-        # adjust caching headers
-        # files in the assets folder have hashes filenames
-        location ~* ^/assets/ {
-            expires 1y;
-            add_header Cache-Control "public, immutable";
-        }
-    }
-}
+<<< @/nginx.conf
 ```
 
 :::

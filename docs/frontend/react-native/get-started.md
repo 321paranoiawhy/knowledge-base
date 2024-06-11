@@ -390,7 +390,7 @@ module.exports = config;
 
 ```
 
-### env
+### `env`
 
 - [react-native-dotenv](https://www.npmjs.com/package/react-native-dotenv)
 

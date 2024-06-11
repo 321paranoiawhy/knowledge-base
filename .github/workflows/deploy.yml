@@ -32,3 +32,21 @@ jobs:
         with:
           github_token: ${{ secrets.GITHUB_TOKEN }}
           publish_dir: .vitepress/dist
+
+      # 将文件上传至云服务器
+      # 参考: https://www.lu-xiaoyu.com/notes/raop/myw
+#      - name: Deploy to server
+#        uses: marcodallasanta/ssh-scp-deploy@v1.2.0
+#        with:
+#          # 本地打包后的文件目录
+#          local: .vitepress/dist
+#          # 上传至远程服务器的目标目录
+#          remote: /home/ubuntu/
+#          # 远程服务器的地址
+#          host: ${{ secrets.REMOTE_HOST }}
+#          # 远程服务器的用户名
+#          user: ${{ secrets.REMOTE_USERNAME }}
+#          # 远程服务器的密钥（与密码二者选其一）
+#          key: ${{ secrets.PRIVATE_KEY }}
+#          # 上传后执行的脚本
+#          post_upload: sudo nginx -s reload

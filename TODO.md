@@ -87,6 +87,10 @@
 - - [vitepress-theme-demoblock](https://github.com/xinlei3166/vitepress-theme-demoblock/tree/main)
 - 🚧 code group 当前页联动, tabs 切换下划线动画
 - ✅ nav sidebar 添加图标
+- `mermaid`
+
+  - [vitepress-plugin-mermaid](https://emersonbottero.github.io/vitepress-plugin-mermaid/)
+
 - 🚧 页面切换动画
 - 🚧 基于 nuxt/vue3/ts/unocss/nest/mongodb/redis/mysql 开发后台管理系统
 - ✅ tools
