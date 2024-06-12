@@ -6,7 +6,7 @@
 
 - [Netlify](https://why-knowledge-base.netlify.app/) [![Netlify Status](https://api.netlify.com/api/v1/badges/f5cbf133-9278-45eb-a702-250db1ed650a/deploy-status)](https://app.netlify.com/sites/why-knowledge-base/deploys)
 - 🚧 Cloudflare
-- [Vercel](https://knowledge-base-mauve-pi.vercel.app/) ![Vercel](https://knowledge-base-mauve-pi.vercel.app/api/321paranoiawhy/knowledge-base)
+- [Vercel](https://knowledge-base-mauve-pi.vercel.app/) ![Vercel](https://vercelbadge.vercel.app/api/321paranoiawhy/knowledge-base)
 
 技术栈及亮点:
 

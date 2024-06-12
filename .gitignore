@@ -19,3 +19,6 @@ dist
 env/.env.local
 
 log
+
+auto-imports.d.ts
+components.d.ts
