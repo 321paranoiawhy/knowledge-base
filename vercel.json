@@ -8,5 +8,11 @@
   "outputDirectory": ".vitepress/dist",
   "github": {
     "silent": true
+  },
+  "git": {
+    "deploymentEnabled": {
+      "main": true,
+      "gh-pages": false
+    }
   }
 }
