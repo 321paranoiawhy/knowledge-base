@@ -1,12 +1,15 @@
 # Knowledge Base (WHY の 自留地)
 
+![GitHub Actions Workflow Status](https://img.shields.io/github/actions/workflow/status/321paranoiawhy/knowledge-base/deploy.yml)
+[![Netlify Status](https://api.netlify.com/api/v1/badges/f5cbf133-9278-45eb-a702-250db1ed650a/deploy-status)](https://app.netlify.com/sites/why-knowledge-base/deploys)
+![Vercel](https://vercelbadge.vercel.app/api/321paranoiawhy/knowledge-base)
+
 在线查看:
 
-- [GitHub](https://321paranoiawhy.github.io/knowledge-base) ![GitHub Actions Workflow Status](https://img.shields.io/github/actions/workflow/status/321paranoiawhy/knowledge-base/deploy.yml)
-
-- [Netlify](https://why-knowledge-base.netlify.app/) [![Netlify Status](https://api.netlify.com/api/v1/badges/f5cbf133-9278-45eb-a702-250db1ed650a/deploy-status)](https://app.netlify.com/sites/why-knowledge-base/deploys)
+- [GitHub](https://321paranoiawhy.github.io/knowledge-base)
+- [Netlify](https://why-knowledge-base.netlify.app/)
 - 🚧 Cloudflare
-- [Vercel](https://knowledge-base-mauve-pi.vercel.app/) ![Vercel](https://vercelbadge.vercel.app/api/321paranoiawhy/knowledge-base)
+- [Vercel](https://knowledge-base-mauve-pi.vercel.app/)
 
 技术栈及亮点:
 
@@ -80,6 +83,14 @@ pnpm generate:heatmap
 - [vercel.json 配置文件](vercel.json)
 - [vercel-badge](https://github.com/datejer/vercel-badge)
 
+  `Vercel` 构建徽标
+
+- 关闭 `preview build`:
+  - [Turning off Preview Deployments](https://vercel.com/docs/deployments/preview-deployments#turning-off-preview-deployments)
+  - [How do I use the "Ignored Build Step" field on Vercel?](https://vercel.com/guides/how-do-i-use-the-ignored-build-step-field-on-vercel)
+  - [Ignored Build Step](https://vercel.com/docs/projects/overview#ignored-build-step)
+- 仅监听 `main` 分支变动: 判断 `VERCEL_GIT_COMMIT_REF` 环境变量值是否等于 `main` 即可
+
 注意:
 
 须在 `vercel` 后台添加环境变量:
@@ -112,7 +123,7 @@ docker run -itd -p 8002:80 --name knowledge-base knowledge-base
 使用 `deploy.sh` 一键运行:
 
 ```bash
-# 避免 zsh: permission denied: ./deploy.sh
+# 避免 bash/zsh: permission denied: ./deploy.sh
 # cd 至当前项目所在根目录
 chmod 777 deploy.sh
 
