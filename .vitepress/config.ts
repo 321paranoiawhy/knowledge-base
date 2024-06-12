@@ -27,9 +27,8 @@ const Nav: DefaultTheme.NavItem[] = [
 // const base = isDev ? '/' : '/knowledge-base/';
 // console.log(process.env.NODE_ENV, isDev, base);
 
-// TODO
-const vercel = ['preview', 'production'].includes(process.env.VITE_VERCEL_ENV || '');
-const isDefaultBase = vercel || process.env.VITE_BASE_ENV === 'development';
+const isDefaultBase = process.env.VITE_BASE_ENV === 'development';
+console.log(process.env.VITE_BASE_ENV, isDefaultBase);
 // const base = '/knowledge-base/';
 const base = isDefaultBase ? '/' : '/knowledge-base/';
 

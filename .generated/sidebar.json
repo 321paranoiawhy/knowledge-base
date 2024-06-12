@@ -168,6 +168,10 @@
       "text": "代码指南",
       "items": [
         {
+          "text": "README",
+          "link": "/docs/frontend/代码指南/README"
+        },
+        {
           "text": "Coding Style",
           "link": "/docs/frontend/代码指南/coding-style"
         },
@@ -194,10 +198,6 @@
         {
           "text": "React",
           "link": "/docs/frontend/代码指南/react"
-        },
-        {
-          "text": "README",
-          "link": "/docs/frontend/代码指南/README"
         },
         {
           "text": "Tools",
@@ -246,6 +246,10 @@
     {
       "text": "All In One",
       "items": [
+        {
+          "text": "Nginx",
+          "link": "/docs/tools/all-in-one/nginx"
+        },
         {
           "text": "工具合集",
           "link": "/docs/tools/all-in-one/工具合集"

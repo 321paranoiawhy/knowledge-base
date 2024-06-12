@@ -1,0 +1,11 @@
+{
+  "framework": "vitepress",
+  "installCommand": "pnpm i",
+  "buildCommand": "pnpm docs:build",
+  "cleanUrls": true,
+  "public": false,
+  "outputDirectory": ".vitepress/dist",
+  "env": {
+    "VITE_BASE_ENV": "development"
+  }
+}

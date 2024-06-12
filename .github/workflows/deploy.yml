@@ -8,6 +8,9 @@ on:
     branches:
       - main
 
+env:
+  VITE_BASE_ENV: 'production'
+
 jobs:
   deploy:
     permissions:

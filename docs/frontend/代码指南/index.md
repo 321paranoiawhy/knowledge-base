@@ -1,5 +1,6 @@
 # 代码指南
 
+- [README](./README.md)
 - [Coding Style](./coding-style.md)
 - [Css](./css.md)
 - [Directory Structure](./directory-structure.md)
@@ -7,7 +8,6 @@
 - [Html](./html.md)
 - [Js](./js.md)
 - [React](./react.md)
-- [README](./README.md)
 - [Tools](./tools.md)
 - [Ts](./ts.md)
 - [Vitepress](./vitepress.md)

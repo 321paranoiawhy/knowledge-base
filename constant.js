@@ -14,7 +14,6 @@ const TEST = `${MDI}ab-testing`;
 
 // ****** 侧边栏 sidebar icons ******
 // sidebar-backend
-// TODO nest
 // const C_SHARP = `${MDI}languag-csharp`;
 const C_SHARP = `${LOGOS}c-sharp`;
 // const GO = `${MDI}language-go`;
@@ -100,3 +99,7 @@ export const generateInlineIcon = name => {
     return '';
   }
 };
+
+export const ENV_DEVELOPMENT = 'development';
+export const ENV_TEST = 'test';
+export const ENV_PRODUCTION = 'production';
