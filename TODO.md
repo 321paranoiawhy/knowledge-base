@@ -46,10 +46,15 @@
 - 🚧 友情链接
 - 🚧 广告+网站流量分析
 - 🚧 MDX 支持
+- 自动生成 `sitemap`
+
+  - [给你的 Next.js 项目优雅地添加 sitemap](https://chodocs.cn/nextjs/sitemap/)
+
 - 🚧 归档 archive (按年份降序, 提供排序切换)
 - 🚧 Heading 前置 H1 ~ H6
-- 集成 `slidev`
-- codepen 等媒体网站展示
+- ✅ 集成 `markdown-it-footnote` 以支持脚注
+- 🚧 集成 `slidev`
+- 🚧 codepen 等媒体网站展示
 - [vitepress 插件合集](https://chodocs.cn/program/vitepress-plugin/)
 - 🚧 embed, 如 codepen
 - 🚧 代码块折叠功能 (带动画) 侧边栏展开折叠动画 (collapse)
@@ -60,8 +65,14 @@
 
   - [vitepress-plugin-back-to-top](https://github.com/wehuss/vitepress-plugin-back-to-top)
 
-- 🚧 实时阅读进度
+- 🚧 实时阅读进度, 展示于回到顶部按钮
 - 🚧 路径别名
+- 🚧 mermaid
+
+  - [Mermaid - Docs](https://mermaid.js.org/)
+  - [Mermaid - GitHub](https://github.com/mermaid-js/mermaid)
+  - [Mermaid 在线编辑器](https://mermaid.live)
+
 - ✅ word cloud (标签) 词云
 
   - [wordCloud.vue](https://github.com/yqchilde/yqchilde.github.io/blob/825854e3318298f7d67aab5bcc76f6b0f3dab1d8/.vitepress/theme/components/wordCloud.vue)

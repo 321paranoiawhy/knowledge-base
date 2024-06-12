@@ -72,6 +72,11 @@ pnpm generate:auto
 pnpm generate:heatmap
 ```
 
+## Thanks to
+
+- [ChoDocs](https://chodocs.cn/)
+- [nolebase-integrations](https://nolebase-integrations.ayaka.io/pages/en/)
+
 ## 部署
 
 ### GitHub Pages

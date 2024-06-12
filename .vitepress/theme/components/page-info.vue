@@ -15,7 +15,7 @@ defineProps<{
 const {frontmatter} = useData();
 
 const author = computed(() => {
-  return frontmatter.value?.author || 'WHY';
+  return frontmatter.value?.author || import.meta.env.VITE_AUTHOR || 'WHY';
 });
 </script>
 
