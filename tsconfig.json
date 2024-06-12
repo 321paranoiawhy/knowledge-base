@@ -3,7 +3,7 @@
   "compilerOptions": {
     //    "sourceMap": true,
     "baseUrl": ".",
-    "module": "esnext",
+    "module": "NodeNext",
     //    "moduleResolution": "Node",
     "moduleResolution": "NodeNext",
     "esModuleInterop": true,
@@ -31,5 +31,9 @@
     "*.js",
     "env.d.ts",
     "components.d.ts"
+  ],
+  "exclude": [
+    "**/.vitepress/cache/**",
+    "**/.vitepress/dist/**",
   ]
 }
