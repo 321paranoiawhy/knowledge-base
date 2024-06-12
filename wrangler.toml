@@ -2,8 +2,8 @@
 
 name = "knowledge-base"
 
-# Build command
-build.command = "pnpm docs:build"
+# Build command (Worker only)
+# build.command = "pnpm docs:build"
 
 # Build output directory
 pages_build_output_dir = ".vitepress/dist"

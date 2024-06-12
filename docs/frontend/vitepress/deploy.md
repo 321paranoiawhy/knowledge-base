@@ -51,7 +51,7 @@ chmod 777 deploy.sh
 <<< @/deploy.sh
 :::
 
-### GitHub
+### GitHub Pages
 
 - [GitHub Pages](https://vitepress.dev/guide/deploy#github-pages)
 
@@ -101,7 +101,7 @@ VITE_BASE_ENV="development"
 <<< @/amplify-explicit.yml
 :::
 
-### Cloudflare
+### Cloudflare Pages
 
 - [Git integration guide - Cloudflare Pages](https://developers.cloudflare.com/pages/get-started/git-integration/)
 
@@ -119,6 +119,14 @@ VITE_BASE_ENV="development"
 ::: details wrangler.toml
 <<< @/wrangler.toml
 :::
+
+### Possible Platforms
+
+- [Deno Deploy](https://deno.com/deploy)
+- [Google Cloud](https://cloud.google.com/)
+- [Microsoft Azure](https://azure.microsoft.com/en-us/)
+- [Fly.io](https://fly.io/) Launch Apps Near Users, 须付费使用
+- [Zeabur](https://zeabur.com/)
 
 ## Nginx 配置
 

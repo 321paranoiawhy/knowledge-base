@@ -74,7 +74,7 @@ pnpm generate:heatmap
 
 ## 部署
 
-### GitHub
+### GitHub Pages
 
 - [GitHub Actions Workflow Status - shields.io](https://shields.io/badges/git-hub-actions-workflow-status)
 
