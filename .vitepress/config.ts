@@ -1,14 +1,13 @@
-import {defineConfig} from 'vitepress';
-import type {DefaultTheme} from 'vitepress/types';
+import {defineConfig, type DefaultTheme} from 'vitepress';
 import {transformerTwoslash} from '@shikijs/vitepress-twoslash';
 import markdownItMathjax3 from 'markdown-it-mathjax3';
+// @ts-ignore
 import markdownItFootnote from 'markdown-it-footnote';
+// @ts-ignore
 import {generatedNavbar, generatedSidebar} from './utils/auto-generate.js';
-import {containerPreview, componentPreview} from '@vitepress-demo-preview/plugin';
+// import {containerPreview, componentPreview} from '@vitepress-demo-preview/plugin';
 import {InlineLinkPreviewElementTransform} from '@nolebase/vitepress-plugin-inline-link-preview/markdown-it';
 
-const ogUrl = 'https://unocss.dev/';
-const ogImage = `${ogUrl}og.png#1`;
 const title = 'WHY の 自留地';
 // const titleTemplate = '';
 const description = 'WHY の 自留地';
@@ -56,8 +55,8 @@ export default defineConfig({
     ['meta', {name: 'author', content: 'WHY'}],
     ['meta', {property: 'og:type', content: 'website'}],
     ['meta', {name: 'og:title', content: title}],
-    ['meta', {name: 'og:description', content: description}],
-    ['meta', {property: 'og:image', content: ogImage}]
+    ['meta', {name: 'og:description', content: description}]
+    // ['meta', {property: 'og:image', content: ogImage}]
   ],
   // 显示最后一次更新时间, 文件须被 git 提交方可显示, 否则不显示
   lastUpdated: true,
@@ -84,10 +83,12 @@ export default defineConfig({
       lazyLoading: true
     },
     config: md => {
+      // @ts-ignore
       md.use(markdownItMathjax3);
       md.use(markdownItFootnote);
-      md.use(containerPreview);
-      md.use(componentPreview);
+      // md.use(containerPreview);
+      // md.use(componentPreview);
+      // @ts-ignore
       md.use(InlineLinkPreviewElementTransform);
     },
     codeTransformers: [

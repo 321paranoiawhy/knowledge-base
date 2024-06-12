@@ -8,7 +8,7 @@
     "moduleResolution": "NodeNext",
     "esModuleInterop": true,
     "resolveJsonModule": true,
-    "allowJs": true,
+    // "allowJs": true,
     "jsx": "preserve",
     "paths": {
       //      "@/*": ["./src/*"],
@@ -23,14 +23,13 @@
     //    "ignoreDeprecations": "5.0"
   },
   "include": [
-    "**/.vitepress/**/*.js",
-    "**/.vitepress/**/*.ts",
-    "**/.vitepress/**/*.jsx",
-    "**/.vitepress/**/*.tsx",
-    "**/.vitepress/**/*.vue",
-    "*.js",
-    "env.d.ts",
-    "components.d.ts"
+    ".vitepress/**/*.js",
+    ".vitepress/**/*.ts",
+    ".vitepress/**/*.jsx",
+    ".vitepress/**/*.tsx",
+    ".vitepress/**/*.vue",
+    "**/*.js",
+    "**/*.d.ts"
   ],
   "exclude": [
     "**/.vitepress/cache/**",
