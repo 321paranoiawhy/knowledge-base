@@ -48,6 +48,8 @@
 - 🚧 MDX 支持
 - 🚧 归档 archive (按年份降序, 提供排序切换)
 - 🚧 Heading 前置 H1 ~ H6
+- 集成 `slidev`
+- codepen 等媒体网站展示
 - [vitepress 插件合集](https://chodocs.cn/program/vitepress-plugin/)
 - 🚧 embed, 如 codepen
 - 🚧 代码块折叠功能 (带动画) 侧边栏展开折叠动画 (collapse)

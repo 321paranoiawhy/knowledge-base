@@ -19,7 +19,7 @@ watch(
 </script>
 
 <template>
-  <section px-1.2rem relative py-1rem my-8 rounded-2 lh-6 w-full class="bg-[--vp-c-default-soft]">
+  <section px-1.2rem relative py-1rem my-8 rounded-2 lh-6 w-full class="bg-[--vp-custom-block-details-bg]">
     <div i-mdi:copyright absolute top-4 right-1.2rem />
     <div flex flex-col gap-y-2 overflow-hidden>
       <div>

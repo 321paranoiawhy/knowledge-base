@@ -424,3 +424,68 @@ module.exports = config;
   ```
 
   :::
+
+### EAS CLI
+
+- [Create your first build](https://docs.expo.dev/build/setup/)
+- [Expo Go 实践教程 - 项目搭建](https://clwy.cn/pages/expo-project-setup)
+
+全局安装 `eas-cli`:
+
+```bash
+pnpm add eas-cli -g
+```
+
+登录:
+
+```bash
+eas login
+```
+
+检查是否登录:
+
+```bash
+eas whoami
+```
+
+配置:
+
+```bash
+eas build:configure
+```
+
+配置文件为 `eas.json`, 请确保它位于项目根目录
+
+打包:
+
+```bash
+expo build --platform android
+
+expo build --platform ios
+```
+
+### `np` 和 `react-native-version`
+
+- [React Native + GitHub Action = ❤️](https://www.obytes.com/blog/react-native-ci-cd-github-action)
+- [react-native-template-obytes](https://github.com/obytes/react-native-template-obytes)
+
+  `RN` 全面的模板库
+
+```bash
+pnpm add np react-native-version  -D
+```
+
+更新 `package.json`:
+
+```json
+{
+  "repository": {
+    "type": "git",
+    "url": "git+https://github.com/<username>/<repo-name>.git"
+  },
+  "scripts": {
+    "np": "np --no-publish",
+    "postversion": "react-native-version"
+  }
+}
+```

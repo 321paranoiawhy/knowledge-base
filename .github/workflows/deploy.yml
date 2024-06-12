@@ -12,7 +12,8 @@ env:
   VITE_BASE_ENV: 'production'
 
 jobs:
-  deploy:
+  deploy-gh-pages:
+    name: Deploy to GitHub Pages
     permissions:
       contents: write
     concurrency:

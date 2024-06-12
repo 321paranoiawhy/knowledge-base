@@ -1,4 +1,5 @@
 # 参考: https://juejin.cn/post/7306018817687322676
+MAINTAINER why
 FROM node:20.11.1
 WORKDIR /app
 COPY package.json ./
