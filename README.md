@@ -2,15 +2,15 @@
 
 在线查看:
 
-- [GitHub](https://321paranoiawhy.github.io/knowledge-base)
-- 🚧 Netlify
+- [GitHub](https://321paranoiawhy.github.io/knowledge-base) ![GitHub Actions Workflow Status](https://img.shields.io/github/actions/workflow/status/321paranoiawhy/knowledge-base/deploy.yml)
+
+- [Netlify](https://why-knowledge-base.netlify.app/) [![Netlify Status](https://api.netlify.com/api/v1/badges/f5cbf133-9278-45eb-a702-250db1ed650a/deploy-status)](https://app.netlify.com/sites/why-knowledge-base/deploys)
 - 🚧 Cloudflare
-- [Vercel](https://knowledge-base-mauve-pi.vercel.app/)
+- [Vercel](https://knowledge-base-mauve-pi.vercel.app/) ![Vercel](https://knowledge-base-mauve-pi.vercel.app/api/321paranoiawhy/knowledge-base)
 
 技术栈及亮点:
 
-- 基于 `vitepress`
-- 参考 `UnoCSS Docs` 适当改造
+- 基于 `vitepress` 和 `UnoCSS Docs` 并适当改造
 - 自动生成 `nav` 和 `sidebar` 至 `.generated/navbar.json` 和 `.generated/sidebar.json`
 - `nolebase` 系列插件
   - [@nolebase/vitepress-plugin-highlight-targeted-heading](https://nolebase-integrations.ayaka.io/pages/en/integrations/vitepress-plugin-highlight-targeted-heading/)
@@ -67,4 +67,56 @@ pnpm generate:auto
 ```bash
 # 文件位于 .generated/heatmap.json
 pnpm generate:heatmap
+```
+
+## 部署
+
+### GitHub
+
+- [GitHub Actions Workflow Status - shields.io](https://shields.io/badges/git-hub-actions-workflow-status)
+
+### Vercel
+
+- [vercel.json 配置文件](vercel.json)
+- [vercel-badge](https://github.com/datejer/vercel-badge)
+
+注意:
+
+须在 `vercel` 后台添加环境变量:
+
+```dotenv
+# 这将使 `.vitepress/config.ts` 中 `base` 为 `/`
+VITE_BASE_ENV="development"
+```
+
+### Netlify
+
+- [Status badges - Netlify](https://docs.netlify.com/monitor-sites/status-badges/)
+
+### Docker
+
+构建镜像:
+
+```bash
+docker build -t knowledge-base .
+```
+
+运行:
+
+```bash
+docker run -itd -p 8002:80 --name knowledge-base knowledge-base
+```
+
+浏览器输入 `http://localhost:8002/knowledge-base` 即可查看
+
+使用 `deploy.sh` 一键运行:
+
+```bash
+# 避免 zsh: permission denied: ./deploy.sh
+# cd 至当前项目所在根目录
+chmod 777 deploy.sh
+
+# 运行 deploy.sh
+# 运行成功后查看 http://localhost:8002/knowledge-base
+./deploy.sh
 ```

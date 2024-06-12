@@ -1,0 +1,19 @@
+[build]
+base = ""
+publish = ".vitepress/dist"
+command = "pnpm run docs:build"
+
+[context.main]
+VITE_BASE_ENV = "development"
+
+[[headers]]
+for = "/*"
+
+[headers.values]
+cache-control = "max-age=7200"
+
+[[headers]]
+for = "/assets/*"
+
+[headers.values]
+cache-control = "max-age=31536000"

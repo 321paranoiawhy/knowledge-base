@@ -28,28 +28,21 @@
   {
     "author": "why",
     "description": "",
-    "tags": [
-      "UniAPP",
-      "踩坑记录"
-    ],
+    "tags": ["UniAPP", "踩坑记录"],
     "path": "docs/frontend/uniapp/uniapp 踩坑记录"
   },
   {
     "title": "Vitepress Basic",
     "author": "why",
     "description": "",
-    "tags": [
-      "Vitepress"
-    ],
+    "tags": ["Vitepress"],
     "path": "docs/frontend/vitepress/basic"
   },
   {
     "title": "Vitepress Customize",
     "author": "why",
     "description": "",
-    "tags": [
-      "Vitepress"
-    ],
+    "tags": ["Vitepress"],
     "path": "docs/frontend/vitepress/customize"
   },
   {
@@ -133,9 +126,7 @@
   {
     "author": "why",
     "description": "",
-    "tags": [
-      "Tools"
-    ],
+    "tags": ["Tools"],
     "path": "docs/tools/all-in-one/工具合集"
   }
 ]

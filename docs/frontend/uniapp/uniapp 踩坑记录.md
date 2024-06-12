@@ -29,7 +29,7 @@ tags: ['UniAPP', '踩坑记录']
 ```vue
 <style>
 page {
-	background-color: red;
+  background-color: red;
 }
 </style>
 ```
@@ -51,7 +51,6 @@ module.exports = {
     ]
   }
 };
-
 ```
 
 ## 组件样式穿透失效
@@ -59,13 +58,13 @@ module.exports = {
 `Vue2` 项目可做如下配置:
 
 ```vue
-<script lang="ts">  
-export default {  
-  options: {  
-	// 默认值为 apply-shared
-    styleIsolation: 'shared'  
-  }  
-};  
+<script lang="ts">
+export default {
+  options: {
+    // 默认值为 apply-shared
+    styleIsolation: 'shared'
+  }
+};
 </script>
 ```
 
@@ -101,8 +100,7 @@ export default {
 `uniapp` 在 `H5` 平台上会自动开启 `scoped` 以样式隔离, 可使用以下方式规避:
 
 ```vue
-<style noscoped lang="scss">
-</style>
+<style noscoped lang="scss"></style>
 ```
 
 - [uni-app issues #4491](https://github.com/dcloudio/uni-app/issues/4491#issuecomment-1695412517)
@@ -129,7 +127,7 @@ export default {
       // lh
       "^lh-(.*)": "@subComponents/lh-$1.vue"
     }
-  },
+  }
 }
 ```
 
@@ -183,7 +181,7 @@ export default {
 
 ```ts
 // 可能值为 h5/mp-weixin/mp-alipay/mp-baidu/mp-taobao/mp-qq
-process.env?.UNI_PLATFORM
+process.env?.UNI_PLATFORM;
 ```
 
 ## 图片无损压缩
@@ -240,9 +238,11 @@ process.env?.UNI_PLATFORM
 
 ```vue
 <script setup lang="ts">
-import {onPageScroll} from '@dcloudio/uni-app'
+import {onPageScroll} from '@dcloudio/uni-app';
 
-onPageScroll((e) => {console.log('页面滚动了', e.scrollTop);})
+onPageScroll(e => {
+  console.log('页面滚动了', e.scrollTop);
+});
 </script>
 ```
 
@@ -267,6 +267,7 @@ const onScroll = (e) => {console.log('页面滚动了', e.scrollTop);}
 ```vue
 <view @touchmove.stop.prevent></view>
 ```
+
 ### 滚动吸顶
 
 ## `useLoading`
@@ -291,11 +292,10 @@ const onScroll = (e) => {console.log('页面滚动了', e.scrollTop);}
 
 ```css
 .image {
-	aspect-ratio: 16 / 9;
+  aspect-ratio: 16 / 9;
 }
 
-@supports not(aspect-ratio: 16 / 9) {
-
+@supports not (aspect-ratio: 16 / 9) {
 }
 ```
 
@@ -303,22 +303,22 @@ const onScroll = (e) => {console.log('页面滚动了', e.scrollTop);}
 
 ```js
 // 返回布尔值, 取决于当前浏览器的支持情况
-CSS.supports('aspect-ratio', '16 / 9')
+CSS.supports('aspect-ratio', '16 / 9');
 ```
 
 ### JS
 
 ```js
 if (typeof requestIdleCallback !== 'undefined' && typeof window.requestIdleCallback === 'function') {
-	// 支持 requestIdleCallback
+  // 支持 requestIdleCallback
 }
 
 if (typeof document.body.scrollIntoView === 'function') {
-	// 支持 scrollIntoView
+  // 支持 scrollIntoView
 }
 
 if ('scrollBehavior' in document.documentElement.style) {
-	// 支持 scrollBehavior
+  // 支持 scrollBehavior
 }
 ```
 
@@ -328,7 +328,7 @@ if ('scrollBehavior' in document.documentElement.style) {
 
 ```js
 // 直接传入 this
-uni.createSelectorQuery().in(this).select('.class')
+uni.createSelectorQuery().in(this).select('.class');
 ```
 
 `Vue3`:
@@ -337,9 +337,8 @@ uni.createSelectorQuery().in(this).select('.class')
 const instance = getCurrentInstance();
 
 // 使用 getCurrentInstance() 代替 Vue2 中的 this
-uni.createSelectorQuery().in(instance).select('.class')
+uni.createSelectorQuery().in(instance).select('.class');
 ```
-
 
 ## 生命周期
 
@@ -377,7 +376,6 @@ uni.createSelectorQuery().in(instance).select('.class')
 - `onNavigationBarSearchInputConfirmed`原生标题栏搜索输入框**搜索**事件, 用户点击软键盘的搜索按钮时触发
 - `onNavigationBarSearchInputClicked` 原生标题栏搜索输入框**点击**事件
 
-
 ### Vue2
 
 ### Vue3
@@ -398,7 +396,7 @@ TODO
 
 ```json
 {
-	"condition": {
+  "condition": {
     "current": 1,
     "list": [
       {
@@ -410,7 +408,7 @@ TODO
         "path": "subpackages/sample-database/sample-database"
       }
     ]
-  },
+  }
 }
 ```
 
@@ -421,17 +419,17 @@ TODO
 
 ```vue
 <script>
-const onClick = (e) => {
-	// custom
-	console.log(e.target.dataset.custom)
-	// custom-info
-	// 注意这里的驼峰写法会被转换为全小写
-	console.log(e.target.dataset.custominfo)
-}
+const onClick = e => {
+  // custom
+  console.log(e.target.dataset.custom);
+  // custom-info
+  // 注意这里的驼峰写法会被转换为全小写
+  console.log(e.target.dataset.custominfo);
+};
 </script>
 
 <template>
-<view data-custom="custom" data-customInfo="custom-info" @click="onClick">自定义属性</view>
+  <view data-custom="custom" data-customInfo="custom-info" @click="onClick">自定义属性</view>
 </template>
 ```
 
@@ -440,11 +438,13 @@ const onClick = (e) => {
 ```vue
 <script>
 onMounted(() => {
-	const item = uni.createSelectorQuery().in(instance).select('#id')
-	item.boundingClientRect((data) => {
-		console.log(data.dataset)
-	}).exec()
-})
+  const item = uni.createSelectorQuery().in(instance).select('#id');
+  item
+    .boundingClientRect(data => {
+      console.log(data.dataset);
+    })
+    .exec();
+});
 </script>
 ```
 
@@ -470,7 +470,7 @@ onMounted(() => {
   padding-bottom: constant(safe-area-inset-bottom); /* 兼容 iOS < 11.2 */
   padding-bottom: env(safe-area-inset-bottom, 20px); /* 兼容 iOS >= 11.2 */
   /* #endif */
-  
+
   /* #ifdef H5 */
   padding-bottom: 20px;
   /* #endif */
@@ -489,7 +489,7 @@ onMounted(() => {
 
 ```html
 <head>
-	<meta name="viewport" content="viewport-fit=cover" />
+  <meta name="viewport" content="viewport-fit=cover" />
 </head>
 ```
 
@@ -503,14 +503,14 @@ onMounted(() => {
 // develop 开发版
 // trial 体验版
 // release 正式版
-__wxConfig.envVersion
+__wxConfig.envVersion;
 ```
 
 对于 `H5`:
 
 ```js
 // develepment 开发版
-process.env.NODE_ENV
+process.env.NODE_ENV;
 ```
 
 ## 动态插槽
