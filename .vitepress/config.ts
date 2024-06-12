@@ -1,7 +1,8 @@
 import {defineConfig} from 'vitepress';
 import type {DefaultTheme} from 'vitepress/types';
 import {transformerTwoslash} from '@shikijs/vitepress-twoslash';
-import mathjax3 from 'markdown-it-mathjax3';
+import markdownItMathjax3 from 'markdown-it-mathjax3';
+import markdownItFootnote from 'markdown-it-footnote';
 import {generatedNavbar, generatedSidebar} from './utils/auto-generate.js';
 import {containerPreview, componentPreview} from '@vitepress-demo-preview/plugin';
 import {InlineLinkPreviewElementTransform} from '@nolebase/vitepress-plugin-inline-link-preview/markdown-it';
@@ -83,7 +84,8 @@ export default defineConfig({
       lazyLoading: true
     },
     config: md => {
-      md.use(mathjax3);
+      md.use(markdownItMathjax3);
+      md.use(markdownItFootnote);
       md.use(containerPreview);
       md.use(componentPreview);
       md.use(InlineLinkPreviewElementTransform);
