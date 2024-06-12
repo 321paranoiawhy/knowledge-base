@@ -8,7 +8,7 @@
 
 - [GitHub](https://321paranoiawhy.github.io/knowledge-base)
 - [Netlify](https://why-knowledge-base.netlify.app/)
-- 🚧 Cloudflare
+- [Cloudflare](https://knowledge-base-bag.pages.dev/)
 - [Vercel](https://knowledge-base-mauve-pi.vercel.app/)
 
 技术栈及亮点:
@@ -91,9 +91,7 @@ pnpm generate:heatmap
   - [Ignored Build Step](https://vercel.com/docs/projects/overview#ignored-build-step)
 - 仅监听 `main` 分支变动: 判断 `VERCEL_GIT_COMMIT_REF` 环境变量值是否等于 `main` 即可
 
-注意:
-
-须在 `vercel` 后台添加环境变量:
+注意, 须在 `Vercel` 后台添加环境变量:
 
 ```dotenv
 # 这将使 `.vitepress/config.ts` 中 `base` 为 `/`
@@ -103,6 +101,13 @@ VITE_BASE_ENV="development"
 ### Netlify
 
 - [Status badges - Netlify](https://docs.netlify.com/monitor-sites/status-badges/)
+
+注意, 须在 `Netlify` 后台添加环境变量:
+
+```dotenv
+# 这将使 `.vitepress/config.ts` 中 `base` 为 `/`
+VITE_BASE_ENV="development"
+```
 
 ### Docker
 

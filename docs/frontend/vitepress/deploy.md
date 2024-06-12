@@ -59,6 +59,67 @@ chmod 777 deploy.sh
 <<< @/.github/workflows/deploy.yml
 :::
 
+### Netlify
+
+- [Vercel](https://vitepress.dev/guide/deploy#netlify-vercel-cloudflare-pages-aws-amplify-render)
+
+注意, 须在 `Netlify` 后台添加环境变量:
+
+```dotenv
+# 这将使 `.vitepress/config.ts` 中 `base` 为 `/`
+VITE_BASE_ENV="development"
+```
+
+配置文件为 `netlify.toml`:
+
+::: details netlify.toml
+<<< @/netlify.toml
+:::
+
+### Vercel
+
+- [Vercel](https://vitepress.dev/guide/deploy#netlify-vercel-cloudflare-pages-aws-amplify-render)
+
+注意, 须在 `Vercel` 后台添加环境变量:
+
+```dotenv
+# 这将使 `.vitepress/config.ts` 中 `base` 为 `/`
+VITE_BASE_ENV="development"
+```
+
+配置文件为 `vercel.json`:
+
+::: details vercel.json
+<<< @/vercel.json
+:::
+
+### AWS Amplify
+
+- [AWS Amplify](https://vitepress.dev/guide/deploy#netlify-vercel-cloudflare-pages-aws-amplify-render)
+
+::: details amplify-explicit.yml
+<<< @/amplify-explicit.yml
+:::
+
+### Cloudflare
+
+- [Git integration guide - Cloudflare Pages](https://developers.cloudflare.com/pages/get-started/git-integration/)
+
+  仅支持 `GitHub` 和 `GitLab` 平台
+
+注意, 须在 `Cloudflare` 后台添加环境变量:
+
+```dotenv
+# 这将使 `.vitepress/config.ts` 中 `base` 为 `/`
+VITE_BASE_ENV="development"
+```
+
+配置文件为 `wrangler.toml`:
+
+::: details wrangler.toml
+<<< @/wrangler.toml
+:::
+
 ## Nginx 配置
 
 - [Nginx](https://vitepress.dev/guide/deploy#nginx)

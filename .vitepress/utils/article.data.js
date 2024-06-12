@@ -10,9 +10,7 @@ export default {
       .map(file => {
         const content = fs.readFileSync(file, 'utf-8');
 
-        const {data} = grayMatter(content);
-
-        console.log(file);
+        const { data } = grayMatter(content);
 
         // title path description tags author
         // TODO created date

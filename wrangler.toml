@@ -1,0 +1,12 @@
+# schema https://github.com/cloudflare/workers-sdk/files/12887590/wrangler.schema.json
+
+name = "knowledge-base"
+
+# Build command
+build.command = "pnpm docs:build"
+
+# Build output directory
+pages_build_output_dir = ".vitepress/dist"
+
+[vars]
+VITE_BASE_ENV = "development"
