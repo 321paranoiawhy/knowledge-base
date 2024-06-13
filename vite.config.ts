@@ -12,7 +12,6 @@ import {GitChangelog, GitChangelogMarkdownSection} from '@nolebase/vitepress-plu
 
 export default defineConfig(({command, mode}) => {
   const env = loadEnv(mode, 'env', 'VITE_');
-  console.log(env);
 
   return {
     optimizeDeps: {

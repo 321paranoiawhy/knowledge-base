@@ -112,6 +112,8 @@ npx @react-native-community/cli doctor
 
 ### Entry point
 
+`app.json`:
+
 ```json
 {
   "main": "expo-router/entry"
@@ -123,7 +125,7 @@ npx @react-native-community/cli doctor
 `Hermes` 是专门针对 `React Native` 应用而优化的全新开源 `JavaScript` 引擎,
 启用 `Hermes` 可以优化应用启动时间、减少内存和空间占用。
 
-在 `React Native` 旧版本上默认使用 `JavaScript Core`引擎, 自`React Native 0.70`版本开始, 默认启用`Hermes` 引擎。
+在 `React Native` 旧版本上默认使用 `JavaScript Core` 引擎, 自 `React Native 0.70` 版本开始, 默认启用 `Hermes` 引擎。
 
 验证该引擎是否开启:
 
@@ -135,9 +137,9 @@ const isHermes = () => !!global.HermesInternal;
 
 - [Style -reactnative.dev](https://reactnative.dev/docs/style)
 
-#### 内联样式 style={{}}
+#### 内联样式 <code v-pre>style={{}}</code>
 
-使用内联样式:
+使用内联样式 <code v-pre>style={{}}</code>:
 
 ```tsx
 <View
@@ -378,10 +380,10 @@ pnpm start -c
 />
 
 // Text 使用 onTextLayout
-<Text onTextLayout={e=>console.log(e,e.lines)}/>
+<Text onTextLayout={e => console.log(e,e.lines)}/>
 ```
 
-### Font
+### `Font` 字体
 
 - [Expo Font](https://docs.expo.dev/versions/latest/sdk/font/)
 
@@ -503,10 +505,6 @@ export default function Page() {
 - [Role Based Navigation in React Native with Expo Router](https://galaxies.dev/react-native-role-based-navigation)
 - [Authentication in Expo Router](https://docs.expo.dev/router/reference/authentication/)
 
-### 真机调试
-
-- [Expo CLI](https://docs.expo.dev/more/expo-cli/)
-
 ### 平台相关适配
 
 - 使用 `Platform` 判断当前平台:
@@ -520,11 +518,11 @@ export default function Page() {
 
   `Platform.OS` 枚举值为:
 
-  - "ios"
-  - "android"
-  - "windows"
-  - "macos"
-  - "web"
+  - `ios`
+  - `android`
+  - `windows`
+  - `macos`
+  - `web`
 
   上述代码可被 `tree-shaking`, 即仅出现在相应平台, 而非全平台, [See Platform shaking](https://docs.expo.dev/guides/tree-shaking/#platform-shaking)
 

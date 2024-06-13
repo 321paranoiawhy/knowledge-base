@@ -14,7 +14,12 @@ import '@nolebase/vitepress-plugin-enhanced-readabilities/client/style.css';
 
 import {NolebaseHighlightTargetedHeading} from '@nolebase/vitepress-plugin-highlight-targeted-heading/client';
 import '@nolebase/vitepress-plugin-highlight-targeted-heading/client/style.css';
-// import BackToTop from './components/back-to-top.vue';
+
+if ([true, 'true'].includes(import.meta.env.VITE_HEADING_BEFORE)) {
+  import('./styles/heading/heading-before.css');
+} else if ([true, 'true'].includes(import.meta.env.VITE_HEADING_AFTER)) {
+  import('./styles/heading/heading-after.css');
+}
 
 const {isDark} = useData();
 
@@ -85,12 +90,17 @@ onMounted(async () => {
 <template>
   <!-- eslint-disable-next-line vue/component-name-in-template-casing -->
   <DefaultTheme.Layout>
-    <!--    https://vitepress.dev/guide/extending-default-theme#layout-slots -->
-    <!--    https://github.com/vuejs/vitepress/blob/main/src/client/theme-default/Layout.vue -->
+    <!-- https://vitepress.dev/guide/extending-default-theme#layout-slots -->
+    <!-- https://github.com/vuejs/vitepress/blob/main/src/client/theme-default/Layout.vue -->
     <template #doc-before>
       <breadcrumb />
       <!-- TODO 字数统计和阅读时长 -->
       <page-info words="" reading-time=""></page-info>
+    </template>
+    <template #layout-bottom>
+      <div class="c-[var(--vp-c-text-1)] text-center wocao" mb-8 flex-1>
+        Copyright © 2024 WHY の 自留地. Built with Vitepress & 💕.
+      </div>
     </template>
     <template #doc-footer-before>
       <copy-right />
@@ -105,5 +115,6 @@ onMounted(async () => {
     <template #nav-screen-content-after>
       <nolebase-enhanced-readabilities-screen-menu />
     </template>
+    hhh
   </DefaultTheme.Layout>
 </template>

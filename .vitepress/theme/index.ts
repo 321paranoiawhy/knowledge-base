@@ -61,7 +61,7 @@ export default {
     );
   },
   setup() {
-    const {frontmatter} = toRefs(useData());
+    const {frontmatter} = useData();
     const route = useRoute();
 
     const initZoom = () => {
@@ -78,7 +78,6 @@ export default {
       () => nextTick(() => initZoom())
     );
 
-    // TODO 更改 giscus 配置
     // https://giscus.app/zh-CN
     // https://github.com/settings/installations/51129315
     giscusTalk(

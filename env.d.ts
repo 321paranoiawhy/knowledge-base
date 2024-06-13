@@ -4,6 +4,8 @@ interface IEnv {
   readonly VITE_REPO_NAME: string;
   readonly VITE_GITHUB_URL: string;
   readonly VITE_BASE_ENV: 'development' | 'test' | 'production';
+  readonly VITE_HEADING_BEFORE: boolean;
+  readonly VITE_HEADING_AFTER: boolean;
 }
 
 interface ImportMeta {

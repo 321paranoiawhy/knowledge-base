@@ -26,7 +26,14 @@ watch(
 
 <template>
   <div v-if="$frontmatter.breadcrumb && breadcrumb?.length > 1" flex items-center>
-    <a :href="withBase('/')" flex items-center fw-500 underline class="hover:text-[--vp-c-brand-2]">
+    <a
+      :href="withBase('/')"
+      flex
+      items-center
+      fw-500
+      underline
+      class="text-[--vp-c-brand-1] hover:text-[--vp-c-brand-2]"
+    >
       <svg i-mdi:home w-1em h-1em mr-1></svg>
       Home
     </a>
@@ -39,7 +46,7 @@ watch(
         inline-block
         underline
         fw-500
-        class="hover:text-[--vp-c-brand-2]"
+        class="text-[--vp-c-brand-1] hover:text-[--vp-c-brand-2]"
       >
         {{ item }}
       </a>
