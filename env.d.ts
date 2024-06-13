@@ -6,6 +6,7 @@ interface IEnv {
   readonly VITE_BASE_ENV: 'development' | 'test' | 'production';
   readonly VITE_HEADING_BEFORE: boolean;
   readonly VITE_HEADING_AFTER: boolean;
+  readonly VITE_HEADING_NUMBER: boolean;
 }
 
 interface ImportMeta {

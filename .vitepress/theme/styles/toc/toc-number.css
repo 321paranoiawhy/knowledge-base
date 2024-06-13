@@ -1,0 +1,9 @@
+.aside nav.VPDocAsideOutline ul {
+  counter-reset: section;
+  list-style-type: none;
+}
+
+.aside nav.VPDocAsideOutline ul a.outline-link::before {
+  counter-increment: section;
+  content: counters(section, '.') '. ';
+}

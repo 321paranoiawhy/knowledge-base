@@ -21,6 +21,14 @@ if ([true, 'true'].includes(import.meta.env.VITE_HEADING_BEFORE)) {
   import('./styles/heading/heading-after.css');
 }
 
+if ([true, 'true'].includes(import.meta.env.VITE_HEADING_NUMBER)) {
+  import('./styles/heading/heading-number.css');
+}
+
+if ([true, 'true'].includes(import.meta.env.VITE_TOC_NUMBER)) {
+  import('./styles/toc/toc-number.css');
+}
+
 const {isDark} = useData();
 
 function enableTransitions() {
