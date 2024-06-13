@@ -133,6 +133,24 @@ const isHermes = () => !!global.HermesInternal;
 
 ### 样式
 
+- [Style -reactnative.dev](https://reactnative.dev/docs/style)
+
+#### 内联样式 style={{}}
+
+使用内联样式:
+
+```tsx
+<View
+  style={{
+    flex: 1,
+    justifyContent: 'center',
+    alignItems: 'center'
+  }}
+></View>
+```
+
+#### `StyleSheet.create({})`
+
 使用 `StyleSheet.create({})`:
 
 ```tsx
@@ -155,67 +173,44 @@ const styles = StyleSheet.create({
 注意:
 
 - `React Native` 不支持 `CSS` 伪类选择器, 如 `::before` 和 `::after`
-
-- [Styled Components](https://styled-components.com/)
-
-  ```tsx
-  import styled from 'styled-components';
-
-  const Button = styled.button`
-    background: transparent;
-    border-radius: 3px;
-    border: 2px solid #bf4f74;
-    color: #bf4f74;
-    margin: 0 1em;
-    padding: 0.25em 1em;
-  `;
-  ```
-
+- 不支持渐变色, 可使用
+  - [react-native-linear-gradient](https://github.com/react-native-linear-gradient/react-native-linear-gradient)
+  - [Expo LinearGradient](https://docs.expo.dev/versions/latest/sdk/linear-gradient/)
 - [CSS to React Native](https://csstox.surge.sh/)
 
   - 将 `CSS` 样式转换为 `React Native Stylesheet Objects`
   - [csstox GitHub 源码](https://github.com/jamesgeorge007/csstox)
   - [css-to-react-native](https://github.com/styled-components/css-to-react-native/tree/master)
 
-TODO
-
-- 使用原子类 `UnoCSS`
+- 可使用适配 `RN` 的 `CSS` 原子类工具 `nativewind`
 
 尺寸单位:
 
 - `px`, {width: 50}, 表示 `50px` (`50` 不带单位)
 - 百分比, 相对于**屏幕**的百分比尺寸
 
-### 清除缓存
+#### `nativewind`
 
-```bash
-# https://docs.expo.dev/router/installation/#clear-bundler-cache
-pnpm start -c
-```
+- [Install tailwind using postcss](https://tailwindcss.com/docs/installation/using-postcss)
+- [nativewind expo example](https://github.com/nativewind/nativewind/tree/next/examples/expo)
 
-### 判断系统
-
-```tsx
-import {Platform} from 'react-native';
-
-// TODO 枚举值为
-console.log(Platform.OS);
-```
-
-### `Routing` 路由
-
-- [File-based routing](https://docs.expo.dev/develop/file-based-routing/)
-
-借助于 `expo-router` 包, 可实现基于文件的路由系统 (类 `Next` 和 `Nuxt` 元框架)
-
-### `nativewind`
+`nativewind` 是适配 `RN` 的 `CSS` 原子类工具, 须配合 `tailwindcss`、`postcss` 和 `autoprefixer` 使用:
 
 ```bash
 pnpm add nativewind@2.0.11
 
 pnpm add tailwindcss@3.3.2 -D
 pnpm add postcss autoprefixer -D
+
+# web support
+pnpm add @expo/webpack-config postcss-loader -D
 ```
+
+::: Caution
+必须锁死 `tailwindcss` 版本 `tailwindcss@3.3.`, 否则会出现问题:
+
+[Use process(css).then(cb) to work with async plugins](https://stackoverflow.com/questions/76688256/getting-error-use-processcss-thencb-to-work-with-async-plugins)
+:::
 
 `babel.config.js`:
 
@@ -303,6 +298,211 @@ import clsx from 'clsx';
 const classes = clsx('foo', true && 'bar', 'baz');
 ```
 
+#### `Styled Components`
+
+- [Styled Components](https://styled-components.com/)
+
+```tsx
+import styled from 'styled-components';
+
+const Button = styled.button`
+  background: transparent;
+  border-radius: 3px;
+  border: 2px solid #bf4f74;
+  color: #bf4f74;
+  margin: 0 1em;
+  padding: 0.25em 1em;
+`;
+```
+
+### 仅开发生效
+
+```tsx
+if (process.env.NODE_ENV === 'development') {
+  console.log('Hello in development');
+}
+
+if (__DEV__) {
+  console.log('Another development-only conditional...');
+}
+```
+
+在开发时上述代码会被保留, 生产环境则会被移除以提高性能
+
+### 产物和性能分析
+
+- [Analyzing JavaScript bundles](https://docs.expo.dev/guides/analyzing-bundles/)
+
+### 更改默认端口号 8081
+
+- [Using a port other than 8081](https://reactnative.dev/docs/next/troubleshooting#using-a-port-other-than-8081)
+
+`RN` 运行到 `web` 时默认端口号为 `8081`,
+如该端口被占用, 会提示使用其它端口, 但需要用户手动确认, 一方面端口号可能不固定, 另一方面增加了手动确认端口号的额外步骤.
+
+因此更好的解决方案是设定一个较大的、极少可能被占用的端口号,
+如指定端口号为 `8085`:
+
+```json
+{
+  "scripts": {
+    "web": "expo start --web --port=8085"
+  }
+}
+```
+
+### 清除缓存
+
+```bash
+# https://docs.expo.dev/router/installation/#clear-bundler-cache
+pnpm start -c
+# npx start -c
+```
+
+### 获取组件尺寸
+
+- [LayoutEvent Object Type](https://reactnative.dev/docs/layoutevent)
+- [TextLayoutEvent](https://reactnative.dev/docs/text#textlayoutevent)
+
+```tsx
+// view 使用 onLayout
+<View
+  onLayout={e => {
+    // 组件自身尺寸
+    this.viewWidth = e.nativeEvent.layout.width;
+    this.viewHeight = e.nativeEvent.layout.height;
+    // 屏幕尺寸
+    this.screenWidth = Dimensions.gert('window').width;
+    this.screenHeight = Dimensions.get('window').height;
+  }}
+/>
+
+// Text 使用 onTextLayout
+<Text onTextLayout={e=>console.log(e,e.lines)}/>
+```
+
+### Font
+
+- [Expo Font](https://docs.expo.dev/versions/latest/sdk/font/)
+
+### `Routing` 路由
+
+- [File-based routing](https://docs.expo.dev/develop/file-based-routing/)
+
+借助于 `expo-router` 包, 可实现基于文件的路由系统 (类 `Next` 和 `Nuxt` 元框架), 同时提供静态类型, 开发时可自动补齐
+
+::: tip 根目录下 `expo-env.d.ts`
+
+- 不应被提交至 `git`, 须添加至 `.gitignore`
+- 须存在于 `tsconfig.json` 文件 `include` 字段中
+
+:::
+
+#### 入口目录由 `app` 更改为 `src`
+
+- [Can I use /app inside /src #41](https://github.com/expo/router/issues/41)
+- [Top-level src directory](https://docs.expo.dev/router/reference/src-directory/)
+
+#### 平台相关路由
+
+不支持条件编译写法, 但支持文件后缀名的平台路由:
+
+- `app/index.tsx`
+- `app/index.web.tsx`
+- `app/index.android.tsx`
+- `app/index.ios.tsx`
+
+#### 路由跳转
+
+使用 `Link` 标签 (引入自 `expo-router`):
+
+```tsx
+import {View} from 'react-native';
+import {Link} from 'expo-router';
+
+export default function Page() {
+  return (
+    <View>
+      <Link href="/about">About</Link>
+      {/* ...other links */}
+      <Link href="/user/bacon">View user</Link>
+    </View>
+  );
+}
+```
+
+`Link` 标签可传入 `asChild` 参数:
+
+```tsx
+import {Pressable, Text} from 'react-native';
+import {Link} from 'expo-router';
+
+export default function Page() {
+  return (
+    <Link href="/other" asChild>
+      <Pressable>
+        <Text>To other page</Text>
+      </Pressable>
+    </Link>
+  );
+}
+```
+
+`Link` 标签可传入 `push` 和 `replace` 参数, 表示往路由栈中追加路由或替换路由, 如不传入, 则使用默认策略:
+跳转至最近的路由, 即路由栈中已存在该路由则跳转回去, 不存在则追加路由
+
+使用 `router` 声明式导航:
+
+```tsx
+import {router} from 'expo-router';
+
+export function logout() {
+  router.replace('/login');
+}
+```
+
+`router` 是不可变对象, 有以下导航方法:
+
+- `navigate` 导航至某页面
+- `push` 追加并导航至新页面
+- `replace` 替换当前页面
+- `back` 返回上一级页面
+- `dismiss` 关闭多级页面
+- `dismissAll` 关闭所有页面
+- `canDismiss` 是否可以关闭当前页面, 即路由栈是否仅有一个路由
+- `canGoBack` 是否可以向上返回, 即该路由是否位于路由栈栈底
+- `setParams` 更新当前路由的查询参数 `query params`
+
+或使用 `useRouter` 声明式导航:
+
+```tsx
+import {useRouter} from 'expo-router';
+
+function toAbout() {
+  const router = useRouter();
+
+  router.push('/about');
+}
+```
+
+使用 `useLocalSearchParams` 获取查询参数 `query parameters`:
+
+```tsx
+import {Text} from 'react-native';
+import {useLocalSearchParams} from 'expo-router';
+
+export default function Page() {
+  const {query} = useLocalSearchParams<{query?: string}>();
+
+  return <Text>Search: {query ?? 'unset'}</Text>;
+}
+```
+
+#### 登录相关
+
+- [Role Based Navigation in React Native with Expo Router](https://galaxies.dev/react-native-role-based-navigation)
+- [Authentication in Expo Router](https://docs.expo.dev/router/reference/authentication/)
+
 ### 真机调试
 
 - [Expo CLI](https://docs.expo.dev/more/expo-cli/)
@@ -318,13 +518,15 @@ const classes = clsx('foo', true && 'bar', 'baz');
   console.log(Platform.OS);
   ```
 
-  枚举值为:
+  `Platform.OS` 枚举值为:
 
   - "ios"
   - "android"
   - "windows"
   - "macos"
   - "web"
+
+  上述代码可被 `tree-shaking`, 即仅出现在相应平台, 而非全平台, [See Platform shaking](https://docs.expo.dev/guides/tree-shaking/#platform-shaking)
 
 - `app` 目录下文件名不可出现平台相关文本
 
@@ -346,6 +548,10 @@ const classes = clsx('foo', true && 'bar', 'baz');
   ```
 
   则在 `web/android/ios` 平台上将展示各自组件内容, 其余平台则按 `components/about/index.tsx` 展示
+
+::: tip
+上述特性在 `Expo Router 3.5.x` 中引入, 低版本可[参考](https://docs.expo.dev/router/advanced/platform-specific-modules/)
+:::
 
 ### `Storybook`
 
