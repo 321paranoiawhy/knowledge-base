@@ -500,6 +500,34 @@ export default function Page() {
 }
 ```
 
+#### 路由文件命名
+
+路由文件名在 `web` 平台上会成为 `url` 的一部分, 因此推荐路由文件使用 `kebab-case` 命名, 如 `app/get-started.tsx`
+
+::: tip
+可查看 `.expo/types/router.d.ts` 文件中 `type StaticRoutes` 静态路由联合类型
+:::
+
+#### 报错
+
+> Attempted to navigate before mounting the Root Layout component. Ensure the Root Layout component is rendering a Slot, or other navigator on the first render
+
+原因是在路由文件里直接 `router.replace()`, 可使用 `useEffect`:
+
+```tsx
+// dont't do this directly
+// setTimeout(() => {
+//   router.replace('/home');
+// }, 3000);
+
+// wrap it in useEffect
+useEffect(() => {
+  setTimeout(() => {
+    router.replace('/home');
+  }, 3000);
+}, []);
+```
+
 #### 登录相关
 
 - [Role Based Navigation in React Native with Expo Router](https://galaxies.dev/react-native-role-based-navigation)
@@ -693,3 +721,60 @@ pnpm add np react-native-version  -D
   }
 }
 ```
+
+## 功能
+
+### `Toast` 轻提示
+
+- [Display a popup toast - Expo Docs](https://docs.expo.dev/ui-programming/react-native-toast/)
+- [react-native-root-tips](https://github.com/openUmbrella/react-native-root-tips)
+- [react-native-toast-message](https://github.com/calintamas/react-native-toast-message)
+- [react-native-root-toast](https://github.com/magicismight/react-native-root-toast)
+
+  基于 [react-native-root-siblings](https://github.com/magicismight/react-native-root-siblings) 实现
+
+```bash
+pnpm add react-native-root-siblings react-native-root-toast
+```
+
+```tsx
+import Toast from 'react-native-root-toast';
+
+let toast = Toast.show('Success', {
+  duration: Toast.durations.LONG
+});
+
+Toast.hide(toast);
+
+<Toast visible={visible}>Thanks for subscribing!</Toast>;
+```
+
+### `Loading` 加载效果
+
+### `Network` 全局网络监听
+
+### 图片放大查看
+
+TODO `medium-zoom`
+
+### `Icons` 图标
+
+- [react-native-vector-icons](https://github.com/oblador/react-native-vector-icons)
+
+### `Chat` 聊天
+
+- [react-native-gifted-chat](https://github.com/FaridSafi/react-native-gifted-chat)
+
+### `List` 高性能长列表
+
+- [react-native-gifted-listview](https://github.com/FaridSafi/react-native-gifted-listview)
+
+### `Dropdown` 下拉列表
+
+- [react-native-element-dropdown](https://www.npmjs.com/package/react-native-element-dropdown)
+
+### 国际化
+
+- [facebook fbt](https://github.com/facebook/fbt)
+
+  - [fbt rn demo](https://github.com/facebook/fbt/tree/rn-demo-app)
