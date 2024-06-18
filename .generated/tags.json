@@ -14,119 +14,159 @@
     "path": "docs/backend/python/astro"
   },
   {
+    "title": "get-started",
     "author": "why",
     "description": "",
     "tags": [],
     "path": "docs/frontend/react-native/get-started"
   },
   {
+    "title": "调研",
     "author": "why",
     "description": "",
     "tags": [],
     "path": "docs/frontend/react-native/调研"
   },
   {
+    "title": "get-started",
     "author": "why",
     "description": "",
-    "tags": ["UniAPP", "踩坑记录"],
+    "tags": [],
+    "path": "docs/frontend/react/get-started"
+  },
+  {
+    "title": "uniapp 踩坑记录",
+    "author": "why",
+    "description": "",
+    "tags": [
+      "UniAPP",
+      "踩坑记录"
+    ],
     "path": "docs/frontend/uniapp/uniapp 踩坑记录"
   },
   {
     "title": "Vitepress Basic",
     "author": "why",
     "description": "",
-    "tags": ["Vitepress"],
+    "tags": [
+      "Vitepress"
+    ],
     "path": "docs/frontend/vitepress/basic"
   },
   {
     "title": "Vitepress Customize",
     "author": "why",
     "description": "",
-    "tags": ["Vitepress"],
+    "tags": [
+      "Vitepress"
+    ],
     "path": "docs/frontend/vitepress/customize"
   },
   {
+    "title": "deploy",
     "author": "why",
     "description": "",
     "tags": [],
     "path": "docs/frontend/vitepress/deploy"
   },
   {
+    "title": "README",
     "author": "why",
     "description": "",
     "tags": [],
     "path": "docs/frontend/代码指南/README"
   },
   {
+    "title": "coding-style",
     "author": "why",
     "description": "",
     "tags": [],
     "path": "docs/frontend/代码指南/coding-style"
   },
   {
+    "title": "css",
     "author": "why",
     "description": "",
     "tags": [],
     "path": "docs/frontend/代码指南/css"
   },
   {
+    "title": "directory-structure",
     "author": "why",
     "description": "",
     "tags": [],
     "path": "docs/frontend/代码指南/directory-structure"
   },
   {
+    "title": "git",
     "author": "why",
     "description": "",
     "tags": [],
     "path": "docs/frontend/代码指南/git"
   },
   {
+    "title": "html",
     "author": "why",
     "description": "",
     "tags": [],
     "path": "docs/frontend/代码指南/html"
   },
   {
+    "title": "js",
     "author": "why",
     "description": "",
     "tags": [],
     "path": "docs/frontend/代码指南/js"
   },
   {
+    "title": "react",
     "author": "why",
     "description": "",
     "tags": [],
     "path": "docs/frontend/代码指南/react"
   },
   {
+    "title": "tools",
     "author": "why",
     "description": "",
     "tags": [],
     "path": "docs/frontend/代码指南/tools"
   },
   {
+    "title": "ts",
     "author": "why",
     "description": "",
     "tags": [],
     "path": "docs/frontend/代码指南/ts"
   },
   {
+    "title": "vitepress",
     "author": "why",
     "description": "",
     "tags": [],
     "path": "docs/frontend/代码指南/vitepress"
   },
   {
+    "title": "vue",
     "author": "why",
     "description": "",
     "tags": [],
     "path": "docs/frontend/代码指南/vue"
   },
   {
+    "title": "nginx",
     "author": "why",
     "description": "",
-    "tags": ["Tools"],
+    "tags": [],
+    "path": "docs/tools/all-in-one/nginx"
+  },
+  {
+    "title": "工具合集",
+    "author": "why",
+    "description": "",
+    "tags": [
+      "Tools"
+    ],
     "path": "docs/tools/all-in-one/工具合集"
   }
 ]

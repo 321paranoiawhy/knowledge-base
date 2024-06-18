@@ -97,7 +97,12 @@
   "/docs/frontend/react/": [
     {
       "text": "<span class=\"i-logos:react w-1em h-1em inline-block v-mid mr-4px\"></span>React",
-      "items": []
+      "items": [
+        {
+          "text": "Get Started",
+          "link": "/docs/frontend/react/get-started"
+        }
+      ]
     }
   ],
   "/docs/frontend/react-native/": [
@@ -172,7 +177,7 @@
           "link": "/docs/frontend/代码指南/coding-style"
         },
         {
-          "text": "Css",
+          "text": "CSS",
           "link": "/docs/frontend/代码指南/css"
         },
         {
@@ -184,11 +189,11 @@
           "link": "/docs/frontend/代码指南/git"
         },
         {
-          "text": "Html",
+          "text": "HTML",
           "link": "/docs/frontend/代码指南/html"
         },
         {
-          "text": "Js",
+          "text": "JS",
           "link": "/docs/frontend/代码指南/js"
         },
         {
@@ -204,7 +209,7 @@
           "link": "/docs/frontend/代码指南/tools"
         },
         {
-          "text": "Ts",
+          "text": "TS",
           "link": "/docs/frontend/代码指南/ts"
         },
         {

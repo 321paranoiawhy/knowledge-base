@@ -10,14 +10,23 @@ export default {
       .map(file => {
         const content = fs.readFileSync(file, 'utf-8');
 
-        const { data } = grayMatter(content);
+        const {data} = grayMatter(content);
+
+        const lastSplashIndex = file.lastIndexOf('/');
+        let fileName = '';
+
+        if (~lastSplashIndex) {
+          fileName = file.slice(lastSplashIndex + 1).replace('.md', '');
+        } else {
+          fileName = file.replace('.md', '');
+        }
 
         // title path description tags author
         // TODO created date
         // TODO last updated date
         return {
           // ...data,
-          title: data.title,
+          title: data.title || fileName,
           // TODO default author
           author: data.author || 'why',
           description: data.description || '',

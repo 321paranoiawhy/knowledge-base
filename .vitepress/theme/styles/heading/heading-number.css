@@ -1,3 +1,4 @@
+/* vp-doc 标题自 h1 始 (如有) */
 .vp-doc {
   counter-reset: h1;
 }

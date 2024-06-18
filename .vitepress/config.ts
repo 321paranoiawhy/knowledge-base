@@ -75,8 +75,8 @@ export default defineConfig({
       light: 'vitesse-light',
       dark: 'vitesse-dark'
     },
-    // 所有 code block 均显示行号
-    lineNumbers: true,
+    // 所有 code block 是否显示行号
+    lineNumbers: false,
     // 支持数学公式 (基于 markdown-it-mathjax3)
     math: true,
     image: {

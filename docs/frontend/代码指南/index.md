@@ -1,14 +1,14 @@
 # 代码指南
 
 - [Coding Style](./coding-style.md)
-- [Css](./css.md)
+- [CSS](./css.md)
 - [Directory Structure](./directory-structure.md)
 - [Git](./git.md)
-- [Html](./html.md)
-- [Js](./js.md)
+- [HTML](./html.md)
+- [JS](./js.md)
 - [React](./react.md)
 - [README](./README.md)
 - [Tools](./tools.md)
-- [Ts](./ts.md)
+- [TS](./ts.md)
 - [Vitepress](./vitepress.md)
 - [Vue](./vue.md)

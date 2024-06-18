@@ -6,7 +6,7 @@ import {transformFileName} from './index.js';
  * 须全大写的技术栈
  * @type {string[]}
  */
-const ALL_CAPITALIZE_STACK = ['php'];
+const ALL_CAPITALIZE_STACK = ['php', 'html', 'css', 'js', 'ts'];
 
 const READ_DIR_OPTIONS = {withFileTypes: false, encoding: 'utf-8', recursive: false};
 
@@ -81,7 +81,10 @@ fs.readdirSync(DOCS_ROOT_PATH, READ_DIR_OPTIONS).forEach(name => {
           });
           return;
         }
-        const transformFileNameWithoutExtension = transformFileName(fileNameWithoutExtension);
+        const transformFileNameWithoutExtension = transformFileName(
+          fileNameWithoutExtension,
+          ALL_CAPITALIZE_STACK.includes(fileNameWithoutExtension)
+        );
         currentSidebarItems.push({
           text: transformFileNameWithoutExtension,
           link: `/docs/${name}/${folder}/${fileNameWithoutExtension}`

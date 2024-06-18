@@ -66,14 +66,18 @@ function debounce(func: Function, timeout = 100) {
   </transition>
 </template>
 
-<style scoped>
+<style scoped lang="scss">
 .back-to-top {
   box-shadow: 0 2px 12px #0000001a;
 }
 
 @media (max-width: 959px) {
   .back-to-top {
-    display: none;
+    right: -18px !important;
+    transition: right 0.25s ease-in-out;
+    &:hover {
+      right: 8px !important;
+    }
   }
 }
 

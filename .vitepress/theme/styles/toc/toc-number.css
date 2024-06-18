@@ -1,9 +1,15 @@
-.aside nav.VPDocAsideOutline ul {
+/* TOC 自二级标题始 (如有) */
+
+/* pc */
+.aside nav.VPDocAsideOutline ul,
+/* mobile */
+.VPLocalNavOutlineDropdown .outline ul {
   counter-reset: section;
   list-style-type: none;
 }
 
-.aside nav.VPDocAsideOutline ul a.outline-link::before {
+.aside nav.VPDocAsideOutline ul a.outline-link::before,
+.VPLocalNavOutlineDropdown ul a.outline-link::before {
   counter-increment: section;
   content: counters(section, '.') '. ';
 }
