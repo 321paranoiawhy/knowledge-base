@@ -133,14 +133,3 @@ import {ref} from 'vue';
 const message = ref('Hello world!');
 </script>
 ```
-
-## 数学公式
-
-When $a \ne 0$, there are two solutions to $(ax^2 + bx + c = 0)$ and they are
-$$ x = {-b \pm \sqrt{b^2-4ac} \over 2a} $$
-
-[//]: # ':::preview title || component description content'
-[//]: #
-[//]: # 'demo-preview=./.vitepress/theme/components/demo-test.vue'
-[//]: #
-[//]: # ':::'

@@ -25,10 +25,11 @@ if ([true, 'true'].includes(import.meta.env.VITE_HEADING_NUMBER)) {
   import('./styles/heading/heading-number.css');
 }
 
-console.log(typeof import.meta.env.VITE_TOC_NUMBER);
 if ([true, 'true'].includes(import.meta.env.VITE_TOC_NUMBER)) {
   import('./styles/toc/toc-number.css');
 }
+
+// import './styles/list/rainbow-indents.css';
 
 const {isDark} = useData();
 
@@ -126,3 +127,17 @@ onMounted(async () => {
     </template>
   </DefaultTheme.Layout>
 </template>
+
+<!--<style lang="scss">-->
+<!--.vp-doc ul {-->
+<!--  position: relative;-->
+<!--  &:before {-->
+<!--    content: ' ';-->
+<!--    position: absolute;-->
+<!--    border-left: 1px solid red;-->
+<!--    left: 8px;-->
+<!--    top: 1.25em;-->
+<!--    bottom: 1.25em;-->
+<!--  }-->
+<!--}-->
+<!--</style>-->
