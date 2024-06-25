@@ -1,9 +1,8 @@
 ---
-# title: Vitepress Basic
 tags: ['UniAPP', '踩坑记录']
 ---
 
-# Uniapp 踩坑记录
+# `UniAPP` 踩坑记录
 
 ## `nav-bar`
 
@@ -53,7 +52,11 @@ module.exports = {
 };
 ```
 
-## 组件样式穿透失效
+## 样式穿透
+
+::: tip
+小程序默认只能页面穿透到组件, 而不能组件穿透到组件
+:::
 
 `Vue2` 项目可做如下配置:
 
@@ -72,7 +75,17 @@ export default {
 
 `Vue3` 在组件内除 `<script setup>` 外再新增一个 `<script>` 标签, 注意两个 `script` 标签 `lang` 属性值须一致, 否则编译报错。
 
-**小程序默认只页面穿透到组件, 而不能组件穿透到组件**
+```vue
+<script lang="ts">
+export default {
+  options: {
+    styleIsolation: 'shared'
+  }
+};
+</script>
+
+<script setup lang="ts"></script>
+```
 
 ## 不支持的 `API`
 
@@ -84,16 +97,16 @@ export default {
 
 ### `Vue`
 
-不支持以下 `API`:
+在 (微信) 小程序上不支持以下 `API`:
 
 - `keep-alive` 缓存组件
 - `component :is` 动态组件
 - 不支持自定义指令 `directives`
-- 不支持自定义过滤器 `filters`
+- 不支持自定义过滤器 `filters` (仅 `Vue 2` 支持, `Vue 3` 已移除过滤器)
 - 不支持内置指令 `v-html`/`v-once`
 - `transition`/`transition-group`
-- 小程序上不支持 `jsx/tsx`, `H5` 和 `Web` 平台支持, 须安装相应插件
-- 不支持 `Teleport` 和 `Suspense`
+- 小程序上不支持 `jsx/tsx`, `H5` 和 `Web` 平台支持, 但须安装相应插件
+- 不支持 `Teleport`、 `Suspense`、`defineModel` 等较新的 `API`
 
 ## `H5 scoped`
 
@@ -547,3 +560,128 @@ process.env.NODE_ENV;
   <!-- #endif  -->
 </view>
 ```
+
+## 动态样式
+
+使用 `v-bind:style=""` 而非 `:style=""`, 否则样式不生效
+
+## 页面间通信
+
+- `url` 单向通信:
+
+  `A` 页面向 `B` 页面传递参数:
+
+  ```js
+  uni.navigateTo({url: '/pages/exapme/example?id=1'});
+  ```
+
+  `B` 页面获取 `A` 页面传递的参数:
+
+  ```js
+  export default {
+    onLoad(option) {
+      console.log(option, option.id);
+    }
+  };
+  ```
+
+- 全局变量
+
+  - 存储全局变量于 `constant.js`
+  - 可挂载属性或方法至 `Vue.prototype`, 仅适用于 `vue` 文件 而不适用于 `nvue` 文件
+  - 在 `App.vue` 设置 `globalData`
+
+    ```js
+    export default {
+      globalData: {
+        example: 'example'
+      }
+    };
+    ```
+
+    在任何地方获取:
+
+    ```js
+    console.log(getApp().globalData.example);
+    ```
+
+- 本地存储 `uni.getStorageSync` 和 `uni.setStorageSync`
+- 全局事件总线 `uni.$on`、`uni.$emit`、`uni.$once`、`uni.$off`
+- 使用 `getCurrentPages`:
+
+  ```js
+  const pages = getCurrentPages();
+  const previousPageInstance = pages[pages.length - 2]?.$vm;
+  // 获取上一页面的数据
+  console.log(previousPageInstance.exampleData);
+  // 调用上一页面的方法
+  console.log(previousPageInstance.exampleMethod?.());
+  ```
+
+- 状态管理 `Vuex` 或 `Pinia`
+
+## 空格、换行处理
+
+仅 `text` 标签可识别 `\n` 字符串并实现换行:
+
+```vue
+<template>
+  <text>{{ message }}</text>
+</template>
+
+<script>
+export default {
+  data() {
+    return {
+      message: 'Line 1\nLine2\nLine3'
+    };
+  }
+};
+</script>
+```
+
+::: tip
+
+- 仅 `text` 标签支持 `\n` 换行, `view` 等标签不支持
+- 空格可输入 `&nbsp;`, 同样仅在 `text` 标签中支持
+- `span` 标签会被 `uniapp` 自动转换为 `text` 标签
+
+:::
+
+## 版本更新
+
+### 小程序
+
+- [小程序更新 - uniapp](https://zh.uniapp.dcloud.io/api/other/update.html)
+
+主要使用 `uni` 提供的以下 `API`:
+
+- `uni.getUpdateManager` 返回一个 `updateManager` 对象, 有以下几个方法:
+  - `onCheckForUpdate`
+  - `onUpdateReady`
+  - `onUpdateFailed`
+  - `applyUpdate`
+
+::: tip
+上述 `API` 仅支持小程序平台, 不支持 `H5` 和 `APP` 平台, 代码建议使用条件编译包裹:
+
+```js
+// #ifndef H5 || APP-PLUS
+// rest of the code
+// #endif
+```
+
+并在 `App.vue` 文件 `onLaunch` 中尽可能最先调用
+
+:::
+
+### APP
+
+- [APP版本更新、强制更新、漂亮的更新界面、IOS更新（跳转IOS store）、wgt更新](https://github.com/lilishop/lilishop-uniapp/blob/master/plugins/APPUpdate/APPUpdate.md)
+
+## 杂项
+
+### 页面根元素
+
+- 微信小程序上页面根元素为 `page` 标签
+- `H5` 上页面根元素为 `uni-page-body` 标签 (类似 `web components`)

@@ -29,6 +29,8 @@ if ([true, 'true'].includes(import.meta.env.VITE_TOC_NUMBER)) {
   import('./styles/toc/toc-number.css');
 }
 
+// import './styles/list/rainbow-indents.css';
+
 const {isDark} = useData();
 
 function enableTransitions() {
@@ -106,9 +108,9 @@ onMounted(async () => {
       <page-info words="" reading-time=""></page-info>
     </template>
     <template #layout-bottom>
-      <div class="c-[var(--vp-c-text-1)] text-center wocao" mb-8 flex-1>
-        Copyright © 2024 WHY の 自留地. Built with Vitepress & 💕.
-      </div>
+      <!--      <div class="c-[var(&#45;&#45;vp-c-text-2)] text-center wocao" mb-8 flex-1 v-if="$frontmatter?.layout !== 'home'">-->
+      <!--        Copyright © 2024 WHY の 自留地. Built with Vitepress & 💕.-->
+      <!--      </div>-->
     </template>
     <template #doc-footer-before>
       <copy-right />
@@ -123,6 +125,19 @@ onMounted(async () => {
     <template #nav-screen-content-after>
       <nolebase-enhanced-readabilities-screen-menu />
     </template>
-    hhh
   </DefaultTheme.Layout>
 </template>
+
+<!--<style lang="scss">-->
+<!--.vp-doc ul {-->
+<!--  position: relative;-->
+<!--  &:before {-->
+<!--    content: ' ';-->
+<!--    position: absolute;-->
+<!--    border-left: 1px solid red;-->
+<!--    left: 8px;-->
+<!--    top: 1.25em;-->
+<!--    bottom: 1.25em;-->
+<!--  }-->
+<!--}-->
+<!--</style>-->

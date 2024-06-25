@@ -64,6 +64,17 @@
       "items": []
     }
   ],
+  "/docs/frontend/css/": [
+    {
+      "text": "CSS",
+      "items": [
+        {
+          "text": "选择器",
+          "link": "/docs/frontend/css/选择器"
+        }
+      ]
+    }
+  ],
   "/docs/frontend/electron/": [
     {
       "text": "<span class=\"i-logos:electron w-1em h-1em inline-block v-mid mr-4px\"></span>Electron",
@@ -97,7 +108,12 @@
   "/docs/frontend/react/": [
     {
       "text": "<span class=\"i-logos:react w-1em h-1em inline-block v-mid mr-4px\"></span>React",
-      "items": []
+      "items": [
+        {
+          "text": "Get Started",
+          "link": "/docs/frontend/react/get-started"
+        }
+      ]
     }
   ],
   "/docs/frontend/react-native/": [
@@ -134,6 +150,10 @@
         {
           "text": "Uniapp 踩坑记录",
           "link": "/docs/frontend/uniapp/uniapp 踩坑记录"
+        },
+        {
+          "text": "深度定制",
+          "link": "/docs/frontend/uniapp/深度定制"
         }
       ]
     }
@@ -160,7 +180,12 @@
   "/docs/frontend/vue/": [
     {
       "text": "<span class=\"i-logos:vue w-1em h-1em inline-block v-mid mr-4px\"></span>Vue",
-      "items": []
+      "items": [
+        {
+          "text": "技术栈",
+          "link": "/docs/frontend/vue/技术栈"
+        }
+      ]
     }
   ],
   "/docs/frontend/代码指南/": [
@@ -168,11 +193,15 @@
       "text": "代码指南",
       "items": [
         {
+          "text": "README",
+          "link": "/docs/frontend/代码指南/README"
+        },
+        {
           "text": "Coding Style",
           "link": "/docs/frontend/代码指南/coding-style"
         },
         {
-          "text": "Css",
+          "text": "CSS",
           "link": "/docs/frontend/代码指南/css"
         },
         {
@@ -184,11 +213,11 @@
           "link": "/docs/frontend/代码指南/git"
         },
         {
-          "text": "Html",
+          "text": "HTML",
           "link": "/docs/frontend/代码指南/html"
         },
         {
-          "text": "Js",
+          "text": "JS",
           "link": "/docs/frontend/代码指南/js"
         },
         {
@@ -196,20 +225,12 @@
           "link": "/docs/frontend/代码指南/react"
         },
         {
-          "text": "README",
-          "link": "/docs/frontend/代码指南/README"
-        },
-        {
           "text": "Tools",
           "link": "/docs/frontend/代码指南/tools"
         },
         {
-          "text": "Ts",
+          "text": "TS",
           "link": "/docs/frontend/代码指南/ts"
-        },
-        {
-          "text": "Vitepress",
-          "link": "/docs/frontend/代码指南/vitepress"
         },
         {
           "text": "Vue",
@@ -253,6 +274,10 @@
         {
           "text": "工具合集",
           "link": "/docs/tools/all-in-one/工具合集"
+        },
+        {
+          "text": "跨平台开发",
+          "link": "/docs/tools/all-in-one/跨平台开发"
         }
       ]
     }

@@ -1,4 +1,6 @@
 <script setup lang="ts">
+import {useData} from 'vitepress';
+
 const props = withDefaults(
   defineProps<{
     threshold?: number;
@@ -45,35 +47,41 @@ function debounce(func: Function, timeout = 100) {
 <template>
   <!-- reference: https://github.com/wehuss/vitepress-plugin-back-to-top/blob/master/lib/back-to-top.vue -->
   <transition name="fade">
-    <div
-      class="back-to-top rounded-[50%] bg-[var(--vp-code-block-bg)] hover:bg-[var(--vp-code-bg)]"
-      w-36px
-      h-36px
-      p-0
-      bottom-2em
-      right-2.5em
-      cursor-pointer
-      fixed
-      z-999
-      flex
-      items-center
-      justify-center
-      @click="scrollToTop"
-      v-if="show"
-    >
-      <svg i-carbon:up-to-top w-1em h-1em class="color-[var(--vp-c-brand-1)]"></svg>
-    </div>
+    <el-tooltip :effect="useData().isDark ? 'dark' : 'light'" content="back to top" placement="top">
+      <div
+        class="back-to-top rounded-[50%] bg-[var(--vp-code-block-bg)] hover:bg-[var(--vp-code-bg)]"
+        w-36px
+        h-36px
+        p-0
+        bottom-2em
+        right-2.5em
+        cursor-pointer
+        fixed
+        z-999
+        flex
+        items-center
+        justify-center
+        @click="scrollToTop"
+        v-if="show"
+      >
+        <svg i-carbon:up-to-top w-1em h-1em class="color-[var(--vp-c-brand-1)]"></svg>
+      </div>
+    </el-tooltip>
   </transition>
 </template>
 
-<style scoped>
+<style scoped lang="scss">
 .back-to-top {
   box-shadow: 0 2px 12px #0000001a;
 }
 
 @media (max-width: 959px) {
   .back-to-top {
-    display: none;
+    right: -18px !important;
+    transition: right 0.25s ease-in-out;
+    &:hover {
+      right: 8px !important;
+    }
   }
 }
 

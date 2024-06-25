@@ -449,3 +449,50 @@ import {data as exampleData} from './example.data.js';
 这是一个脚注[^1]
 
 [^1]: 这是一个脚注
+
+## 数学公式
+
+When $a \ne 0$, there are two solutions to $(ax^2 + bx + c = 0)$ and they are:
+
+$$ x = {-b \pm \sqrt{b^2-4ac} \over 2a} $$
+
+## 列表彩虹大纲线
+
+- one
+  - two
+    - three
+      - four
+        - five
+          - six
+            - seven
+              - eight
+                - nine
+                  - ten
+                  - 10
+                - 9
+              - 8
+            - 7
+          - 6
+        - 5
+      - 4
+    - 3
+  - 2
+- 1
+
+![](https://user-images.githubusercontent.com/64155612/144135344-d58124d7-dec5-4e3d-9786-88630cf66e3e.png)
+
+- 1
+  - 1.1
+  - 1.2
+    - 1.2.1
+    - 1.2.2
+      - 1.2.2.1
+      - 1.2.2.2
+        -1.2.3
+  - 1.3
+- 2
+  - 2.1
+  - 2.2
+    - 2.2.1
+    - 2.2.2
+- 3

@@ -6,7 +6,7 @@ import {withBase} from 'vitepress';
 
 console.log(generatedArticleData);
 
-const articleMeta = [{tags: ['node', 'js', 'ts']}, {tags: ['fe', 'be', 'ts']}, {tags: ['我去', '我去', '我去']}];
+// const articleMeta = [{tags: ['node', 'js', 'ts']}, {tags: ['fe', 'be', 'ts']}, {tags: ['我去', '我去', '我去']}];
 
 // const tags = computed(() => initTags(articleMeta));
 const tags = computed(() => initTags(generatedArticleData));
@@ -45,7 +45,7 @@ let selectTag = ref('');
  * @param tag 新选中的标签
  * @param cancel 如果新旧标签一致, 是否取消该标签
  */
-const toggleTag = (tag: string, cancel = true) => {
+const toggleTag = (tag: string, cancel = false) => {
   if (selectTag.value && selectTag.value == tag && cancel) {
     selectTag.value = '';
 
@@ -113,11 +113,11 @@ function initWordCloud(tags: any) {
               <!-- 遍历对象 -->
               <el-tag
                 type="primary"
-                effect="plain"
+                :effect="selectTag === tagTitle ? 'dark' : 'plain'"
                 round
                 @click="toggleTag(tagTitle)"
                 v-for="(tag, tagTitle, index) in tags"
-                :key="tag"
+                :key="`${tag}-${index}`"
                 cursor-pointer
               >
                 <span class="tag-title" mr-1>{{ tagTitle }}</span>
@@ -126,8 +126,6 @@ function initWordCloud(tags: any) {
             </div>
           </el-card>
         </el-col>
-
-        {{ tags[selectTag] }}
         <!-- 文章列表区域 -->
         <el-col :span="24">
           <div v-if="selectTag && tags[selectTag]?.length" w-full>
@@ -142,9 +140,11 @@ function initWordCloud(tags: any) {
                 border-b-solid
                 :key="article.path"
               >
-                <a :href="withBase('/' + article.path)">{{ article.title || 'Title' }}</a>
+                <a :href="withBase('/' + article.path)">
+                  {{ article.title }}
+                </a>
                 <!-- TODO 文章元数据信息 -->
-                <!--                <ArticleMetadata :article="article" :key="md5(article.date)" />-->
+                <!--  <ArticleMetadata :article="article" :key="md5(article.date)" />-->
               </el-col>
             </div>
           </div>
