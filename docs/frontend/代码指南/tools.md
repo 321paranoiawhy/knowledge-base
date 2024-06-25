@@ -17,7 +17,7 @@ pnpm husky install
 - `post-commit`, 提交代码信息之后
 - `pre-push`, 推送代码之前
 
-:::tip
+::: tip
 如果在提交代码时因报错而终止提交代码, 此时可能会丢失代码, 可执行以下命令:
 
 ```bash

@@ -208,7 +208,7 @@ pnpm add postcss autoprefixer -D
 pnpm add @expo/webpack-config postcss-loader -D
 ```
 
-::: Caution
+::: danger
 必须锁死 `tailwindcss` 版本 `tailwindcss@3.3.`, 否则会出现问题:
 
 [Use process(css).then(cb) to work with async plugins](https://stackoverflow.com/questions/76688256/getting-error-use-processcss-thencb-to-work-with-async-plugins)
@@ -579,49 +579,6 @@ useEffect(() => {
 上述特性在 `Expo Router 3.5.x` 中引入, 低版本可[参考](https://docs.expo.dev/router/advanced/platform-specific-modules/)
 :::
 
-### `Storybook`
-
-- [Storybook for React Native](https://github.com/storybookjs/react-native)
-
-```bash
-npx storybook@latest init
-```
-
-如根目录下无 `metro.config.js`, 则使用以下命令自动生成该文件:
-
-```bash
-npx expo customize metro.config.js
-```
-
-`metro.config.js`:
-
-```js
-// Learn more https://docs.expo.io/guides/customizing-metro
-const path = require('path');
-const {getDefaultConfig} = require('expo/metro-config');
-
-const {generate} = require('@storybook/react-native/scripts/generate');
-
-generate({
-  configPath: path.resolve(__dirname, './.storybook')
-});
-
-/** @type {import('expo/metro-config').MetroConfig} */
-const config = getDefaultConfig(__dirname);
-
-config.transformer.unstable_allowRequireContext = true;
-
-config.resolver.sourceExts.push('mjs');
-
-module.exports = config;
-```
-
-更新 `app/_layout.tsx`:
-
-```tsx
-
-```
-
 ### `env`
 
 - [react-native-dotenv](https://www.npmjs.com/package/react-native-dotenv)
@@ -773,7 +730,7 @@ TODO `medium-zoom`
 
 - [react-native-element-dropdown](https://www.npmjs.com/package/react-native-element-dropdown)
 
-### 国际化
+### `I18n` 国际化
 
 - [facebook fbt](https://github.com/facebook/fbt)
 

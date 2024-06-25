@@ -206,6 +206,14 @@ tags: ['Vitepress']
 - [Custom Containers](https://vitepress.dev/guide/markdown#custom-containers)
 - [GitHub-flavored Alerts](https://vitepress.dev/guide/markdown#github-flavored-alerts)
 
+支持以下类别:
+
+- `info`
+- `tip`
+- `warning`
+- `danger`
+- `details`
+
 ````md
 ::: info
 This is an info box.
