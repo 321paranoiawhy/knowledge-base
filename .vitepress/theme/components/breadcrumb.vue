@@ -1,7 +1,7 @@
 <script setup lang="ts">
 import {useRouter, withBase} from 'vitepress';
 import {transformFileName} from '../../utils/index.js';
-import {generateInlineIcon} from '../../../constant.js';
+import {generateInlineIcon, ALL_CAPITALIZE_STACK} from '../../../constant.js';
 
 const breadcrumb = ref<string[]>([]);
 
@@ -16,7 +16,7 @@ const getBreadcrumb = () => {
         ?.split('/')
         .filter(Boolean)
         // 中文支持
-        .map(e => transformFileName(decodeURI(e)))
+        .map(e => transformFileName(decodeURI(e), ALL_CAPITALIZE_STACK.includes(decodeURI(e))))
     );
   } else {
     return (
@@ -25,7 +25,7 @@ const getBreadcrumb = () => {
         // TODO
         .filter(item => item && item !== import.meta.env.BASE_URL?.replaceAll('/', ''))
         // 中文支持
-        .map(e => transformFileName(decodeURI(e)))
+        .map(e => transformFileName(decodeURI(e), ALL_CAPITALIZE_STACK.includes(decodeURI(e))))
     );
   }
 };
@@ -50,7 +50,7 @@ watch(
       class="text-[--vp-c-brand-1] hover:text-[--vp-c-brand-2]"
     >
       <svg i-mdi:home w-1em h-1em mr-1></svg>
-      Home
+      <span class="text-[--vp-c-brand-1]">Home</span>
     </a>
     <span mx-2>/</span>
     <span v-for="(item, index) in breadcrumb" :key="index" flex-shrink-0>

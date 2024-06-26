@@ -1,0 +1,49 @@
+<template>
+  <div class="cssload-spin-box absolute-center"></div>
+</template>
+
+<style scoped>
+.cssload-spin-box {
+  width: 15px;
+  height: 15px;
+  border-radius: 100%;
+  box-shadow:
+    15px 15px rgb(79, 77, 73),
+    -15px 15px rgb(223, 223, 223),
+    -15px -15px rgb(79, 77, 73),
+    15px -15px rgb(223, 223, 223);
+  animation: cssload-spin ease infinite 4.6s;
+}
+
+@keyframes cssload-spin {
+  0%,
+  100% {
+    box-shadow:
+      15px 15px rgb(79, 77, 73),
+      -15px 15px rgb(223, 223, 223),
+      -15px -15px rgb(79, 77, 73),
+      15px -15px rgb(223, 223, 223);
+  }
+  25% {
+    box-shadow:
+      -15px 15px rgb(223, 223, 223),
+      -15px -15px rgb(79, 77, 73),
+      15px -15px rgb(223, 223, 223),
+      15px 15px rgb(79, 77, 73);
+  }
+  50% {
+    box-shadow:
+      -15px -15px rgb(79, 77, 73),
+      15px -15px rgb(223, 223, 223),
+      15px 15px rgb(79, 77, 73),
+      -15px 15px rgb(223, 223, 223);
+  }
+  75% {
+    box-shadow:
+      15px -15px #dfdfdf,
+      15px 15px #4f4d49,
+      -15px 15px #dfdfdf,
+      -15px -15px #4f4d49;
+  }
+}
+</style>

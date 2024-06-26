@@ -1,12 +1,6 @@
 import fs from 'fs';
-import {generateInlineIcon} from '../../constant.js';
+import {generateInlineIcon, ALL_CAPITALIZE_STACK} from '../../constant.js';
 import {transformFileName} from './index.js';
-
-/**
- * 须全大写的技术栈
- * @type {string[]}
- */
-const ALL_CAPITALIZE_STACK = ['php', 'html', 'css', 'js', 'ts'];
 
 const READ_DIR_OPTIONS = {withFileTypes: false, encoding: 'utf-8', recursive: false};
 

@@ -47,26 +47,28 @@ function debounce(func: Function, timeout = 100) {
 <template>
   <!-- reference: https://github.com/wehuss/vitepress-plugin-back-to-top/blob/master/lib/back-to-top.vue -->
   <transition name="fade">
-    <el-tooltip :effect="useData().isDark ? 'dark' : 'light'" content="back to top" placement="top">
-      <div
-        class="back-to-top rounded-[50%] bg-[var(--vp-code-block-bg)] hover:bg-[var(--vp-code-bg)]"
-        w-36px
-        h-36px
-        p-0
-        bottom-2em
-        right-2.5em
-        cursor-pointer
-        fixed
-        z-999
-        flex
-        items-center
-        justify-center
-        @click="scrollToTop"
-        v-if="show"
-      >
-        <svg i-carbon:up-to-top w-1em h-1em class="color-[var(--vp-c-brand-1)]"></svg>
-      </div>
-    </el-tooltip>
+    <div>
+      <el-tooltip :effect="useData().isDark ? 'dark' : 'light'" content="Back to top" placement="top">
+        <div
+          class="back-to-top rounded-[50%] bg-[var(--vp-code-block-bg)] hover:bg-[var(--vp-code-bg)]"
+          w-36px
+          h-36px
+          p-0
+          bottom-2em
+          right-2.5em
+          cursor-pointer
+          fixed
+          z-999
+          flex
+          items-center
+          justify-center
+          @click="scrollToTop"
+          v-if="show"
+        >
+          <svg i-carbon:up-to-top w-1em h-1em class="color-[var(--vp-c-brand-1)]"></svg>
+        </div>
+      </el-tooltip>
+    </div>
   </transition>
 </template>
 

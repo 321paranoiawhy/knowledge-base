@@ -49,6 +49,10 @@
         "link": "/docs/frontend/angular/"
       },
       {
+        "text": "CSS",
+        "link": "/docs/frontend/css/"
+      },
+      {
         "text": "Electron",
         "link": "/docs/frontend/electron/"
       },
@@ -113,6 +117,10 @@
       {
         "text": "Cocos",
         "link": "/docs/game/cocos/"
+      },
+      {
+        "text": "Flame",
+        "link": "/docs/game/flame/"
       },
       {
         "text": "Godot",

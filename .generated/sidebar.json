@@ -32,7 +32,12 @@
   "/docs/backend/nest/": [
     {
       "text": "<span class=\"i-logos:nestjs w-1em h-1em inline-block v-mid mr-4px\"></span>Nest",
-      "items": []
+      "items": [
+        {
+          "text": "Basic",
+          "link": "/docs/backend/nest/basic"
+        }
+      ]
     }
   ],
   "/docs/backend/php/": [
@@ -66,8 +71,20 @@
   ],
   "/docs/frontend/css/": [
     {
-      "text": "CSS",
+      "text": "<span class=\"i-mdi:language-css3 w-1em h-1em inline-block v-mid mr-4px\"></span>CSS",
       "items": [
+        {
+          "text": "UnoCSS",
+          "link": "/docs/frontend/css/UnoCSS"
+        },
+        {
+          "text": "Tabs",
+          "link": "/docs/frontend/css/tabs"
+        },
+        {
+          "text": "动画合集",
+          "link": "/docs/frontend/css/动画合集"
+        },
         {
           "text": "选择器",
           "link": "/docs/frontend/css/选择器"
@@ -84,7 +101,20 @@
   "/docs/frontend/flutter/": [
     {
       "text": "<span class=\"i-logos:flutter w-1em h-1em inline-block v-mid mr-4px\"></span>Flutter",
-      "items": []
+      "items": [
+        {
+          "text": "LogInterceptor",
+          "link": "/docs/frontend/flutter/LogInterceptor"
+        },
+        {
+          "text": "动画合集",
+          "link": "/docs/frontend/flutter/动画合集"
+        },
+        {
+          "text": "插件",
+          "link": "/docs/frontend/flutter/插件"
+        }
+      ]
     }
   ],
   "/docs/frontend/kotlin-multiplatform/": [
@@ -160,7 +190,7 @@
   ],
   "/docs/frontend/vitepress/": [
     {
-      "text": "Vitepress",
+      "text": "<span class=\"i-simple-icons:vitepress w-1em h-1em inline-block v-mid mr-4px\"></span>Vitepress",
       "items": [
         {
           "text": "Basic",
@@ -248,19 +278,45 @@
   "/docs/game/cocos/": [
     {
       "text": "<span class=\"i-simple-icons:cocos w-1em h-1em inline-block v-mid mr-4px\"></span>Cocos",
-      "items": []
+      "items": [
+        {
+          "text": "五子棋",
+          "link": "/docs/game/cocos/五子棋"
+        }
+      ]
+    }
+  ],
+  "/docs/game/flame/": [
+    {
+      "text": "Flame",
+      "items": [
+        {
+          "text": "五子棋",
+          "link": "/docs/game/flame/五子棋"
+        }
+      ]
     }
   ],
   "/docs/game/godot/": [
     {
       "text": "<span class=\"i-logos:godot-icon w-1em h-1em inline-block v-mid mr-4px\"></span>Godot",
-      "items": []
+      "items": [
+        {
+          "text": "五子棋",
+          "link": "/docs/game/godot/五子棋"
+        }
+      ]
     }
   ],
   "/docs/game/unity/": [
     {
       "text": "<span class=\"i-mdi:unity w-1em h-1em inline-block v-mid mr-4px\"></span>Unity",
-      "items": []
+      "items": [
+        {
+          "text": "五子棋",
+          "link": "/docs/game/unity/五子棋"
+        }
+      ]
     }
   ],
   "/docs/tools/all-in-one/": [

@@ -33,6 +33,9 @@ const RUST = `${LOGOS}rust`;
 // TODO jetpack-compose kmp react-native uniapp 鸿蒙
 // const ANGULAR = `${MDI}angular`;
 const ANGULAR = `${LOGOS}angular`;
+
+const CSS = `${MDI}language-css3`;
+
 // const ELECTRON = `${MDI}electron-framework`;
 const ELECTRON = `${LOGOS}electron`;
 const FLUTTER = `${LOGOS}flutter`;
@@ -49,6 +52,7 @@ const TAURI = `${LOGOS}tauri`;
 // const UNIAPP = `${MDI}uniapp`;
 // const VUE = `${MDI}vuejs`;
 const VUE = `${LOGOS}vue`;
+const VITEPRESS = 'i-simple-icons:vitepress';
 // const HM = `${MDI}hongmeng`;
 
 // sidebar-game
@@ -73,6 +77,7 @@ export const ICONS_MAP = {
   RUST,
   // sidebar-frontend
   ANGULAR,
+  CSS,
   ELECTRON,
   FLUTTER,
   'KOTLIN MULTIPLATFORM': KMP,
@@ -82,6 +87,7 @@ export const ICONS_MAP = {
   SWIFT,
   TAURI,
   VUE,
+  VITEPRESS,
   // sidebar-game
   COCOS,
   GODOT,
@@ -103,3 +109,9 @@ export const generateInlineIcon = name => {
 export const ENV_DEVELOPMENT = 'development';
 export const ENV_TEST = 'test';
 export const ENV_PRODUCTION = 'production';
+
+/**
+ * 须全大写的技术栈
+ * @type {string[]}
+ */
+export const ALL_CAPITALIZE_STACK = ['php', 'html', 'css', 'js', 'ts'];
