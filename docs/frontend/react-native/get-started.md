@@ -71,6 +71,9 @@ pnpm add @babel/runtime
 
 ```bash
 npx @react-native-community/cli doctor
+
+# 或
+npx react-native doctor
 ```
 
 ## Basic
@@ -132,6 +135,21 @@ npx @react-native-community/cli doctor
 ```ts
 const isHermes = () => !!global.HermesInternal;
 ```
+
+可在 `app.json` 中配置 `expo.jsEngine`:
+
+```json
+{
+  "expo": {
+    "jsEngine": "hermes"
+  }
+}
+```
+
+`expo.jsEngine` 支持以下值:
+
+- `jsc`
+- `hermes`
 
 ### 样式
 
@@ -614,45 +632,6 @@ useEffect(() => {
 
   :::
 
-### EAS CLI
-
-- [Create your first build](https://docs.expo.dev/build/setup/)
-- [Expo Go 实践教程 - 项目搭建](https://clwy.cn/pages/expo-project-setup)
-
-全局安装 `eas-cli`:
-
-```bash
-pnpm add eas-cli -g
-```
-
-登录:
-
-```bash
-eas login
-```
-
-检查是否登录:
-
-```bash
-eas whoami
-```
-
-配置:
-
-```bash
-eas build:configure
-```
-
-配置文件为 `eas.json`, 请确保它位于项目根目录
-
-打包:
-
-```bash
-expo build --platform android
-
-expo build --platform ios
-```
-
 ### `np` 和 `react-native-version`
 
 - [React Native + GitHub Action = ❤️](https://www.obytes.com/blog/react-native-ci-cd-github-action)
@@ -735,3 +714,7 @@ TODO `medium-zoom`
 - [facebook fbt](https://github.com/facebook/fbt)
 
   - [fbt rn demo](https://github.com/facebook/fbt/tree/rn-demo-app)
+
+```
+
+```
