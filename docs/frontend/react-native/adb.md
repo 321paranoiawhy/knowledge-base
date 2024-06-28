@@ -23,4 +23,17 @@ adb disconnect 10.66.62.15
 adb reverse tcp:8081 tcp:8081
 ```
 
-已成功连接一个安卓设备并执行端口转发时报错 `c`
+查看 `abi`:
+
+```bash
+# 查看受支持的单个 abi, 推荐将其作为安卓打包的目标架构
+# 示例输出: armeabi-v7a
+adb shell getprop ro.product.cpu.abi
+
+# 查看受支持的 abi 列表
+# 示例输出: armeabi-v7a,armeabi
+adb shell getprop ro.product.cpu.abilist
+
+# grep 表达式过滤出含 abi 的信息
+adb shell getprop | grep abi
+```
