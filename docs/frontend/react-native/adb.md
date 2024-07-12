@@ -1,5 +1,7 @@
 # ADB
 
+- [ADB 操作命令详解及用法大全](https://wade-test.readthedocs.io/zh/latest/ADB%20%E6%93%8D%E4%BD%9C%E5%91%BD%E4%BB%A4%E8%AF%A6%E8%A7%A3%E5%8F%8A%E7%94%A8%E6%B3%95%E5%A4%A7%E5%85%A8/)
+
 `ADB` 全称为 `Android Debug Bridge`, 意为安卓调试桥
 
 ```bash
@@ -119,7 +121,7 @@ adb shell pm list packages -s
 adb shell pm list packages -3
 
 # 查看所有包名含有 google 的应用
-# TODO 如何多条件过滤
+# TODO 如何多条件过滤, google svox iflytek
 adb shell pm list packages google
 ```
 
