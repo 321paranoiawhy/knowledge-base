@@ -28,6 +28,9 @@ jobs:
       - run: npm i pnpm@8.15.4 -g
       - run: pnpm install --frozen-lockfile
 
+      - name: Generate
+        run: pnpm generate:heatmap
+
       - name: Build
         run: pnpm docs:build
 

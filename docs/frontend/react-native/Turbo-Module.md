@@ -169,6 +169,7 @@ WritableMap map = Arguments.createMap();
 
 `ReadableMap` 有以下方法:
 
+- `hasKey(String name)`
 - `getArray(String name)`
 - `getBoolean(String name)`
 - `getDouble(String name)`
@@ -176,8 +177,11 @@ WritableMap map = Arguments.createMap();
 - `getMap(String name)`
 - `getString(String name)`
 - `getType(String name)`, 返回值类型为 `ReadableType`
+- `getDynamic(String name)`, 返回值类型为 `Dynamic`
 - `isNull(String name)`
+- `getEntryIterator()`
 - `keySetIterator()`
+- `toHashMap()` 转为 `Java HashMap`
 
 ### `WritableMap`
 
@@ -207,9 +211,11 @@ WritableMap map = Arguments.createMap();
 - `getInt(int index)`
 - `getMap(int index)`
 - `getString(int index)`
+- `getDynamic(int index)`, 返回值类型为 `Dynamic`
 - `getType(int index)`, 返回值类型为 `ReadableType`
 - `isNull(int index)`
 - `size()`
+- `toArrayList` 转为 `Java ArrayList`
 
 ### `WritableArray`
 

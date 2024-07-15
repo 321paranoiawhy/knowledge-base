@@ -171,7 +171,7 @@ module.exports = {
 - 文本必须处于 `Text` 组件内, 否则报错:
 
   ::: warning
-  Error: Text strings must be rendered within a <Text> component
+  Error: Text strings must be rendered within a `<Text>` component
   :::
 
 - `display` 属性值只有 `flex` 和 `none`, 不支持 `inline-flex`、`grid` 等属性值
